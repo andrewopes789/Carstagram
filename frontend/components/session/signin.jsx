@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Signup extends React.Component {
+class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      email: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +19,7 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state);
+    this.props.login(this.state);
   }
 
   renderErrors () {
@@ -42,21 +41,9 @@ class Signup extends React.Component {
   render () {
     return(
       <div className='session-form'>
-
         <form onSubmit={this.handleSubmit}>
           <h2>Carstagram</h2>
-          <p className='session-blurb'>Sign up to see photos and videos of cars</p>
           {this.renderErrors()}
-          <label>
-            <input
-              type='text'
-              onChange={this.handleInput('email')}
-              placeholder='Email'
-              className='session-input'
-            />
-          </label>
-          <br/>
-          <br/>
           <label>
             <input
               type='text'
@@ -70,6 +57,7 @@ class Signup extends React.Component {
           <label>
             <input
               type='password'
+              value={this.state.password}
               onChange={this.handleInput('password')}
               placeholder='Password'
               className='session-input'
@@ -77,11 +65,11 @@ class Signup extends React.Component {
           </label>
           <br/>
           <br/>
-          <button type="submit" className="session-button">Sign Up</button>
+          <button type="submit" className="session-button">Log In</button>
           <br/>
           <br/>
-          <label>Have an account? &nbsp;
-            <Link to="/login">Login</Link>
+          <label>Don't have an account? &nbsp;
+            <Link to="/signup">Sign up</Link>
           </label>
 
         </form>
@@ -90,4 +78,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default Signin;

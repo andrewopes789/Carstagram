@@ -6,8 +6,7 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
-      login(@user)
-      render "api/photos/?profile=false"
+      sign_in(@user)
     else
       render json: ["Invalid username/password combination"], status: 401
     end
@@ -17,9 +16,8 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       sign_out
-      render "api/session"
     else
-      render json: ["Nobody signed in"], status: 404
+      render json: ["Please sign in"], status: 404
     end
   end
 end

@@ -4,7 +4,6 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      render "api/photos/?profile=false"
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -13,6 +12,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password)
   end
 end

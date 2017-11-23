@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  username        :string           not null
 #  email           :string           not null
-#  img_url         :string           not null
+#  img_url         :string
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  created_at      :datetime         not null
@@ -13,7 +13,7 @@
 #
 
 class User < ApplicationRecord
-  validates :username, :email, :img_url, :password_digest, :session_token, presence: true
+  validates :username, :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
