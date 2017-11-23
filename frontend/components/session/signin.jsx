@@ -40,39 +40,56 @@ class Signin extends React.Component {
 
   render () {
     return(
-      <div className='session-form'>
-        <form onSubmit={this.handleSubmit}>
-          <h2>Carstagram</h2>
-          {this.renderErrors()}
-          <label>
-            <input
-              type='text'
-              onChange={this.handleInput('username')}
-              placeholder='Username'
-              className='session-input'
-            />
-          </label>
-          <br/>
-          <br/>
-          <label>
-            <input
-              type='password'
-              value={this.state.password}
-              onChange={this.handleInput('password')}
-              placeholder='Password'
-              className='session-input'
-            />
-          </label>
-          <br/>
-          <br/>
-          <button type="submit" className="session-button">Log In</button>
-          <br/>
-          <br/>
-          <label>Don't have an account? &nbsp;
-            <Link to="/signup">Sign up</Link>
-          </label>
+      <div className='session-all'>
 
-        </form>
+        <div className='session-photo'></div>
+
+        <div className='session-text'>
+          <div className='session-form'>
+
+            <form onSubmit={this.handleSubmit}>
+
+              <h2 className='logo-text'>Carstagram</h2>
+              {this.renderErrors()}
+
+              <div >
+                <label className="input-container">
+                  <input
+                    type='text'
+                    onChange={this.handleInput('username')}
+                    placeholder='Username'
+                    className='session-input'
+                    />
+                </label>
+              </div>
+
+              <div >
+                <label className="input-container">
+                  <input
+                    type='password'
+                    value={this.state.password}
+                    onChange={this.handleInput('password')}
+                    placeholder='Password'
+                    className='session-input'
+                    />
+                </label>
+              </div>
+
+              <div className='button'>
+                <button type="submit" className="session-button">Log in</button>
+              </div>
+
+            </form>
+          </div>
+
+          <div className='change-form'>
+            <label>Don't have an account? &nbsp;
+              <Link to="/signup" className='link'>Sign up</Link>
+            </label>
+
+          </div>
+          <p className='get-the-app'>Get the app.</p>
+        </div>
       </div>
     );
   }

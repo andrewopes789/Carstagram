@@ -8,6 +8,7 @@ import { postUser, postSession, deleteSession } from './utils/session_utils';
 document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
   const root = document.getElementById("root");
+  window.getState = store.getState;
   ReactDOM.render(<Root store={store}/>, root);
 });
 
