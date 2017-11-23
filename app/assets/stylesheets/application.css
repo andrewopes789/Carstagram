@@ -180,7 +180,7 @@
 }
 
 .session-photo {
-  background-image: url('./docs/login_photo.jpeg');
+  background-image: url('http://res.cloudinary.com/dn26kjpum/image/upload/v1511462034/login_photo_tbxle2.jpg');
   height: 600px;
   margin: 4% 15px auto auto;
   border-radius: 35px;
