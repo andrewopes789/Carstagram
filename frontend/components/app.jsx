@@ -11,6 +11,7 @@ import {
 import NavbarContainer from './navbar/navbar_container';
 import SignupContainer from './session/signup_container';
 import SigninContainer from './session/signin_container';
+import PhotoContainer from './photo/photo_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 
 const App = () => {
@@ -20,8 +21,10 @@ const App = () => {
         <NavbarContainer />
       </header>
       <Switch>
-        <AuthRoute path="/login" component={SigninContainer}/>
+        <AuthRoute exact path="/" component={SignupContainer}/>
         <AuthRoute path="/signup" component={SignupContainer}/>
+        <AuthRoute path="/login" component={SigninContainer}/>
+        <ProtectedRoute path='/photos' component={PhotoContainer}/>
       </Switch>
     </div>
   );

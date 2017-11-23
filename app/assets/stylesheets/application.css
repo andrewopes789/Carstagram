@@ -41,6 +41,12 @@
    margin-right: 10%;
  }
 
+ .following-photo-feed {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+ }
+
  .get-the-app {
    color: #262626;
    font-size: 14px;

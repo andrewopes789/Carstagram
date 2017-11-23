@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const siteNav = (currentUser) => (
+const siteNav = ({currentUser, logout}) => (
   <div className='nav-bar'>
 
     <div className='left-nav'>
@@ -17,6 +17,7 @@ const siteNav = (currentUser) => (
     </div>
 
     <div className='right-nav'>
+      <Link to='/login' onClick={logout}>Logout</Link>
 
       <Link to='/photos' className='nav-icons'>
         <i className='fa fa-heart-o'></i>
@@ -31,7 +32,7 @@ const siteNav = (currentUser) => (
 );
 
 const NavBar = ({ currentUser, logout }) => (
-  currentUser ? siteNav() : null
+  currentUser ? siteNav({currentUser, logout}) : null
 );
 
 export default NavBar;
