@@ -10,6 +10,7 @@ class Signup extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleInput(type) {
@@ -39,6 +40,15 @@ class Signup extends React.Component {
     this.props.receiveErrors([]);
   }
 
+  demoLogin (e) {
+    e.preventDefault();
+    this.props.login({
+      email: 'demo@email.com',
+      username: 'demo',
+      password: 'password'
+    });
+  }
+
   render () {
     return(
       <div className='session-all'>
@@ -52,7 +62,8 @@ class Signup extends React.Component {
 
               <h2 className='logo-text'>Carstagram</h2>
               <p className='session-blurb'>Sign up to see photos and videos of your favorite cars.</p>
-              <button className="session-button">
+
+              <button onClick={this.demoLogin} className="session-button">
                 <i className="fa fa-user-circle-o"></i>&nbsp;
                   Log in with Demo
                 </button>
