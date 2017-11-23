@@ -14,6 +14,22 @@
  *= require_self
  */
 
+ .button-container {
+   padding: 9px 0 7px 8px;
+ }
+
+ .change-form {
+   background-color: #fff;
+   border: 1px solid #e6e6e6;
+   display: flex;
+   flex-direction: column;
+   font-size: 14px;
+   margin: 10px auto;
+   padding: 27px 0 27px 0;
+   text-align: center;
+   width: 100%;
+ }
+
  .errors {
    color: #ed4956;
  }
@@ -25,6 +41,32 @@
    margin-right: 10%;
  }
 
+ .get-the-app {
+   color: #262626;
+   font-size: 14px;
+   line-height: 18px;
+   text-align: center;
+ }
+
+ .link {
+   color: #3897f0;
+   text-decoration: none;
+ }
+
+ .login-or {
+   border-bottom: 1px solid #999;
+   margin: 10px 40px 18px;
+   line-height: 0.1em;
+ }
+
+ .login-or span {
+   color: #999;
+   font-weight: 600;
+   font-size: 13px;
+   padding:0 16px 0 16px;
+   background-color: #fff;
+ }
+
 .logo-text {
   font-family: Brush Script MT, cursive;
   font-size: 60px;
@@ -32,10 +74,103 @@
   margin: 10px 0 10px 0;
 }
 
+.left-nav {
+  margin: auto;
+}
+
+.nav-bar {
+  align-items: center;
+  border-bottom: 0.2px solid #999;
+  display: flex;
+  flex-direction: row;
+  height: 77px;
+  justify-content: center;
+}
+
+.nav-bar-logo {
+  border-right: 0.2px solid #262626;
+  color: #262626;
+  font-weight: 10;
+  font-size: 24px;
+  text-decoration: none;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+.nav-bar-written-logo {
+  color: #262626;
+  font-family: Brush Script MT, cursive;
+  font-size: 30px;
+  font-weight: 50;
+  text-decoration: none;
+}
+
+.nav-icons {
+  color: #262626;
+  font-size: 24px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.right-nav {
+  margin: auto;
+}
+
 .session-all {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.session-blurb {
+  color: #999;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 15% 3px;
+  text-align: center;
+}
+
+.session-button {
+  background: #3897f0;
+  border-color: #3897f0;
+  border-radius: 3px;
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 12px 17px 17px 17px;
+  width: 268px;
+}
+
+.session-form {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 6px 0 0 0;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.session-form form {
+  flex-direction: column;
+}
+
+.session-input {
+  background: #fafafa;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  font-size: 14px;
+  height: 18px;
+  margin: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 245px;
+  padding: 2% 3% 2% 3%;
 }
 
 .session-photo {
@@ -55,101 +190,8 @@
   width: 350px;
 }
 
-.session-form {
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 6px 0 0 0;
-  padding: 10px 0;
-  text-align: center;
-  width: 100%;
-}
-
-.session-blurb {
-  color: #999;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 20px;
-  margin: 0 15% 3px;
-  text-align: center;
-}
-
-.session-form form {
-  flex-direction: column;
-}
-
-.login-or {
-  border-bottom: 1px solid #999;
-  margin: 10px 40px 18px;
-  line-height: 0.1em;
-}
-
-.login-or span {
-  color: #999;
-  font-weight: 600;
-  font-size: 13px;
-  padding:0 16px 0 16px;
-  background-color: #fff;
-}
-
-.session-input {
-  background: #fafafa;
-  border: 1px solid #efefef;
-  border-radius: 3px;
-  font-size: 14px;
-  height: 18px;
-  margin: 3px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 245px;
-  padding: 2% 3% 2% 3%;
-}
-
-.button-container {
-  padding: 9px 0 7px 8px;
-}
-
-.session-button {
-  background: #3897f0;
-  border-color: #3897f0;
-  border-radius: 3px;
-  color: #fff;
-  font-family: Helvetica;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 28px;
-  margin: 12px 17px 17px 17px;
-  width: 268px;
-}
-
 .terms-privacy-policy {
   color: #999;
   margin: 10px 60px 30px;
   font-size: 14px;
-}
-
-.change-form {
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  margin: 10px auto;
-  padding: 27px 0 27px 0;
-  text-align: center;
-  width: 100%;
-}
-
-.link {
-  color: #3897f0;
-  text-decoration: none;
-}
-
-.get-the-app {
-  color: #262626;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
 }

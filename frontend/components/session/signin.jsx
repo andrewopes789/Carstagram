@@ -50,7 +50,6 @@ class Signin extends React.Component {
             <form onSubmit={this.handleSubmit}>
 
               <h2 className='logo-text'>Carstagram</h2>
-              {this.renderErrors()}
 
               <div >
                 <label className="input-container">
@@ -79,6 +78,8 @@ class Signin extends React.Component {
                 <button type="submit" className="session-button">Log in</button>
               </div>
 
+              {this.renderErrors()}
+              
             </form>
           </div>
 
