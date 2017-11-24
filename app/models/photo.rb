@@ -12,6 +12,7 @@
 
 class Photo < ApplicationRecord
   belongs_to :poster,
+    primary_key: :id,
     foreign_key: :author_id,
     class_name: :User
 
