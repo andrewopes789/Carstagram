@@ -3,7 +3,7 @@ class Api::PhotosController < ApplicationController
     if params[:profile]
       @photos = current_user.profile_photos
     else
-      @photos = current_user.feed
+      @photos = current_user.feed_photos
     end
   end
 

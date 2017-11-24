@@ -50,7 +50,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   def feed_photos
-    self.followings
+    self.followings.photos.append(self.photos)
   end
 
   def profile_photos

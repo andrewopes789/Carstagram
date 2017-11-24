@@ -1,4 +1,10 @@
 class Api::UsersController < ApplicationController
+
+  def index
+    @users = User.includes(followings: [:photos, :likes]).where(id: current_user.id)
+    render json: @users
+  end
+
   def create
     @user = User.new(user_params)
 
