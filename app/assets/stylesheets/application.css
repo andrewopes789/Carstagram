@@ -150,6 +150,10 @@
   width: 268px;
 }
 
+.session-button:hover {
+  cursor: pointer;
+}
+
 .session-form {
   background-color: #fff;
   border: 1px solid #e6e6e6;
