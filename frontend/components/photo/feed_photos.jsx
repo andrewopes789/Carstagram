@@ -10,17 +10,35 @@ class FeedPhotos extends React.Component {
     this.props.fetchFeedPhotos();
   }
 
+  componentWillUnmount() {
+  }
+
   renderComment (comment) {
     return (
       <div key={comment.id} className='comment-item'>
-        <Link to={`/users/`}
-          className='comment-poster'>commenter</Link>&nbsp;
+        <Link to={`/users/${comment.user_id}`}
+          className='comment-poster'>{comment.user_id}</Link>&nbsp;
         <div className='comment-body'>{comment.body}</div>
       </div>
     );
   }
 
+  renderAllComments (photo) {
+    photo.comments.map(comment => (
+      this.renderComment(comment)
+    ));
+  }
+
   renderPhoto ({photo}) {
+    let commentTrigger;
+    if (photo.comments.length > 20) {
+      commentTrigger = 'Load more comments';
+    } else if (photo.comments.length < 5) {
+      commentTrigger = null;
+    } else {
+      commentTrigger = `View all ${photo.comments.length} comments`;
+    }
+
     return (
       <div key={photo.id} className='feed-photo-container'>
 
@@ -61,20 +79,17 @@ class FeedPhotos extends React.Component {
 
           <div className='view-all-photos-container'>
             <button className='view-all-photos-button'>
-              <span className='view-all-photos-text'>
-                View all {photo.comments.length} comments
-              </span>
+              {commentTrigger}
             </button>
           </div>
 
           <div>
             {
-              photo.comments.map(comment => (
+              photo.comments.slice(0,4).map(comment => (
                 this.renderComment(comment)
               ))
             }
           </div>
-
           <section className='comment-input-container'>
             <form>
               <textarea

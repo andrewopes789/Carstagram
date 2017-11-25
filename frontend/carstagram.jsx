@@ -6,19 +6,19 @@ import configureStore from './store/store';
 import { postUser, postSession, deleteSession } from './utils/session_utils';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("root");
-
+  let store;
   let preloadedState = undefined;
+
   if (window.currentUser) {
-    preloadedState = {
-      session: {
-        currentUser: window.currentUser
-      }
-    };
+    preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
   }
 
-  const store = configureStore(preloadedState);
   window.getState = store.getState;
+  const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);
 });
 

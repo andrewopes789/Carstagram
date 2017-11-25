@@ -18,13 +18,13 @@ const siteNav = ({currentUser, logout}) => (
 
     <Link to='/login' onClick={logout}>Logout</Link>
 
-    <div className='right-nav'>  
+    <div className='right-nav'>
 
       <Link to='/photos' className='nav-icons'>
         <i className='fa fa-heart-o'></i>
       </Link>
 
-      <Link to={`/users/${currentUser.ids}`} className='nav-icons'>
+      <Link to={`/users/${currentUser.id}`} className='nav-icons'>
         <i className='fa fa-user-o'></i>
       </Link>
 

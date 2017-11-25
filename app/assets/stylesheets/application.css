@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .bottom-line-username {
+   font-family: Helvetica;
+   font-size: 16px;
+   font-weight: 600;
+   margin: -15px auto auto 0;
+ }
 
  .button-container {
    padding: 9px 0 7px 8px;
@@ -94,6 +100,7 @@
 
  .feed-photo-button {
     border: none;
+    display: inline-block;
     height: 24px;
     font-size: 25px;
     font-weight: 200;
@@ -131,11 +138,25 @@
  }
 
  .feed-photo-text {
-   border-top: 1px solid #e6e6e6;
    margin: auto;
    width: 568px;
    padding-left: 16px;
    padding-right: 16px;
+ }
+
+ .follow-button {
+   border-radius: 3px;
+   font-family: Helvetica;
+   font-size: 14px;
+   font-weight: 600;
+   height: 28px;
+   margin: auto auto auto 20px;
+   padding: 0 8px 0 8px;
+   width: 116px;
+ }
+
+ .follow-button:hover {
+   cursor: pointer;
  }
 
  .get-the-app {
@@ -158,15 +179,6 @@
    text-decoration: none;
  }
 
- .poster-and-caption {
-   display: flex;
-   flex-direction: row;
-   padding-top: 5px;
-   padding-bottom: 6px;
-   width: 568px;
-   margin-left: 0;
- }
-
  .likes-count {
    font-weight: 600;
    margin-left: 0;
@@ -176,13 +188,6 @@
 
  .likes-count:hover {
    cursor: pointer;
- }
-
- .photo-poster {
-  color: inherit;
-  font-weight: 600;
-  margin: auto 5px 0 0;
-  text-decoration: none;
  }
 
  .login-or {
@@ -207,7 +212,7 @@
 }
 
 .left-nav {
-  margin: auto;
+  margin: auto auto auto 0;
 }
 
 .nav-bar {
@@ -215,8 +220,11 @@
   border-bottom: 1px solid #e6e6e6;
   display: flex;
   flex-direction: row;
-  height: 76px;
+  height: 25px;
   justify-content: center;
+  margin: auto;
+  max-width: 930px;
+  padding: 26px 40px 26px 40px;
 }
 
 .nav-bar-logo {
@@ -252,6 +260,22 @@
   padding: 16px;
 }
 
+.photo-poster {
+color: inherit;
+font-weight: 600;
+margin: auto 5px 0 0;
+text-decoration: none;
+}
+
+.poster-and-caption {
+ display: flex;
+ flex-direction: row;
+ padding-top: 5px;
+ padding-bottom: 6px;
+ width: 568px;
+ margin-left: 0;
+}
+
 .poster-photo {
   border: 1px solid #e6e6e6;
   border-radius: 50%;
@@ -261,14 +285,89 @@
   width: 30px;
 }
 
-.profile-photos-all {
+.profile-all {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 60px 20px 0 20px;
+  margin: auto 166px 0 166px;
+}
+
+.profile-followers {
+  margin-right: 42px;
+}
+
+.profile-followings {
+  margin-right: 42px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  margin: auto auto auto 0;
+}
+
+.profile-main {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-bottom-line {
+  margin: auto auto 20px 0;
+}
+
+.profile-photo {
+  border-radius: 100%;
+  border: 1px solid #e6e6e6;
+  margin: 0 auto 0 auto;
+  width: 152px;
+  height: 152px;
+}
+
+.profile-photo-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 30px 0 auto;
+  padding: 0 62px 0 62px;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  font-family: Helvetica;
+  font-weight: 100;
+}
+
+.profile-top-line {
+  display: flex;
+  flex-direction: row;
+  margin: auto auto 20px 0;
+}
+
+.posts-followers-followings {
+  display: flex;
+  flex-direction: row;
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-posts {
+  margin: auto 42px auto 0;
+}
+
+.profile-name-bio {
+  font-size: 16px;
+  margin: auto auto 20px 0;
+}
+
+.profile-username {
+  font-weight: lighter;
 }
 
 .right-nav {
-  margin: auto;
+  margin: auto 0 auto auto;
 }
 
 .session-all {
@@ -332,6 +431,10 @@
   padding: 2% 3% 2% 3%;
 }
 
+.session-input:invalid {
+  border: 1px solid #ed4956;
+}
+
 .session-photo {
   background-image: url('http://res.cloudinary.com/dn26kjpum/image/upload/v1511462034/login_photo_tbxle2.jpg');
   height: 600px;
@@ -357,6 +460,8 @@
 
 .view-all-photos-button {
   border: none;
+  color: #999;
+  font-size: 14px;
   margin: auto auto auto -7px;
   padding: none;
 }
@@ -367,7 +472,7 @@
 
 .view-all-photos-text {
   color: #999;
-  font-size: 14px;
+  font-size: inherit;
 }
 
 .view-all-photos-button:hover {
