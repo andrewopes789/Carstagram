@@ -32,11 +32,11 @@ class User < ApplicationRecord
     class_name: :Comment
 
   has_many :user_followers,
-    foreign_key: :follower_id,
+    foreign_key: :following_id,
     class_name: :Follow
 
   has_many :user_followings,
-    foreign_key: :following_id,
+    foreign_key: :follower_id,
     class_name: :Follow
 
   has_many :followers,
@@ -47,14 +47,14 @@ class User < ApplicationRecord
     through: :user_followings,
     source: :following
 
+  has_many :following_photos,
+    through: :followings,
+    source: :photos
+
   after_initialize :ensure_session_token
 
   def feed_photos
-    self.followings.photos.append(self.photos)
-  end
-
-  def profile_photos
-    self.photos
+    following_photos.sample(12)
   end
 
   def self.find_by_credentials(username, password)

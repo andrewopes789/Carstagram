@@ -1,10 +1,6 @@
 class Api::PhotosController < ApplicationController
   def index
-    if params[:profile]
-      @photos = current_user.profile_photos
-    else
-      @photos = current_user.feed_photos
-    end
+    @photos = current_user.feed_photos
   end
 
   def show

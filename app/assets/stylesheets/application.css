@@ -30,6 +30,50 @@
    width: 100%;
  }
 
+ .comment-body {
+   font-size: 14px;
+   margin: auto auto auto 0;
+   padding: 0;
+ }
+
+ .comment-input {
+   align-items: center;
+   border: none;
+   border-image-repeat: stretch;
+   font-size: 14px;
+   margin: auto;
+   height: 18px;
+   width: 542px;
+   word-wrap: break-word;;
+ }
+
+ .comment-input-container {
+   border-top: 1px solid #e6e6e6;
+   display: flex;
+   flex-direction: row;
+   width: 568px;
+   height: 56px;
+ }
+
+ .comment-input-container form {
+   height: 18px;
+   margin: auto auto auto 0;
+ }
+
+ .comment-item {
+   display: flex;
+   flex-direction: row;
+   padding: 5px 0 6px 0;
+   text-align: left;
+ }
+
+ .comment-poster {
+   color: inherit;
+   font-size: 14px;
+   font-weight: 600;
+   text-decoration: none;
+ }
+
  .errors {
    color: #ed4956;
  }
@@ -41,10 +85,57 @@
    margin-right: 10%;
  }
 
- .following-photo-feed {
+ .feed-photos-all {
    display: flex;
    flex-direction: column;
+   font-family: Helvetica;
    text-align: center;
+ }
+
+ .feed-photo-button {
+    border: none;
+    height: 24px;
+    font-size: 25px;
+    font-weight: 200;
+    margin: auto 24px auto -6px;
+    width: 24px;
+ }
+
+ .feed-photo-button:hover {
+   cursor: pointer;
+ }
+
+ .feed-photo-buttons-container {
+   margin: 4px auto auto auto;
+   display: flex;
+   flex-direction: row;
+   height: 40px;
+   margin-right: 4.2px;
+   width: 568px;
+ }
+
+ .feed-photo-container {
+   border: 1px solid #e6e6e6;
+   display: flex;
+   flex-direction: column;
+   margin: 60px auto auto auto;
+   width: 600px;
+ }
+
+ .feed-photo {
+   display: flex;
+   flex-direction: column;
+   margin: auto;
+   width: inherit;
+   text-align: center;
+ }
+
+ .feed-photo-text {
+   border-top: 1px solid #e6e6e6;
+   margin: auto;
+   width: 568px;
+   padding-left: 16px;
+   padding-right: 16px;
  }
 
  .get-the-app {
@@ -54,9 +145,44 @@
    text-align: center;
  }
 
+ .index-poster-username {
+   color: inherit;
+   font-size: 14px;
+   font-weight: 600;
+   margin: auto auto auto 0;
+   text-decoration: none;
+ }
+
  .link {
    color: #3897f0;
    text-decoration: none;
+ }
+
+ .poster-and-caption {
+   display: flex;
+   flex-direction: row;
+   padding-top: 5px;
+   padding-bottom: 6px;
+   width: 568px;
+   margin-left: 0;
+ }
+
+ .likes-count {
+   font-weight: 600;
+   margin-left: 0;
+   padding: 6px 0 6px 0;
+   text-align: left;
+ }
+
+ .likes-count:hover {
+   cursor: pointer;
+ }
+
+ .photo-poster {
+  color: inherit;
+  font-weight: 600;
+  margin: auto 5px 0 0;
+  text-decoration: none;
  }
 
  .login-or {
@@ -86,15 +212,15 @@
 
 .nav-bar {
   align-items: center;
-  border-bottom: 0.2px solid #999;
+  border-bottom: 1px solid #e6e6e6;
   display: flex;
   flex-direction: row;
-  height: 77px;
+  height: 76px;
   justify-content: center;
 }
 
 .nav-bar-logo {
-  border-right: 0.2px solid #262626;
+  border-right: 1px solid #e6e6e6;
   color: #262626;
   font-weight: 10;
   font-size: 24px;
@@ -116,6 +242,29 @@
   font-size: 24px;
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.photo-header {
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  height: 28px;
+  padding: 16px;
+}
+
+.poster-photo {
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  height: 30px;
+  margin: auto 15px auto 0;
+  padding: none;
+  width: 30px;
+}
+
+.profile-photos-all {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .right-nav {
@@ -204,4 +353,23 @@
   color: #999;
   margin: 10px 60px 30px;
   font-size: 14px;
+}
+
+.view-all-photos-button {
+  border: none;
+  margin: auto auto auto -7px;
+  padding: none;
+}
+
+.view-all-photos-container {
+  text-align: left;
+}
+
+.view-all-photos-text {
+  color: #999;
+  font-size: 14px;
+}
+
+.view-all-photos-button:hover {
+  cursor: pointer;
 }

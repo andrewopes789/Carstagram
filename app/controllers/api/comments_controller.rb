@@ -3,12 +3,18 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
+    @comment.photo_id = params[:photo_id]
 
     if @comment.save
       render :show
     else
       render json: @comment, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
   end
 
   def destroy
