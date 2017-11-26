@@ -11,7 +11,9 @@ class ProfilePhotos extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.props.fetchUser(newProps.match.params.userId);
+    if (newProps.match.params.userId !== this.props.userId) {
+      this.props.fetchUser(newProps.match.params.userId);
+    }
   }
 
   // componentWillReceiveProps () {
@@ -48,12 +50,13 @@ class ProfilePhotos extends React.Component {
   render () {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
+
     // const photos = user.photos || [];
     // const followers = user.followers || [];
     let profButton;
     if (user.id === currentUser.id) {
       profButton = 'Edit Profile';
-    } else if (currentUser.followings.includes(user)) {
+    } else if (currentUser.followings.map(el => el.id).includes(user.id)) {
       profButton = 'Following';
     } else {
       profButton = 'Follow';

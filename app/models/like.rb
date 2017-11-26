@@ -10,6 +10,8 @@
 #
 
 class Like < ApplicationRecord
+  validates :user_id, presence: true, uniqueness: { scope: :photo_id }
+
   belongs_to :liker,
     foreign_key: :user_id,
     class_name: :User

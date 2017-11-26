@@ -98,8 +98,8 @@ Like.delete_all
 
 photo_ids = Photo.all.map(&:id)
 
-5000.times do
-  Like.create!(
+100.times do
+  Like.create(
     user_id: user_ids.sample,
     photo_id: photo_ids.sample
   )
@@ -107,8 +107,8 @@ end
 
 Comment.delete_all
 
-1000.times do
-  Comment.create!(
+100.times do
+  Comment.create(
     body: Faker::Company.catch_phrase,
     user_id: user_ids.sample,
     photo_id: photo_ids.sample
@@ -117,7 +117,7 @@ end
 
 Follow.delete_all
 
-5000.times do
+100.times do
   follower_id = user_ids.sample
   following_id = user_ids.sample
 
@@ -125,7 +125,7 @@ Follow.delete_all
     following_id = user_ids.sample
   end
 
-  Follow.create!(
+  Follow.create(
     follower_id: follower_id,
     following_id: following_id
   )

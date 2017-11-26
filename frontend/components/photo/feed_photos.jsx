@@ -14,7 +14,7 @@ class FeedPhotos extends React.Component {
     return (
       <div key={comment.id} className='comment-item'>
         <Link to={`/users/${comment.user_id}`}
-          className='comment-poster'>{comment.user_id}</Link>&nbsp;
+          className='comment-poster'>{comment.commenter.username}</Link>&nbsp;
         <div className='comment-body'>{comment.body}</div>
       </div>
     );

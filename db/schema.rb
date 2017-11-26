@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20171121222335) do
     t.integer "following_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["follower_id"], name: "index_follows_on_follower_id"
+    t.index ["follower_id", "following_id"], name: "index_follows_on_follower_id_and_following_id", unique: true
     t.index ["following_id"], name: "index_follows_on_following_id"
   end
 
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20171121222335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["photo_id"], name: "index_likes_on_photo_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["user_id", "photo_id"], name: "index_likes_on_user_id_and_photo_id", unique: true
   end
 
   create_table "photos", force: :cascade do |t|

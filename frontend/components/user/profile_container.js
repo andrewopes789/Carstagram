@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
   userId: ownProps.match.params.userId,
@@ -14,4 +15,5 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Profile));
