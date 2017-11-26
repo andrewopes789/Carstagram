@@ -10,9 +10,6 @@ class FeedPhotos extends React.Component {
     this.props.fetchFeedPhotos();
   }
 
-  componentWillUnmount() {
-  }
-
   renderComment (comment) {
     return (
       <div key={comment.id} className='comment-item'>

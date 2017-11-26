@@ -223,8 +223,7 @@
   height: 25px;
   justify-content: center;
   margin: auto;
-  max-width: 930px;
-  padding: 26px 40px 26px 40px;
+  padding: 26px 170px 26px 170px;
 }
 
 .nav-bar-logo {
@@ -248,8 +247,7 @@
 .nav-icons {
   color: #262626;
   font-size: 24px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 30px;
 }
 
 .photo-header {
@@ -258,6 +256,22 @@
   flex-direction: row;
   height: 28px;
   padding: 16px;
+}
+
+.photo-item {
+  height: 293px;
+  width: 293px;
+  object-fit: cover;
+  -webkit-transition: .2s all;
+}
+
+.photo-item:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(70%);
+}
+
+.photo-item-container {
+  margin: 15px 0 15px 30px;
 }
 
 .photo-poster {
@@ -285,12 +299,20 @@ text-decoration: none;
   width: 30px;
 }
 
+.posts-followers-followings {
+  display: flex;
+  flex-direction: row;
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
 .profile-all {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 60px 20px 0 20px;
-  margin: auto 166px 0 166px;
+  margin: auto auto 0 auto;
 }
 
 .profile-followers {
@@ -304,7 +326,8 @@ text-decoration: none;
 .profile-header {
   display: flex;
   flex-direction: row;
-  margin: auto auto auto 0;
+  margin: 0 15px -15px 15px;
+  width: 997px;
 }
 
 .profile-main {
@@ -316,6 +339,17 @@ text-decoration: none;
   margin: auto auto 20px 0;
 }
 
+.profile-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name-bio {
+  font-size: 16px;
+  margin: auto auto 20px 0;
+}
+
 .profile-photo {
   border-radius: 100%;
   border: 1px solid #e6e6e6;
@@ -324,11 +358,25 @@ text-decoration: none;
   height: 152px;
 }
 
+.profile-photos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 45px auto 28px auto;
+  width: 997px;
+}
+
 .profile-photo-container {
   display: flex;
   flex-direction: row;
-  margin: 0 30px 0 auto;
-  padding: 0 62px 0 62px;
+  margin: 0 30px 0 30px;
+  padding: 0 69.5px 0 69.5px;
+}
+
+
+.profile-posts {
+  margin: auto 42px auto 0;
 }
 
 .profile-text {
@@ -342,23 +390,6 @@ text-decoration: none;
 .profile-top-line {
   display: flex;
   flex-direction: row;
-  margin: auto auto 20px 0;
-}
-
-.posts-followers-followings {
-  display: flex;
-  flex-direction: row;
-  font-weight: normal;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.profile-posts {
-  margin: auto 42px auto 0;
-}
-
-.profile-name-bio {
-  font-size: 16px;
   margin: auto auto 20px 0;
 }
 

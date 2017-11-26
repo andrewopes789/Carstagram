@@ -15,17 +15,10 @@ User.create!(
   img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_615/v1511644892/white_lshl6d.jpg'
 )
 
-usernames = ['alfaromeo', 'astonmartin', 'audi', 'bentley', 'bmw', 'bugatti',
-'citroen', 'ferrari', 'fisker', 'jaguar', 'koenigsegg', 'lamborghini',
-'landrover', 'maserati', 'maybach', 'mclaren', 'mercedesbenz', 'mg', 'porsche',
-'rollsroyce', 'saleen', 'spyker', 'tesla', 'acura', 'austinhealey', 'buick',
-'cadillac', 'chevrolet', 'chrysler', 'daewoo', 'dodge', 'fiat', 'ford', 'genesis',
-'honda', 'gmc', 'hummer', 'infiniti', 'jeep', 'kia', 'lancia', 'seat', 'lincoln',
-'lotus', 'mazda', 'mini', 'mitsubishi', 'morris', 'nash', 'qvale', 'saab',
-'smart', 'subaru', 'toyota', 'volkswagen', 'volvo', 'yugo', 'carlover123',
-'volkswagenautomotivegroup', 'landcruisersworldwide', 'stancenation',
-'porsche_purists_club', 'supercars247', 'ducati', 'amg_only', 'carsandcoffee',
-'hennesseyvenom', 'raptor_club_worldwide']
+usernames = ['musclecarzone', 'audizine', 'hypercarsworldwide', 'bespokecoachworks',
+'fletcherjonesmotorcars', 'wisimonson', 'jimfalkbeverlyhills', 'ogaracoach',
+'carlover123','carspotters', 'v12power', 'stancenation', 'turbocharged',
+'supercars247', 'eurostance', 'amg_only', 'dupontregistry', 'theautocollection']
 
 usernames.length.times do
   user = usernames.pop
@@ -84,7 +77,6 @@ photos = ['http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v15114
 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v1511479689/445607859_1280x720_sbpkv9.jpg',
 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v1511479688/2016-03-01_Geneva_Motor_Show_G070_swwpoa.jpg',
 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v1511479694/Bugatti_Veyron_Super_Sport__5491917622_gxkbkj.jpg',
-'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v1511479703/jaguar5_kfllga.jpg',
 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v1511475920/jaguar1_jjxqcr.jpg',
 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v1511479683/ALFA-Stelvio_adsjnz.jpg',
 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_600/v1511479696/Alfa_Romeo_8C_Competizione_-_Flickr_-_exfordy_daio2b.jpg',

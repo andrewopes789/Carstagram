@@ -10,7 +10,8 @@ class ProfilePhotos extends React.Component {
     this.props.fetchUser(this.props.userId);
   }
 
-  componentWillUnmount() {
+  componentWillReceiveProps(newProps) {
+    this.props.fetchUser(newProps.match.params.userId);
   }
 
   // componentWillReceiveProps () {
@@ -18,10 +19,21 @@ class ProfilePhotos extends React.Component {
   //   window.photos = this.props.photos;
   // }
 
+  renderPhoto(photo) {
+    return (
+      <div key={photo.id} className='photo-item-container'>
+        <img
+          className='photo-item'
+          src={photo.img_url} alt='user photo'/>
+      </div>
+    );
+  }
+
   render () {
     const user = this.props.user;
     // const photos = user.photos || [];
     // const followers = user.followers || [];
+
     return (
       <main className='profile-main'>
         <div className='profile-all'>
@@ -60,6 +72,14 @@ class ProfilePhotos extends React.Component {
             </section>
 
           </header>
+        </div>
+
+        <div className='profile-photos'>
+          {
+            user.photos.map(photo => (
+              this.renderPhoto(photo)
+            ))
+          }
         </div>
       </main>
     );
