@@ -25,14 +25,40 @@ class ProfilePhotos extends React.Component {
         <img
           className='photo-item'
           src={photo.img_url} alt='user photo'/>
+        <div className='overlay'>
+          <i className='fa fa-heart'></i>&nbsp;
+          <i className='fa fa-comment'></i>
+        </div>
       </div>
     );
   }
 
+  renderButton(user, currentUser) {
+    let editButton;
+    if (user.id === currentUser.id) {
+      return (<i
+        className='fa fa-gear profile-option'
+        onClick={this.props.logout}>
+      </i>);
+    } else {
+      return (<i className='fa fa-caret-square-o-down profile-option'></i>);
+    }
+  }
+
   render () {
     const user = this.props.user;
+    const currentUser = this.props.currentUser;
     // const photos = user.photos || [];
     // const followers = user.followers || [];
+    let profButton;
+    if (user.id === currentUser.id) {
+      profButton = 'Edit Profile';
+    } else if (currentUser.followings.includes(user)) {
+      profButton = 'Following';
+    } else {
+      profButton = 'Follow';
+    }
+
 
     return (
       <main className='profile-main'>
@@ -47,7 +73,8 @@ class ProfilePhotos extends React.Component {
             <section className='profile-text'>
               <div className='profile-top-line'>
                 <div className='profile-username'>{user.username}</div>
-                <button className='follow-button'>Following</button>
+                <button className='follow-button'>{profButton}</button>
+                {this.renderButton(user, currentUser)}
               </div>
 
               <div className='posts-followers-followings'>

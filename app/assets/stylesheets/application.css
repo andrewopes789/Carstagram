@@ -150,7 +150,7 @@
    font-size: 14px;
    font-weight: 600;
    height: 28px;
-   margin: auto auto auto 20px;
+   margin: auto 10px auto 20px;
    padding: 0 8px 0 8px;
    width: 116px;
  }
@@ -223,7 +223,7 @@
   height: 25px;
   justify-content: center;
   margin: auto;
-  padding: 26px 170px 26px 170px;
+  padding: 16px 170px 26px 170px;
 }
 
 .nav-bar-logo {
@@ -248,6 +248,10 @@
   color: #262626;
   font-size: 24px;
   margin-left: 30px;
+}
+
+.overlay {
+  color: white;
 }
 
 .photo-header {
@@ -315,6 +319,16 @@ text-decoration: none;
   margin: auto auto 0 auto;
 }
 
+.profile-option {
+  height: 28px;
+  font-size: 28px;
+  margin: auto 0 auto auto;
+}
+
+.profile-option:hover {
+  cursor: pointer;
+}
+
 .profile-followers {
   margin-right: 42px;
 }
@@ -363,7 +377,7 @@ text-decoration: none;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  margin: 45px auto 28px auto;
+  margin: 45px 166px 28px 162px;
   width: 997px;
 }
 

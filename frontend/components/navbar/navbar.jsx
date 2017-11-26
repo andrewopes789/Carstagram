@@ -16,9 +16,10 @@ const siteNav = ({currentUser, logout}) => (
 
     </div>
 
-    <Link to='/login' onClick={logout}>Logout</Link>
-
     <div className='right-nav'>
+      <Link to='/photos/' className='nav-icons'>
+        <i className='fa fa-plus-square-o'></i>
+      </Link>
 
       <Link to='/photos' className='nav-icons'>
         <i className='fa fa-heart-o'></i>
