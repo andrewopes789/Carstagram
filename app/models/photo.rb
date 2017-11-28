@@ -19,7 +19,19 @@ class Photo < ApplicationRecord
     foreign_key: :photo_id,
     class_name: :Like
 
+  has_many :likers,
+    through: :likes,
+    source: :liker
+
   has_many :comments,
     foreign_key: :photo_id,
     class_name: :Comment
+
+  def likes_by_id
+    self.likes.map(&:id)
+  end
+
+  def comments_by_id
+    self.comments.map(&:id)
+  end
 end

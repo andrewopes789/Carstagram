@@ -38,6 +38,7 @@ gem 'jquery-rails'
 gem 'rails_12factor'
 gem 'figaro'
 gem 'faker'
+gem 'paperclip-cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -24,6 +24,19 @@
    padding: 9px 0 7px 8px;
  }
 
+ .caption-input {
+   background: #fafafa;
+   border: 1px solid #efefef;
+   border-radius: 3px;
+   font-size: 14px;
+   height: 18px;
+   margin: auto auto 3px auto;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 250px;
+   padding: 2% 3% 20% 3%;
+ }
+
  .change-form {
    background-color: #fff;
    border: 1px solid #e6e6e6;
@@ -70,6 +83,7 @@
    display: flex;
    flex-direction: row;
    padding: 5px 0 6px 0;
+   margin-top: -5px;
    text-align: left;
  }
 
@@ -82,6 +96,7 @@
 
  .errors {
    color: #ed4956;
+   display: flex;
  }
 
  .errors li {
@@ -89,6 +104,15 @@
    font-size: 13px;
    list-style-type: none;
    margin-right: 10%;
+ }
+
+ .feed-photo {
+   display: flex;
+   flex-direction: column;
+   margin: auto;
+   object-fit: contain;
+   width: 600px;
+   text-align: center;
  }
 
  .feed-photos-all {
@@ -102,9 +126,9 @@
     border: none;
     display: inline-block;
     height: 24px;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 200;
-    margin: auto 24px auto -6px;
+    margin: auto 16px auto 0;
     width: 24px;
  }
 
@@ -113,11 +137,10 @@
  }
 
  .feed-photo-buttons-container {
-   margin: 4px auto auto auto;
+   margin: 8px auto auto auto;
    display: flex;
    flex-direction: row;
-   height: 40px;
-   margin-right: 4.2px;
+   height: 35px;
    width: 568px;
  }
 
@@ -129,19 +152,17 @@
    width: 600px;
  }
 
- .feed-photo {
-   display: flex;
-   flex-direction: column;
-   margin: auto;
-   width: inherit;
-   text-align: center;
- }
-
  .feed-photo-text {
    margin: auto;
    width: 568px;
    padding-left: 16px;
    padding-right: 16px;
+ }
+
+ .follow {
+   background-color: #3897f0;
+   border-color: #3897f0;
+   color: #fff;
  }
 
  .follow-button {
@@ -151,8 +172,7 @@
    font-weight: 600;
    height: 28px;
    margin: auto 10px auto 20px;
-   padding: 0 8px 0 8px;
-   width: 116px;
+   padding: 0 24px 0 24px;
  }
 
  .follow-button:hover {
@@ -164,6 +184,28 @@
    font-size: 14px;
    line-height: 18px;
    text-align: center;
+ }
+
+ .image-form-container {
+   display: flex;
+   flex-direction: row;
+   margin: auto;
+ }
+
+ .image-placeholder {
+   color: #999;
+   font-family: Helvetica;
+   font-size: 16px;
+   margin: auto auto auto 140px;
+ }
+
+ .image-show-container {
+   display: flex;
+   flex-direction: row;
+   margin-right: 15px;
+   width: 400px;
+   height: 400px;
+   border: 1px solid #e6e6e6;
  }
 
  .index-poster-username {
@@ -179,15 +221,31 @@
    text-decoration: none;
  }
 
+ .liked {
+   color: #F74040;
+ }
+
  .likes-count {
+   font-size: 14px;
    font-weight: 600;
    margin-left: 0;
-   padding: 6px 0 6px 0;
+   padding: 6px 0 8px 0;
    text-align: left;
  }
 
  .likes-count:hover {
    cursor: pointer;
+ }
+
+ .loading-item {
+   margin: auto;
+ }
+
+ .loading-item-container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin: 5%;
  }
 
  .login-or {
@@ -223,6 +281,7 @@
   height: 25px;
   justify-content: center;
   margin: auto;
+  min-width: 385px;
   padding: 16px 170px 26px 170px;
 }
 
@@ -250,8 +309,36 @@
   margin-left: 30px;
 }
 
+.new-post {
+  align-items: center;
+  font-family: Helvetica;
+  font-size: 20px;
+  margin: 20px auto 20px auto;
+  padding: 20px auto auto 20px;
+}
+
 .overlay {
   color: white;
+}
+
+.photo-age {
+  color: #999;
+  display: flex;
+  flex-direction: row;
+  font-family: Helvetica;
+  font-size: 10px;
+  padding: 5px 0 6px 0;
+  margin-top: -5px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.photo-detail {
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  margin: 5% auto auto auto;
+  padding: auto 170px auto 170px;
 }
 
 .photo-header {
@@ -288,7 +375,7 @@ text-decoration: none;
 .poster-and-caption {
  display: flex;
  flex-direction: row;
- padding-top: 5px;
+ font-size: 14px;
  padding-bottom: 6px;
  width: 568px;
  margin-left: 0;
@@ -503,23 +590,66 @@ text-decoration: none;
   font-size: 14px;
 }
 
-.view-all-photos-button {
+.upload-button {
+  background: #3897f0;
+  border-color: #3897f0;
+  border-radius: 3px;
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 6px 17px 6px 17px;
+  width: 268px;
+}
+
+.upload-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-form {
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px auto auto 10px;
+  width: 300px;
+}
+
+.upload-preview {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  object-fit: contain;
+  width: 400px;
+}
+
+.view-all-photos-link {
   border: none;
   color: #999;
+  display: flex
+  font-family: Helvetica;
   font-size: 14px;
-  margin: auto auto auto -7px;
-  padding: none;
+  text-decoration: none;
 }
 
 .view-all-photos-container {
+  display: flex;
   text-align: left;
-}
-
-.view-all-photos-text {
-  color: #999;
-  font-size: inherit;
 }
 
 .view-all-photos-button:hover {
   cursor: pointer;
+}
+
+.zero-likes {
+  color: #999;
+  font-size: 14px;
+  font-family: Helvetica;
+  font-size: 14px;
+  margin-left: 0;
+  padding: 6px 0 8px 0;
+  text-align: left;
 }

@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
-import { createNewUser, receiveErrors, login } from '../../actions/session_actions';
+import { createNewUser,
+  receiveErrors,
+  login } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 import Signup from './signup';
 

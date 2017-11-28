@@ -12,6 +12,7 @@ import NavbarContainer from './navbar/navbar_container';
 import SignupContainer from './session/signup_container';
 import SigninContainer from './session/signin_container';
 import FeedPhotoContainer from './photo/feed_photo_container';
+import PhotoUploadContainer from './photo/photo_upload_container';
 import ProfileContainer from './user/profile_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 
@@ -25,8 +26,9 @@ const App = () => {
         <AuthRoute exact path="/" component={SignupContainer}/>
         <AuthRoute path="/signup" component={SignupContainer}/>
         <AuthRoute path="/login" component={SigninContainer}/>
-        <ProtectedRoute path='/photos' component={FeedPhotoContainer}/>
+        <ProtectedRoute exact path='/photos' component={FeedPhotoContainer}/>
         <ProtectedRoute path='/users/:userId' component={ProfileContainer}/>
+        <ProtectedRoute path='/photos/new' component={PhotoUploadContainer}/>
       </Switch>
     </div>
   );

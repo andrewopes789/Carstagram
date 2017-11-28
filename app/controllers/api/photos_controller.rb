@@ -8,7 +8,8 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
-    @photo = Post.new(photo_params)
+    @photo = Photo.new(photo_params)
+    @photo.author_id = current_user.id
 
     if @photo.save
       render :show

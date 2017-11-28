@@ -1,5 +1,9 @@
 class Api::CommentsController < ApplicationController
-  before_action :require_signed_in
+  before_action :require_signed_in!
+  def index
+    @photo = Photo.find(params[:photo_id])
+    @comments = @photo.comments
+  end
 
   def create
     @comment = Comment.new(comment_params)
@@ -11,10 +15,6 @@ class Api::CommentsController < ApplicationController
     else
       render json: @comment, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @comment = Comment.find(params[:id])
   end
 
   def destroy

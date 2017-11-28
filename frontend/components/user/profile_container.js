@@ -2,18 +2,22 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
-import { withRouter } from 'react-router-dom';
+import { selectUser,
+selectAllPhotos } from '../../reducers/selectors';
 
-const mapStateToProps = (state, ownProps) => ({
-  userId: ownProps.match.params.userId,
-  user: state.entities.user,
-  currentUser: state.session.currentUser
-});
+const mapStateToProps = (state, ownProps) => {
+  return ({
+    userId: ownProps.match.params.userId,
+    user: state.entities.users.user,
+    photos: Object.values(state.entities.photos),
+    currentUser: state.session.currentUser,
+    loading: state.ui.loading.detailLoading
+  });
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: (userId) => dispatch(fetchUser(userId)),
   logout: () => dispatch(logout())
 });
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Profile));
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

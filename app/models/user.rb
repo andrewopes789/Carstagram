@@ -78,6 +78,18 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def photos_by_id
+    self.photos.map(&:id)
+  end
+
+  def followings_by_id
+    self.followings.map(&:id)
+  end
+
+  def followers_by_id
+    self.followers.map(&:id)
+  end
+
   private
 
   def ensure_session_token

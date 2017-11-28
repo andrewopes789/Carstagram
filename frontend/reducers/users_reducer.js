@@ -1,26 +1,32 @@
-import { RECEIVE_USER,
-  RECEIVE_ALL_USERS } from '../actions/user_actions';
+import { combineReducers } from 'redux';
 import { merge } from 'lodash';
 
-const _nullState = {
-  id: -1,
-  img_url: '',
-  username: '',
-  email: '',
-  followers: [],
-  followings: [],
-  photos: []
+import {
+  RECEIVE_USER,
+  RECEIVE_ALL_USERS
+} from '../actions/user_actions';
+
+import {
+  RECEIVE_FEED_PHOTOS
+} from '../actions/photo_actions';
+
+const initialState = {
+  users: {},
+  user: {
+    followers_by_id: [],
+    followings_by_id: []
+  }
 };
 
-export default (state=_nullState, action) => {
+export default (state=initialState, action) => {
   Object.freeze(state);
 
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, action.user);
+      return merge({}, {user: action.payload.user});
     case RECEIVE_ALL_USERS:
-      return merge({}, action.users);
+      return merge({}, {users: action.users});
     default:
       return state;
-  }
-};
+    }
+  };

@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      render :show
+      render :create
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -16,6 +16,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    render :create
   end
 
   private
