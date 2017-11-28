@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoadingIcon from '../photo/loading_icon';
+import PhotoShow from './photo_show';
 
 class ProfilePhotos extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      modalOpen: false,
+      searchId: -1
+    };
+  }
+
   componentWillMount () {
     this.props.fetchUser(this.props.userId);
   }
@@ -10,6 +19,12 @@ class ProfilePhotos extends React.Component {
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.userId !== this.props.userId) {
       this.props.fetchUser(newProps.match.params.userId);
+    }
+    if (newProps.location.search !== '') {
+      this.setState({modalOpen: true});
+      this.setState({searchId: newProps.location.search.slice(1)});
+    } else {
+      this.setState({modalOpen: false});
     }
   }
 
@@ -29,6 +44,13 @@ class ProfilePhotos extends React.Component {
       <LoadingIcon /> :
       <main className='profile-main'>
         <div className='profile-all'>
+
+          { this.state.modalOpen ?
+            <PhotoShow
+              backToProfile={this.backToProfile(this.props.user.id)}
+              photo={this.props.photosAsObject[this.state.searchId]}
+            /> : ""
+          }
 
           <header className='profile-header'>
 
@@ -80,7 +102,8 @@ class ProfilePhotos extends React.Component {
 
   renderPhoto(photo) {
     return (
-      <div key={photo.id} className='photo-item-container'>
+      <div key={photo.id} className='photo-item-container'
+        onClick={this.pushHistory(photo.id)}>
         <img
           className='photo-item'
           src={photo.img_url} alt='user photo'/>
@@ -89,13 +112,22 @@ class ProfilePhotos extends React.Component {
   }
 
   renderButton(user, currentUser) {
-    let editButton;
     if (user.id === currentUser.id) {
       return (<i
         className='fa fa-gear profile-option'
         onClick={this.props.logout}>
       </i>);
     }
+  }
+
+  pushHistory(photoId) {
+    return(() => this.props.history.push({search: photoId.toString()}));
+  }
+
+  backToProfile(userId) {
+    return(() => {
+      this.props.history.push(`/users/${userId}`);
+    });
   }
 
 }

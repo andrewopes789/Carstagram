@@ -35,8 +35,7 @@ export default (state=initialState, action) => {
     case START_LOADING_USER:
       return Object.assign({}, state, {detailLoading: true});
     case RECEIVE_USER:
-      return Object.assign(
-        {}, state, {detailLoading: false, indexLoading: true});
+      return Object.assign({}, state, {detailLoading: false});
 
     case START_LOADING_ALL_USERS:
       return Object.assign({}, state, {indexLoading: true});

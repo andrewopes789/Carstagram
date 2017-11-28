@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class PhotoUpload extends React.Component {
   constructor(props) {
     super(props);
@@ -48,18 +47,21 @@ class PhotoUpload extends React.Component {
 
   render() {
     let imageShow = this.state.img_url === '' ? (
-      imageShow = (<div className='image-placeholder'>Upload an image</div>)
+      imageShow = (<div className='image-placeholder'
+      >Click here to upload an image</div>)
     ) : (
       imageShow = (<img
         src={this.state.img_url}
         className='upload-preview'></img>)
     );
+
     return (
       <section className='photo-detail'>
 
         <div className='image-form-container'>
 
-          <div className='image-show-container'>
+          <div className='image-show-container'
+            onClick={this.handleUpload}>
             {imageShow}
           </div>
 
@@ -72,12 +74,6 @@ class PhotoUpload extends React.Component {
                 placeholder='Write a caption...'
                 onChange={this.update('caption')}
                 />
-            </label>
-
-            <label>
-              <button
-                onClick={this.handleUpload}
-                className='upload-button'>Load Photo</button>
             </label>
 
             <label>

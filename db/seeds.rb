@@ -15,10 +15,12 @@ User.create!(
   img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_615/v1511644892/white_lshl6d.jpg'
 )
 
-usernames = ['musclecarzone', 'audizine', 'hypercarsworldwide', 'bespokecoachworks',
-'fletcherjonesmotorcars', 'wisimonson', 'jimfalkbeverlyhills', 'ogaracoach',
+usernames = ['musclecarzone', 'downtownlamotors', 'hypercarsworldwide', 'bespokecoachworks',
+'fletcherjonesnewportbeach', 'wisimonson', 'jimfalkbeverlyhills', 'ogaracoach',
 'carlover123','carspotters', 'v12power', 'stancenation', 'turbocharged',
-'supercars247', 'eurostance', 'amg_only', 'dupontregistry', 'theautocollection']
+'supercars247', 'eurostance', 'amg_only', 'dupontregistry', 'theautocollection',
+'mulliner', 'penske', 'montecitomotorcars', 'carspottingmonaco', 'platinummotorsports',
+'calabasasluxurymotorcars', '1ofakindmotors', 'rdbla']
 
 usernames.length.times do
   user = usernames.pop
@@ -98,7 +100,7 @@ Like.delete_all
 
 photo_ids = Photo.all.map(&:id)
 
-100.times do
+500.times do
   Like.create(
     user_id: user_ids.sample,
     photo_id: photo_ids.sample
@@ -107,7 +109,7 @@ end
 
 Comment.delete_all
 
-100.times do
+500.times do
   Comment.create(
     body: Faker::Company.catch_phrase,
     user_id: user_ids.sample,
@@ -117,7 +119,7 @@ end
 
 Follow.delete_all
 
-100.times do
+500.times do
   follower_id = user_ids.sample
   following_id = user_ids.sample
 

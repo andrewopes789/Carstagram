@@ -24,8 +24,6 @@ export default (state=initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       return merge({}, {user: action.payload.user});
-    case RECEIVE_ALL_USERS:
-      return merge({}, {users: action.users});
     default:
       return state;
     }

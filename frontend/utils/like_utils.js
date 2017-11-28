@@ -1,14 +1,14 @@
 export const fetchLikes = photoId => (
   $.ajax({
     method: 'GET',
-    url: `/api/${photoId}/likes`
+    url: `/api/photos/${photoId}/likes`
   })
 );
 
 export const createLike = like => (
   $.ajax({
     method: 'POST',
-    url: '/api/likes',
+    url: `/api/photos/${like.photo_id}/likes`,
     data: { like }
   })
 );

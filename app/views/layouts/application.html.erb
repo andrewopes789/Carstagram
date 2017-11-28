@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application' %>
     <script id='bootstrap-current-user' type='text/javascript'>
       <% if signed_in? %>
-        window.currentUser = <%= render('api/users/create.json.jbuilder',
+        window.currentUser = <%= render('api/users/show.json.jbuilder',
         user: current_user).html_safe %>
       <% end %>
     </script>
