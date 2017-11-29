@@ -27,10 +27,10 @@ export default (state=initialState, action) => {
       return merge({}, state, action.like);
     case REMOVE_LIKE:
       let newState2 = merge({}, state);
-      delete newState2[action.likeId];
+      delete newState2[action.like.id];
       return newState2;
 
-      default:
-        return state;
+    default:
+      return state;
     }
   };

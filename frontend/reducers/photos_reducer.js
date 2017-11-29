@@ -6,7 +6,10 @@ import {
   REMOVE_PHOTO
 } from '../actions/photo_actions';
 
-import { RECEIVE_LIKE } from '../actions/like_actions';
+import {
+  RECEIVE_LIKE,
+  REMOVE_LIKE
+} from '../actions/like_actions';
 
 import { RECEIVE_USER } from '../actions/user_actions';
 
@@ -20,6 +23,10 @@ export default (state=initialState, action) => {
   switch (action.type) {
     case RECEIVE_LIKE:
       return merge({}, state, action.photo);
+    case REMOVE_LIKE:
+      let dupState = merge({}, state);
+      dupState[Object.keys(action.photo)[0]] = Object.values(action.photo)[0];
+      return dupState;
     case RECEIVE_FEED_PHOTOS:
       return merge({}, action.payload.photos);
     case RECEIVE_USER:

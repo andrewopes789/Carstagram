@@ -8,14 +8,14 @@ export const fetchLikes = photoId => (
 export const createLike = photoId => (
   $.ajax({
     method: 'POST',
-    url: `/api/photos/${photoId.photo_id}/likes`,
-    data: photoId
+    url: `/api/photos/${photoId}/likes`,
+    data: { photoId }
   })
 );
 
-export const deleteLike = likeId => (
+export const deleteLike = photoId => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/likes/${likeId}`
+    url: `/api/likes/${photoId}`
   })
 );

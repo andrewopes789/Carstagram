@@ -16,9 +16,10 @@ export const receiveLike = ({like, photo}) => ({
   photo
 });
 
-export const removeLike = likeId => ({
+export const removeLike = ({like, photo}) => ({
   type: REMOVE_LIKE,
-  likeId
+  like,
+  photo
 });
 
 export const receiveErrors = errors => ({
@@ -41,5 +42,5 @@ export const createLike = photoId => dispatch => (
 
 export const deleteLike = likeId => dispatch => (
   APIUtil.deleteLike(likeId)
-    .then(like => dispatch(removeLike(likeId)))
+    .then(payload => dispatch(removeLike(payload)))
 );

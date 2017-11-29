@@ -26,14 +26,15 @@ class FeedPhotos extends React.Component {
           this.props.photos.map(photo => (
             <RenderFeedPhoto
               key={photo.id}
-              photo={photo}
               comments={this.props.comments}
-              likes={this.props.likes}
-              showAllComments={this.state.showAllComments}
-              renderComment={this.renderComment}
-              renderAllComments={this.renderAllComments}
               createLike={this.props.createLike}
+              currentUser={this.props.currentUser}
               deleteLike={this.props.deleteLike}
+              likes={this.props.likes}
+              photo={photo}
+              renderAllComments={this.renderAllComments}
+              renderComment={this.renderComment}
+              showAllComments={this.state.showAllComments}
             />
           ))
         }

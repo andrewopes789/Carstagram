@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
     photos: Object.values(state.entities.photos),
     likes: state.entities.likes,
     comments: state.entities.comments,
-    loading: state.ui.loading.indexLoading
+    loading: state.ui.loading.indexLoading,
+    currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

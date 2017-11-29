@@ -7,15 +7,16 @@ const RenderFeedPhoto = (props) => {
   let comments = photo.comments_by_id.map(id => (
     props.comments[id]
   ));
+
   let likes = photo.likes_by_id.map(id => (
     props.likes[id]
   ));
 
+
   let commentTrigger;
   if (comments.length < 5 || props.showAllComments === true) {
     commentTrigger = null;
-  }
-  else if (comments.length > 20) {
+  } else if (comments.length > 20) {
     commentTrigger = 'Load more comments';
   } else {
     commentTrigger = `View all ${comments.length} comments`;
@@ -41,20 +42,20 @@ const RenderFeedPhoto = (props) => {
   );
 
   let likeCounter = likes.length === 1 ? '1 like' : `${likes.length} likes`;
-  let likeTracker = likes.length === 0 ? (
 
-    <div className='zero-likes'>Be the first to like this photo</div>
-  ) : (
-    <div className='likes-count'>{likeCounter}</div>
-  );
+  let likeTracker = likes.length === 0 ? (
+      <div className='zero-likes'>Be the first to like this photo</div>
+    ) : (
+      <div className='likes-count'>{likeCounter}</div>
+    );
 
   let likeButton = photo.current_user_likes ? (
-    <i className='fa fa-heart liked feed-photo-button'
-      onClick={() => props.deleteLike({})}></i>
-  ) : (
-    <i className='fa fa-heart-o feed-photo-button'
-      onClick={() => props.createLike({photo_id: photo.id})}></i>
-  );
+      <i className='fa fa-heart liked feed-photo-button'
+        onClick={() => props.deleteLike(photo.id)}></i>
+    ) : (
+      <i className='fa fa-heart-o feed-photo-button'
+        onClick={() => props.createLike(photo.id)}></i>
+    );
 
   return (
     <div key={photo.id} className='feed-photo-container'>

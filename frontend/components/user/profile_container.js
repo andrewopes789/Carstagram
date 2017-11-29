@@ -2,8 +2,6 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
-import { selectUser,
-selectAllPhotos } from '../../reducers/selectors';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
