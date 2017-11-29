@@ -224,7 +224,7 @@
  .image-show-container {
    display: flex;
    flex-direction: row;
-   margin: auto 15px; auto 140px;
+   margin: auto 15px auto 140px;
    width: 400px;
    min-height: 400px;
    max-height: 500px;
