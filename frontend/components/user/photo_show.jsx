@@ -50,7 +50,6 @@ const PhotoShow = (props) => {
                 </div>
               </div>
 
-
             </div>
 
             <div className='modal-photo-buttons-container'>

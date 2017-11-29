@@ -6,8 +6,8 @@ import { withRouter } from 'react-router-dom';
 import Signup from './signup';
 
 const mapStateToProps = state => {
-  let errors = state.errors.session ?
-  state.errors.session : [];
+  let errors = state.errors ?
+  state.errors : [];
   return { errors };
 };
 

@@ -6,8 +6,8 @@ import {
 import Signin from './signin';
 
 const mapStateToProps = state => {
-  let errors = state.errors.session ?
-  state.errors.session : [];
+  let errors = state.errors ?
+  state.errors : [];
   return { errors };
 };
 
