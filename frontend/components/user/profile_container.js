@@ -3,6 +3,7 @@ import { fetchUser } from '../../actions/user_actions';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
 import { withRouter } from 'react-router-dom';
+import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -19,7 +20,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: (userId) => dispatch(fetchUser(userId)),
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  createLike: photoId => dispatch(createLike(photoId)),
+  deleteLike: photoId => dispatch(deleteLike(photoId))
 });
 
 export default withRouter(

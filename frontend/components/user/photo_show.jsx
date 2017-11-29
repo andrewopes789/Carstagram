@@ -17,9 +17,11 @@ const PhotoShow = (props) => {
   );
 
   let likeButton = photo.current_user_likes ? (
-    <i className='fa fa-heart liked feed-photo-button'></i>
+    <i className='fa fa-heart liked feed-photo-button'
+      onClick={()=>props.deleteLike(photo.id)}></i>
   ) : (
-    <i className='fa fa-heart-o feed-photo-button'></i>
+    <i className='fa fa-heart-o feed-photo-button'
+      onClick={()=>props.createLike(photo.id)}></i>
   );
 
   return(
