@@ -112,6 +112,19 @@
    text-decoration: none;
  }
 
+ .comment-trigger {
+   display: flex;
+   color: #999;
+   font-size: 14px;
+   font-family: Helvetica;
+   font-size: 14px;
+   margin-bottom: 5px;
+ }
+
+ .comment-trigger:hover {
+   cursor: pointer;
+ }
+
  .errors {
    color: #ed4956;
    display: flex;
@@ -357,7 +370,7 @@
 }
 
 .modal-detail {
-  padding: 0 24px 12px 24px;
+  padding: 0 24px 0 24px;
   margin-left: 0;
 }
 
@@ -416,8 +429,7 @@
 .modal-photo-buttons-container {
   border-top: 1px solid #efefef;
   padding-left: 24px;
-  padding-top: 5px;
-  margin: 8px auto auto auto;
+  margin: auto;
   display: flex;
   flex-direction: row;
   height: 35px;
