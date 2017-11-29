@@ -9,7 +9,8 @@ const PhotoShow = (props) => {
       <span className='close-modal'
         onClick={props.backToProfile}>&times;</span>
       <div className='modal-contents'>
-        <div>
+
+        <div className='modal-image-container'>
           <img className='modal-image' src={photo.img_url}></img>
         </div>
 
@@ -17,9 +18,12 @@ const PhotoShow = (props) => {
           <header className='modal-poster'>
             <img className='modal-poster-photo' src={photo.poster_img}/>
             <Link to={`/users/${photo.poster_id}`}
-              className='index-poster-username'>{photo.poster_username}</Link>
+              className='index-poster-username modal-poster-username'>{photo.poster_username}</Link>
           </header>
           <div className='modal-detail'>
+            <div className='modal-caption'>
+              {photo.caption}
+            </div>
           </div>
         </div>
       </div>

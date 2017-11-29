@@ -326,8 +326,8 @@
 }
 
 .modal-detail {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 12px 24px;
+  margin-left: 0;
 }
 
 .modal-detail-container {
@@ -339,23 +339,35 @@
 .modal-image {
   margin: auto;
   max-width: 600px;
-  max-height: 600px;
+  max-height: 601px;
   object-fit: fill;
 }
 
+.modal-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal-poster {
+  display: flex;
+  flex-direction: row;
   border-bottom: 1px solid #efefef;
   font-family: Helvetica;
-  margin-left: 0;
-  padding: 20px 0;
-  width: 287px;
+  margin: auto;
+  padding: 20px 0 20px 24px;
 }
 
 .modal-poster-photo {
   height: 40px;
-  weight: 40px;
+  width: 40px;
+  border: 1px solid #e6e6e6;
   border-radius: 50%;
-  margin: auto auto auto 0;
+  margin: auto 0 auto 0;
+  object-fit: contain;
+}
+
+.modal-poster-username {
+  margin: auto 0 auto 12px;
 }
 
 .nav-bar {
