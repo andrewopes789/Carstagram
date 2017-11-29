@@ -3,35 +3,39 @@ import { Link } from 'react-router-dom';
 
 const siteNav = ({ currentUser }) => {
  return (
-  <div className='nav-bar'>
+   <div className='nav-bar-container'>
 
-    <div className='left-nav'>
+     <div className='nav-bar'>
 
-      <Link to="/photos" className='nav-bar-logo'>
-        <i className='fa fa-automobile'></i>&nbsp;
-      </Link>
+       <div className='left-nav'>
 
-      <Link to="/photos" className='nav-bar-written-logo'>
-        Carstagram
-      </Link>
+         <Link to="/photos" className='nav-bar-logo'>
+           <i className='fa fa-automobile'></i>&nbsp;
+           </Link>
 
-    </div>
+           <Link to="/photos" className='nav-bar-written-logo'>
+             Carstagram
+           </Link>
 
-    <div className='right-nav'>
-      <Link to='/photos/new' className='nav-icons'>
-        <i className='fa fa-plus-square-o'></i>
-      </Link>
+         </div>
 
-      <Link to='/photos' className='nav-icons'>
-        <i className='fa fa-heart-o'></i>
-      </Link>
+         <div className='right-nav'>
+           <Link to='/photos/new' className='nav-icons'>
+             <i className='fa fa-plus-square-o'></i>
+           </Link>
 
-      <Link to={`/users/${currentUser.id}`} className='nav-icons'>
-        <i className='fa fa-user-o'></i>
-      </Link>
+           <Link to='/photos' className='nav-icons'>
+             <i className='fa fa-heart-o'></i>
+           </Link>
 
-    </div>
-  </div>
+           <Link to={`/users/${currentUser.id}`} className='nav-icons'>
+             <i className='fa fa-user-o'></i>
+           </Link>
+
+         </div>
+       </div>
+       
+   </div>
   );
 };
 

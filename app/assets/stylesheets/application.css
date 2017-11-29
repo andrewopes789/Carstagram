@@ -75,13 +75,12 @@
  .comment-input {
    align-items: center;
    border: none;
-   border-image-repeat: stretch;
    font-size: 14px;
    margin: auto;
    height: 18px;
    resize: none;
    width: 542px;
-   word-wrap: break-word;;
+   word-wrap: break-word;
  }
 
  .comment-input-container {
@@ -89,7 +88,8 @@
    display: flex;
    flex-direction: row;
    width: 568px;
-   height: 56px;
+   padding-top: 16px;
+   padding-bottom: 16px;
  }
 
  .comment-input-container form {
@@ -319,6 +319,37 @@
   z-index: 1;
 }
 
+.modal-caption {
+  font-family: Helvetica;
+  font-size: 14px;
+  margin-left: 0;
+  color: inherit;
+  padding: 5px 0 6px 0;
+  text-align: left;
+}
+
+.modal-comment-input {
+  align-items: center;
+  border: none;
+  border-image-repeat: stretch;
+  font-size: 14px;
+  height: 18px;
+  margin-left: 24px;
+  resize: none;
+  width: 248px;
+  word-wrap: break-word;
+}
+
+.modal-comment-input-container {
+  align-self: flex-end;
+  border-top: 1px solid #efefef;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin-left: -300px;
+  padding: 16px 24px 16px 0;
+}
+
 .modal-contents {
   display: flex;
   flex-direction: row;
@@ -326,26 +357,70 @@
 }
 
 .modal-detail {
-  padding: 12px 24px;
+  padding: 0 24px 12px 24px;
   margin-left: 0;
 }
 
 .modal-detail-container {
-  align-items: center;
   width: 300px;
   background-color: white;
 }
 
 .modal-image {
-  margin: auto;
-  max-width: 600px;
-  max-height: 601px;
+  margin-right: 0;
+  min-width: 700px;
+  max-width: 900px;
+  max-height: 700px;
   object-fit: fill;
 }
 
 .modal-image-container {
   display: flex;
   flex-direction: column;
+}
+
+.modal-likes-count {
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 24px;
+  padding: 6px 0 5px 0;
+  text-align: left;
+}
+
+.modal-likes-count:hover {
+  cursor: pointer;
+}
+
+.modal-photo-age {
+  color: #999;
+  display: flex;
+  flex-direction: row;
+  font-family: Helvetica;
+  font-size: 10px;
+  padding: 5px 0 6px 24px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.modal-photo-button {
+   border: none;
+   display: inline-block;
+   height: 24px;
+   font-size: 24px;
+   font-weight: 200;
+   margin: auto 16px auto 0;
+   width: 24px;
+}
+
+.modal-photo-buttons-container {
+  border-top: 1px solid #efefef;
+  padding-left: 24px;
+  padding-top: 5px;
+  margin: 8px auto auto auto;
+  display: flex;
+  flex-direction: row;
+  height: 35px;
 }
 
 .modal-poster {
@@ -367,19 +442,57 @@
 }
 
 .modal-poster-username {
-  margin: auto 0 auto 12px;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 5px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal-poster-lower-username {
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 0;
+  margin-right: 5px;
+  padding: 5px 0 6px 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal-top-detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 5px;
+  padding-bottom: 6px;
+}
+
+.modal-zero-likes {
+  color: #999;
+  font-size: 14px;
+  font-family: Helvetica;
+  font-size: 14px;
+  margin-left: 0;
+  padding: 6px 0 8px 24px;
+  text-align: left;
 }
 
 .nav-bar {
   align-items: center;
-  border-bottom: 1px solid #e6e6e6;
   display: flex;
   flex-direction: row;
   height: 25px;
   justify-content: center;
   margin: auto;
   min-width: 385px;
+  max-width: 930px;
   padding: 16px 170px 26px 170px;
+}
+
+.nav-bar-container {
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .nav-bar-logo {
@@ -483,6 +596,7 @@ text-decoration: none;
   border-radius: 50%;
   height: 30px;
   margin: auto 15px auto 0;
+  object-fit: contain;
   padding: none;
   width: 30px;
 }
@@ -560,6 +674,7 @@ text-decoration: none;
   border-radius: 100%;
   border: 1px solid #e6e6e6;
   margin: 0 auto 0 auto;
+  object-fit: contain;
   width: 152px;
   height: 152px;
 }
@@ -610,8 +725,11 @@ text-decoration: none;
 .session-all {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin: 3% auto auto auto;
+  margin: auto;
+}
+
+.session-all-container {
+  margin-top: 8%;
 }
 
 .session-blurb {
@@ -674,9 +792,11 @@ text-decoration: none;
 }
 
 .session-photo {
+  display: flex;
+  flex-direction: column;
   background-image: url('http://res.cloudinary.com/dn26kjpum/image/upload/v1511462034/login_photo_tbxle2.jpg');
-  height: 600px;
-  margin: 4% 15px auto auto;
+  min-height: 600px;
+  margin: auto 15px auto auto;
   border-radius: 35px;
   width: 454px;
 }
