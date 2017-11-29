@@ -32,6 +32,8 @@ class FeedPhotos extends React.Component {
               showAllComments={this.state.showAllComments}
               renderComment={this.renderComment}
               renderAllComments={this.renderAllComments}
+              createLike={this.props.createLike}
+              deleteLike={this.props.deleteLike}
             />
           ))
         }
@@ -50,7 +52,7 @@ class FeedPhotos extends React.Component {
         <Link to={`/users/${comment.commenter_id}`}
           className='comment-poster'>{comment.commenter_username}</Link>&nbsp;
         <div className='comment-body'>{comment.body}</div>
-        
+
       </div>
       );
   }

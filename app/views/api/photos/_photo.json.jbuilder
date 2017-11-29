@@ -1,6 +1,9 @@
+url = photo.img_url
+url = url.sub('res.cloudinary.com/dn26kjpum/image/upload/','res.cloudinary.com/dn26kjpum/image/upload/c_thumb,h_600,w_800/')
+
 json.set! photo.id do
   json.id photo.id
-  json.img_url photo.img_url
+  json.img_url url
   json.caption photo.caption
   json.poster_id photo.author_id
   json.poster_username photo.poster.username

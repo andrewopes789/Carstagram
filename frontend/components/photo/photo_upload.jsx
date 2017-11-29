@@ -27,8 +27,10 @@ class PhotoUpload extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createPhoto(this.state)
-    .then(() => this.props.history.push('/'));
+    if (this.state.img_url !== '') {
+      this.props.createPhoto(this.state)
+      .then(() => this.props.history.push('/'));
+    } 
   }
 
   update(field) {

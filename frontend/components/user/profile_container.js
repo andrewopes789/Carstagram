@@ -8,6 +8,8 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
+    comments: state.entities.comments,
+    likes: state.entities.likes,
     userId: ownProps.match.params.userId,
     user: state.entities.users.user,
     photos: Object.values(state.entities.photos),

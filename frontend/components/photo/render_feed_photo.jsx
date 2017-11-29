@@ -31,7 +31,7 @@ const RenderFeedPhoto = (props) => {
       }
     </div>
   ) : (
-    <div>
+    <div className='comment-shown-container'>
       {
         comments.slice(0,4).map(comment => (
           props.renderComment(comment)
@@ -49,9 +49,11 @@ const RenderFeedPhoto = (props) => {
   );
 
   let likeButton = photo.current_user_likes ? (
-    <i className='fa fa-heart liked feed-photo-button'></i>
+    <i className='fa fa-heart liked feed-photo-button'
+      onClick={() => props.deleteLike({})}></i>
   ) : (
-    <i className='fa fa-heart-o feed-photo-button'></i>
+    <i className='fa fa-heart-o feed-photo-button'
+      onClick={() => props.createLike({photo_id: photo.id})}></i>
   );
 
   return (
@@ -84,11 +86,6 @@ const RenderFeedPhoto = (props) => {
           <div className='photo-caption'>
             {photo.caption}
           </div>
-        </div>
-
-        <div className='view-all-photos-container'>
-          <Link to='/' className='view-all-photos-link'>
-          </Link>
         </div>
 
         <div className='comment-trigger' onClick={props.renderAllComments}>

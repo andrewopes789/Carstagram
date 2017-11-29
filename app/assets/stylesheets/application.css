@@ -30,7 +30,7 @@
    border-radius: 3px;
    font-size: 14px;
    height: 18px;
-   margin: 10px auto 3px auto;
+   margin: 10px auto auto auto;
    overflow: hidden;
    text-overflow: ellipsis;
    width: 250px;
@@ -101,7 +101,7 @@
    display: flex;
    flex-direction: row;
    padding: 5px 0 6px 0;
-   margin-top: -5px;
+   margin-top: -3px;
    text-align: left;
  }
 
@@ -112,13 +112,16 @@
    text-decoration: none;
  }
 
+ .comment-shown-container:first-child {
+   margin-top: 3px;
+ }
+
  .comment-trigger {
    display: flex;
    color: #999;
    font-size: 14px;
    font-family: Helvetica;
    font-size: 14px;
-   margin-bottom: 5px;
  }
 
  .comment-trigger:hover {
@@ -141,7 +144,7 @@
    display: flex;
    flex-direction: column;
    margin: auto;
-   object-fit: contain;
+   object-fit: cover;
    width: 600px;
    text-align: center;
  }
@@ -237,7 +240,7 @@
  .image-show-container {
    display: flex;
    flex-direction: row;
-   margin: auto 15px auto 140px;
+   margin: auto 15px auto auto;
    width: 400px;
    min-height: 400px;
    max-height: 500px;
@@ -337,8 +340,16 @@
   font-size: 14px;
   margin-left: 0;
   color: inherit;
-  padding: 5px 0 6px 0;
   text-align: left;
+}
+
+.modal-comment-container {
+  border: none;
+  height: 300px;
+  flex: 1;
+  overflow: scroll;
+  display: hidden;
+  padding-left: 24px;
 }
 
 .modal-comment-input {
@@ -354,13 +365,35 @@
 }
 
 .modal-comment-input-container {
+  display: fixed;
   align-self: flex-end;
   border-top: 1px solid #efefef;
   display: flex;
   flex-direction: row;
   height: auto;
-  margin-left: -300px;
+  bottom: 0;
   padding: 16px 24px 16px 0;
+}
+
+.modal-comment-body {
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+.modal-comment-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px 0 6px 0;
+  text-align: left;
+}
+
+.modal-comment-poster {
+  color: inherit;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .modal-contents {
@@ -370,26 +403,27 @@
 }
 
 .modal-detail {
-  padding: 0 24px 0 24px;
   margin-left: 0;
+  padding: 0 24px 0 24px;
 }
 
 .modal-detail-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 0;
   width: 300px;
   background-color: white;
 }
 
-.modal-image {
-  margin-right: 0;
-  min-width: 700px;
-  max-width: 900px;
-  max-height: 700px;
-  object-fit: fill;
+.modal-footer {
 }
 
-.modal-image-container {
-  display: flex;
-  flex-direction: column;
+.modal-image {
+  max-height: 700px;
+  max-width: 1000px;
+  margin-right: 0;
+  object-fit: contain;
 }
 
 .modal-likes-count {
@@ -427,7 +461,6 @@
 }
 
 .modal-photo-buttons-container {
-  border-top: 1px solid #efefef;
   padding-left: 24px;
   margin: auto;
   display: flex;
@@ -440,7 +473,7 @@
   flex-direction: row;
   border-bottom: 1px solid #efefef;
   font-family: Helvetica;
-  margin: auto;
+  margin-left: 0;
   padding: 20px 0 20px 24px;
 }
 
@@ -468,17 +501,22 @@
   font-weight: 600;
   margin-left: 0;
   margin-right: 5px;
-  padding: 5px 0 6px 0;
   text-decoration: none;
   color: inherit;
+}
+
+.modal-show-container {
+  background: white;
+  display: flex;
+  flex-direction: row;
 }
 
 .modal-top-detail {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 5px;
   padding-bottom: 6px;
+  padding-top: 5px;
 }
 
 .modal-zero-likes {
@@ -598,8 +636,8 @@ text-decoration: none;
  display: flex;
  flex-direction: row;
  font-size: 14px;
- padding-bottom: 6px;
  width: 568px;
+ margin-bottom: 5px;
  margin-left: 0;
 }
 

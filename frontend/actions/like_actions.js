@@ -10,9 +10,10 @@ export const receiveAllLikes = likes => ({
   likes
 });
 
-export const receiveLike = like => ({
+export const receiveLike = ({like, photo}) => ({
   type: RECEIVE_LIKE,
-  like
+  like,
+  photo
 });
 
 export const removeLike = likeId => ({
@@ -30,9 +31,9 @@ export const fetchLikes = photoId => dispatch => (
     .then(likes => dispatch(receiveAllLikes(likes)))
 );
 
-export const createLike = inputLike => dispatch => (
-  APIUtil.createLike(inputLike)
-    .then(like => dispatch(receiveLike(like)))
+export const createLike = photoId => dispatch => (
+  APIUtil.createLike(photoId)
+    .then(payload => dispatch(receiveLike(payload)))
     .catch(err => (
       dispatch(receiveErrors(err.responseJSON))
     ))

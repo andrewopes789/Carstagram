@@ -7,16 +7,24 @@ class Api::LikesController < ApplicationController
   end
 
   def create
-    @like = Like.new
+    user_id = current_user.id
+    photo_id = params[:photo_id]
+    @like = Like.new(user_id: user_id, photo_id: photo_id)
+
+    if @like.save
+      render :show
+    else
+      render json: @like.errors.full_messages, status: 422
+    end
   end
 
   def destroy
     @like = current_user.likes.find(params[:id])
 
     if @like.destroy
-      render 'api/photos'
+      render :show
     else
-      render json: @like.errors.full_messages
+      render json: @like.errors.full_messages, status: 422
     end
   end
 end
