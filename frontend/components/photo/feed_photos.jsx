@@ -85,13 +85,12 @@ class FeedPhotos extends React.Component {
 
           <div className='view-all-photos-container'>
             <Link to='/' className='view-all-photos-link'>
-              {commentTrigger}
             </Link>
           </div>
 
           <div>
             {
-              comments.slice(0,4).map(comment => (
+              comments.map(comment => (
                 this.renderComment(comment)
               ))
             }
