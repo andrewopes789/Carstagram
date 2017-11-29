@@ -709,7 +709,7 @@ text-decoration: none;
   width: 268px;
 }
 
-.upload-button: hover {
+.upload-button:hover {
   cursor: pointer;
 }
 
