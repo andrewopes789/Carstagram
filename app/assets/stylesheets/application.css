@@ -739,7 +739,7 @@ text-decoration: none;
 .view-all-photos-link {
   border: none;
   color: #999;
-  display: flex
+  display: flex;
   font-family: Helvetica;
   font-size: 14px;
   text-decoration: none;
