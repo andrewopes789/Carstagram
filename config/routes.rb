@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     resource :session, only: %i(create destroy)
     resources :photos, except: %i(new edit) do
       resources :comments, only: %i(index create)
-      resources :likes, only: %i(index create)
+      member do
+        post 'like', to: "likes#create"
+        delete 'like', to: "likes#destroy", as: 'unlike'
+      end
     end
     resources :comments, only: %i(destroy)
-    resources :likes, only: %i(destroy)
     resources :follows, only: %i(create destroy)
   end
 end

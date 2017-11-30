@@ -10,7 +10,7 @@ class ProfilePhotos extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      modalOpen: false,
+      photoModalOpen: false,
       searchId: -1
     };
     this.pushHistory = this.pushHistory.bind(this);
@@ -25,10 +25,10 @@ class ProfilePhotos extends React.Component {
       this.props.fetchUser(newProps.match.params.userId);
     }
     if (newProps.location.search !== '') {
-      this.setState({modalOpen: true});
+      this.setState({photoModalOpen: true});
       this.setState({searchId: newProps.location.search.slice(1)});
     } else {
-      this.setState({modalOpen: false});
+      this.setState({photoModalOpen: false});
     }
   }
 
@@ -53,7 +53,7 @@ class ProfilePhotos extends React.Component {
       <main className='profile-main'>
         <div className='profile-all'>
 
-          { this.state.modalOpen ?
+          { this.state.photoModalOpen ?
 
             <PhotoShow
               backToProfile={this.backToProfile(this.props.user.id)}

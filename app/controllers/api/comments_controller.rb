@@ -8,7 +8,7 @@ class Api::CommentsController < ApplicationController
   def create
     user_id = current_user.id
     photo_id = params[:photo_id]
-    @comment = Comment.new(user_id: user_id, photo_id: photo_id, body: comment_params)
+    @comment = Comment.new(user_id: user_id, photo_id: photo_id, body: comment_params[:body])
 
     if @comment.save
       render :show

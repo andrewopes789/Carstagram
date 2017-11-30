@@ -4,9 +4,10 @@ export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 
-export const receiveComment = comment => ({
+export const receiveComment = ({comment, photo}) => ({
   type: RECEIVE_COMMENT,
-  comment
+  comment,
+  photo
 });
 
 export const removeComment = commentId => ({

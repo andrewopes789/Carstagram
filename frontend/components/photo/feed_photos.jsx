@@ -7,7 +7,7 @@ class FeedPhotos extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      showAllComments: false
+      showAllComments: false,
     };
     this.renderAllComments = this.renderAllComments.bind(this);
   }
@@ -28,6 +28,7 @@ class FeedPhotos extends React.Component {
               key={photo.id}
               comments={this.props.comments}
               createLike={this.props.createLike}
+              createComment={this.props.createComment}
               currentUser={this.props.currentUser}
               deleteLike={this.props.deleteLike}
               likes={this.props.likes}

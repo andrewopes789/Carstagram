@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   fetchFeedPhotos: () => dispatch(fetchFeedPhotos()),
   createLike: photoId => dispatch(createLike(photoId)),
   deleteLike: photoId => dispatch(deleteLike(photoId)),
-  createComment: photoId => dispatch(createComment(photoId))
+  createComment: comment => dispatch(createComment(comment))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedPhotos);

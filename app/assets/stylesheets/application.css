@@ -80,7 +80,6 @@
    height: 18px;
    resize: none;
    width: 542px;
-   word-wrap: break-word;
  }
 
  .comment-input-container {
@@ -114,6 +113,10 @@
 
  .comment-shown-container:first-child {
    margin-top: 3px;
+ }
+
+ .comment-submit {
+   display: none;
  }
 
  .comment-trigger {
@@ -517,6 +520,7 @@
   flex-wrap: wrap;
   padding-bottom: 6px;
   padding-top: 5px;
+  word-wrap: break-word;
 }
 
 .modal-zero-likes {
@@ -587,7 +591,7 @@
   flex-direction: row;
   font-family: Helvetica;
   font-size: 10px;
-  padding: 5px 0 6px 0;
+  padding: 8px 0 12px 0;
   margin-top: -5px;
   text-align: left;
   text-transform: uppercase;

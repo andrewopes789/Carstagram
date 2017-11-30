@@ -11,6 +11,11 @@ import {
   REMOVE_LIKE
 } from '../actions/like_actions';
 
+import {
+  RECEIVE_COMMENT,
+  REMOVE_COMMENT
+} from '../actions/comment_actions';
+
 import { RECEIVE_USER } from '../actions/user_actions';
 
 import { merge } from 'lodash';
@@ -27,6 +32,8 @@ export default (state=initialState, action) => {
       let dupState = merge({}, state);
       dupState[Object.keys(action.photo)[0]] = Object.values(action.photo)[0];
       return dupState;
+    case RECEIVE_COMMENT:
+      return merge({}, state, {[action.photo.id]: action.photo});
     case RECEIVE_FEED_PHOTOS:
       return merge({}, action.payload.photos);
     case RECEIVE_USER:

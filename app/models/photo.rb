@@ -32,6 +32,6 @@ class Photo < ApplicationRecord
   end
 
   def comments_by_id
-    self.comments.map(&:id)
+    comment_ids
   end
 end

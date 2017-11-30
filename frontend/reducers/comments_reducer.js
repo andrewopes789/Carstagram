@@ -24,7 +24,7 @@ export default (state=initialState, action) => {
     case RECEIVE_ALL_COMMENTS:
       return merge({}, state, action.comments);
     case RECEIVE_COMMENT:
-      return merge({}, state, action.comment);
+      return merge({}, state, {[action.comment.id]: action.comment});
     case REMOVE_COMMENT:
       let newState3 = merge({}, state);
       delete newState3[action.commentId];
