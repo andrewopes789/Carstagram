@@ -10,8 +10,9 @@ export const receiveComment = ({comment, photo}) => ({
   photo
 });
 
-export const removeComment = commentId => ({
+export const removeComment = ({photo, commentId}) => ({
   type: REMOVE_COMMENT,
+  photo,
   commentId
 });
 
@@ -30,5 +31,5 @@ export const createComment = inputComment => dispatch => (
 
 export const deleteComment = commentId => dispatch => (
   APIUtil.deleteComment(commentId)
-    .then(comment => dispatch(removeComment(commentId)))
+    .then(comment => dispatch(removeComment(comment)))
 );

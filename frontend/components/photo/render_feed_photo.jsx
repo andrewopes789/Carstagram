@@ -6,22 +6,53 @@ class RenderFeedPhoto extends React.Component {
     super(props);
     this.state = {
       photo_id: props.photo.id,
-      body: ''
+      body: '',
+      showAllComments: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.renderAllComments = this.renderAllComments.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({showAllComments: false});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-    this.props.createComment(this.state).then(() => this.setState({body: ""}));
+    this.props.createComment({photo_id: this.state.photo_id, body:
+      this.state.body}).then(() => this.setState({body: ""}));
   }
 
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value} );
     };
+  }
+
+  renderAllComments () {
+    this.setState({showAllComments: true});
+  }
+
+  renderComment (comment) {
+    if (!comment) { return null; }
+    const deleteCommentButton =
+      comment.commenter_id === this.props.currentUser.id ?
+      (
+        <button className='delete-comment'
+          onClick={()=>this.props.deleteComment(comment.id)}>&times;</button>
+      ) : (
+        null
+      );
+    return (
+      <div key={comment.id} className='comment-item'>
+
+        <Link to={`/users/${comment.commenter_id}`}
+          className='comment-poster'>{comment.commenter_username}</Link>&nbsp;
+        <div className='comment-body'>{comment.body}</div>
+        {deleteCommentButton}
+      </div>
+      );
   }
 
   render () {
@@ -38,7 +69,7 @@ class RenderFeedPhoto extends React.Component {
 
 
     let commentTrigger;
-    if (comments.length < 5 || this.props.showAllComments === true) {
+    if (comments.length < 5 || this.state.showAllComments === true) {
       commentTrigger = null;
     } else if (comments.length > 20) {
       commentTrigger = 'Load more comments';
@@ -47,11 +78,11 @@ class RenderFeedPhoto extends React.Component {
     }
 
 
-    let shownComments = this.props.showAllComments ? (
+    let shownComments = this.state.showAllComments ? (
       <div>
         {
           comments.map(comment => (
-            this.props.renderComment(comment)
+            this.renderComment(comment)
           ))
         }
       </div>
@@ -59,7 +90,7 @@ class RenderFeedPhoto extends React.Component {
       <div className='comment-shown-container'>
         {
           comments.slice(comments.length-4).map(comment => (
-            this.props.renderComment(comment)
+            this.renderComment(comment)
           ))
         }
       </div>
@@ -114,7 +145,7 @@ class RenderFeedPhoto extends React.Component {
           </div>
 
           <div className='comment-trigger'
-            onClick={this.props.renderAllComments}>
+            onClick={this.renderAllComments}>
             {commentTrigger}
           </div>
 

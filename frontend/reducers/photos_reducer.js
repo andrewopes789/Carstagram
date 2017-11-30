@@ -27,16 +27,23 @@ export default (state=initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_LIKE:
-      return merge({}, state, action.photo);
+      return merge({}, state, {[action.photo.id]: action.photo});
     case REMOVE_LIKE:
       let dupState = merge({}, state);
-      dupState[Object.keys(action.photo)[0]] = Object.values(action.photo)[0];
+      dupState[action.photo.id] = action.photo;
       return dupState;
+
     case RECEIVE_COMMENT:
       return merge({}, state, {[action.photo.id]: action.photo});
-    case RECEIVE_FEED_PHOTOS:
-      return merge({}, action.payload.photos);
+    case REMOVE_COMMENT:
+      let copyState = merge({}, state);
+      copyState[action.photo.id] = action.photo;
+      return copyState;
+
     case RECEIVE_USER:
+      return merge({}, action.payload.photos);
+      
+    case RECEIVE_FEED_PHOTOS:
       return merge({}, action.payload.photos);
     case RECEIVE_PHOTO:
       return merge({}, state, action.photo);

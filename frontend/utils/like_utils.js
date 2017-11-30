@@ -8,7 +8,7 @@ export const fetchLikes = photoId => (
 export const createLike = photoId => (
   $.ajax({
     method: 'POST',
-    url: `/api/photos/${photoId}/likes`,
+    url: `/api/photos/${photoId}/like`,
     data: { photoId }
   })
 );
@@ -16,6 +16,6 @@ export const createLike = photoId => (
 export const deleteLike = photoId => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/likes/${photoId}`
+    url: `/api/photos/${photoId}/like`
   })
 );

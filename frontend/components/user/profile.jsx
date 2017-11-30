@@ -58,7 +58,10 @@ class ProfilePhotos extends React.Component {
             <PhotoShow
               backToProfile={this.backToProfile(this.props.user.id)}
               comments={this.props.comments}
+              createComment={this.props.createComment}
               createLike={this.props.createLike}
+              currentUser={this.props.currentUser}
+              deleteComment={this.props.deleteComment}
               deleteLike={this.props.deleteLike}
               likes={this.props.likes}
               photo={this.props.photosAsObject[this.state.searchId]}

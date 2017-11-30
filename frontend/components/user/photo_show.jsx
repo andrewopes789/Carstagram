@@ -1,34 +1,84 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PhotoShow = (props) => {
-  const photo = props.photo;
-  const comments = photo.comments_by_id.map(id =>
-    props.comments[id]);
-  const likes = photo.likes_by_id.map(id =>
-    props.likes[id]);
+class PhotoShow extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      photo_id: props.photo.id,
+      body: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+  }
 
-  let likeCounter = photo.likes_by_id.length === 1 ? '1 like' :
-  `${photo.likes_by_id.length} likes`;
-  let likeTracker = photo.likes_by_id.length === 0 ? (
-    <div className='modal-zero-likes'>Be the first to like this photo</div>
-  ) : (
-    <div className='modal-likes-count'>{likeCounter}</div>
-  );
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createComment(this.state).then(() => this.setState({body: ""}));
+  }
 
-  let likeButton = photo.current_user_likes ? (
-    <i className='fa fa-heart liked feed-photo-button'
-      onClick={()=>props.deleteLike(photo.id)}></i>
-  ) : (
-    <i className='fa fa-heart-o feed-photo-button'
-      onClick={()=>props.createLike(photo.id)}></i>
-  );
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.target.value} );
+    };
+  }
 
-  return(
-    <div className='modal'>
+  renderComment (comment) {
+    if (!comment) { return null; }
 
-      <span className='close-modal'
-        onClick={props.backToProfile}>&times;</span>
+    const deleteCommentButton =
+      comment.commenter_id === this.props.currentUser.id ?
+      (
+        <button className='modal-delete-comment'
+          onClick={()=>this.props.deleteComment(comment.id)}>&times;</button>
+      ) : (
+        null
+      );
+
+    return (
+      <div key={comment.id} className='modal-comment-item'>
+
+        <Link to={`/users/${comment.commenter_id}`}
+          className='modal-comment-poster'>{comment.commenter_username}
+        </Link>&nbsp;
+
+        <div className='modal-comment-body'>{comment.body}</div>
+        {deleteCommentButton}
+
+      </div>
+      );
+  }
+
+  render () {
+    const photo = this.props.photo;
+
+    const comments = photo.comments_by_id.sort().map(id =>
+      this.props.comments[id]);
+
+    const likes = photo.likes_by_id.map(id =>
+      this.props.likes[id]);
+
+    let likeCounter = photo.likes_by_id.length === 1 ? '1 like' :
+    `${photo.likes_by_id.length} likes`;
+    let likeTracker = photo.likes_by_id.length === 0 ? (
+      <div className='modal-zero-likes'>Be the first to like this photo</div>
+    ) : (
+      <div className='modal-likes-count'>{likeCounter}</div>
+    );
+
+    let likeButton = photo.current_user_likes ? (
+      <i className='fa fa-heart liked feed-photo-button'
+        onClick={()=>this.props.deleteLike(photo.id)}></i>
+    ) : (
+      <i className='fa fa-heart-o feed-photo-button'
+        onClick={()=>this.props.createLike(photo.id)}></i>
+    );
+
+    return(
+      <div className='modal'>
+
+        <span className='close-modal'
+          onClick={this.props.backToProfile}>&times;</span>
 
         <div className='modal-contents'>
 
@@ -57,16 +107,10 @@ const PhotoShow = (props) => {
                 </div>
 
                 {
-                  comments.map(comment =>
-                    <div key={comment.id} className='modal-comment-item'>
-
-                      <Link to={`/users/${comment.commenter_id}`}
-                        className='modal-comment-poster'>
-                        {comment.commenter_username}</Link>&nbsp;
-                        <div className='modal-comment-body'>{comment.body}</div>
-                      </div>
-                    )
-                  }
+                  comments.map(comment => (
+                    this.renderComment(comment)
+                  ))
+                }
 
                 </div>
 
@@ -87,10 +131,13 @@ const PhotoShow = (props) => {
                     {photo.age} ago
                   </div>
 
-                  <form className='modal-comment-input-container'>
-                    <textarea
-                      className='modal-comment-input'
+                  <form onSubmit={this.handleSubmit}
+                    className='modal-comment-input-container'>
+                    <input
+                      className='comment-input'
                       placeholder='Add a comment...'
+                      onChange={this.update('body')}
+                      value={this.state.body}
                       />
                   </form>
 
@@ -98,13 +145,14 @@ const PhotoShow = (props) => {
 
               </div>
 
+            </div>
+
           </div>
 
         </div>
-
-      </div>
-  );
-};
+      );
+    }
+}
 
 
 

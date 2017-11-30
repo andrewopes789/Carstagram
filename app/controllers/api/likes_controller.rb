@@ -8,7 +8,7 @@ class Api::LikesController < ApplicationController
 
   def create
     user_id = current_user.id
-    photo_id = params[:photo_id]
+    photo_id = params[:id]
     @like = Like.new(user_id: user_id, photo_id: photo_id)
 
     if @like.save

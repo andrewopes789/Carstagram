@@ -87,8 +87,8 @@
    display: flex;
    flex-direction: row;
    width: 568px;
-   padding-top: 16px;
    padding-bottom: 16px;
+   padding-top: 16px;
  }
 
  .comment-input-container form {
@@ -129,6 +129,16 @@
 
  .comment-trigger:hover {
    cursor: pointer;
+ }
+
+ .delete-comment {
+   border: none;
+   color: #c7c7c7;
+   cursor: pointer;
+   float: right;
+   font-size: inherit;
+   height: 1em;
+   line-height: inherit;
  }
 
  .errors {
@@ -375,7 +385,7 @@
   flex-direction: row;
   height: auto;
   bottom: 0;
-  padding: 16px 24px 16px 0;
+  padding: 16px 24px 16px 24px;
 }
 
 .modal-comment-body {
@@ -386,7 +396,6 @@
 .modal-comment-item {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: 5px 0 6px 0;
   text-align: left;
 }
@@ -403,6 +412,16 @@
   display: flex;
   flex-direction: row;
   margin: auto;
+}
+
+.modal-delete-comment {
+  border: none;
+  color: #c7c7c7;
+  cursor: pointer;
+  float: right;
+  font-size: inherit;
+  height: 1em;
+  line-height: inherit;
 }
 
 .modal-detail {
