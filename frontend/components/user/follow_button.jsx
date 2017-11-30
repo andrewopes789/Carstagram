@@ -12,7 +12,7 @@ const FollowButton = (props) => {
   } else if (props.user.followed) {
     button = (
       <button
-        className='follow-button follow'
+        className='unfollow-button'
       >Following</button>
     );
   } else {

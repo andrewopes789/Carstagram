@@ -890,6 +890,19 @@ text-decoration: none;
   font-size: 14px;
 }
 
+.unfollow-button {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  color: #262626;
+  background-color: white;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  margin: auto 10px auto 20px;
+  padding: 0 24px 0 24px;
+}
+
 .upload-button {
   background: #3897f0;
   border-color: #3897f0;

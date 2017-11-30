@@ -1,7 +1,9 @@
 json.user do
-  json.extract! user, :id, :username, :email, :img_url, :photos_by_id,
-  :followings_by_id, :followers_by_id
-  json.followed user.user_followers_by_id.include?(current_user.id)
+  json.extract! user, :id, :username, :email, :img_url
+  json.photos_by_id user.photos.map(&:id)
+  json.followings_by_id user.user_followings.map(&:id)
+  json.followers_by_id user.user_followers.map(&:id)
+  json.followed user.followers.map(&:id).include?(current_user.id)
 end
 
 json.photos do
@@ -24,7 +26,4 @@ json.comments do
       json.partial! '/api/comments/comment.json.jbuilder', comment: comment
     end
   end
-end
-
-json.follows do
 end
