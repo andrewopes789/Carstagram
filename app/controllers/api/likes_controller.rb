@@ -1,11 +1,6 @@
 class Api::LikesController < ApplicationController
   before_action :require_signed_in!
 
-  def index
-    @photo = Photo.find(params[:photo_id])
-    @likes = @photo.likes
-  end
-
   def create
     user_id = current_user.id
     photo_id = params[:id]

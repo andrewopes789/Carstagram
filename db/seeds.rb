@@ -101,16 +101,16 @@ end
 
 Follow.delete_all
 
-500.times do
-  follower_id = user_ids.sample
-  following_id = user_ids.sample
-
-  until follower_id != following_id
-    following_id = user_ids.sample
-  end
-
-  Follow.create(
-    follower_id: follower_id,
-    following_id: following_id
-  )
-end
+# 500.times do
+#   follower_id = user_ids.sample
+#   following_id = user_ids.sample
+#
+#   until follower_id != following_id
+#     following_id = user_ids.sample
+#   end
+#
+#   Follow.create(
+#     follower_id: follower_id,
+#     following_id: following_id
+#   )
+# end

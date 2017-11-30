@@ -21,8 +21,7 @@ export default (state=initialState, action) => {
       return merge({}, action.payload.likes);
     case RECEIVE_USER:
       return merge({}, action.payload.likes);
-    case RECEIVE_ALL_LIKES:
-      return merge({}, state, action.likes);
+
     case RECEIVE_LIKE:
       return merge({}, state, action.like);
     case REMOVE_LIKE:

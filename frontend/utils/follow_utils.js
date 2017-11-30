@@ -1,21 +1,14 @@
-export const fetchFollows = photoId => (
-  $.ajax({
-    method: 'GET',
-    url: `/api/photos/${photoId}/follows`
-  })
-);
-
-export const createFollow= follow => (
+export const createFollow = followingId => (
   $.ajax({
     method: 'POST',
-    url: `/api/photos/${follow.photo_id}/follow`,
-    data: { follow }
+    url: `/api/users/${followingId}/follow`,
+    data: { followingId }
   })
 );
 
-export const deleteFollow = followId => (
+export const deleteFollow = followingId => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/follows/${followId}`
+    url: `/api/users/${followingId}/follow`
   })
 );

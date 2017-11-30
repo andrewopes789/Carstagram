@@ -46,6 +46,7 @@ class ProfilePhotos extends React.Component {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
     const photos = this.props.photos;
+    if (!this.props.photos) { return null; }
 
     return (
       this.props.loading ? <LoadingIcon /> :
@@ -83,7 +84,9 @@ class ProfilePhotos extends React.Component {
 
                 <FollowButton
                   currentUser={currentUser}
-                  user={user}/>
+                  user={user}
+                  createFollow={this.props.createFollow}
+                  deleteFollow={this.props.deleteFollow}/>
 
                 <SettingsButton
                   user={user}
@@ -97,22 +100,22 @@ class ProfilePhotos extends React.Component {
               <div className='posts-followers-followings'>
 
                 <div className='profile-posts'>
-                  <strong>{photos.length}</strong> posts</div>
+                  <strong>{this.props.photos.length}</strong> posts</div>
 
                 <div className='profile-followers'>
                   <strong>
-                    {user.followers_by_id.length}</strong> followers</div>
+                    {this.props.user.followers_by_id.length}</strong> followers</div>
 
                 <div className='profile-followings'>
                   <strong>
-                    {user.followings_by_id.length}</strong> following</div>
+                    {this.props.user.followings_by_id.length}</strong> following</div>
 
               </div>
 
               <div className='profile-bottom-line'>
 
                 <div className='bottom-line-username'>
-                  {user.username}
+                  {this.props.user.username}
                 </div>
 
               </div>

@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 
 import {
-  RECEIVE_ALL_FOLLOWS,
   RECEIVE_FOLLOW,
   REMOVE_FOLLOW
 } from '../actions/follow_actions';
@@ -18,16 +17,16 @@ export default (state=initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER:
       return merge({}, action.payload.follows);
-    case RECEIVE_ALL_FOLLOWS:
-      return merge({}, state, action.follows);
+
     case RECEIVE_FOLLOW:
-      return merge({}, state, action.follow);
+      return merge({}, state, {[action.payload.follow.id]: action.payload.follow});
+
     case REMOVE_FOLLOW:
       let newState2 = merge({}, state);
       delete newState2[action.followId];
       return newState2;
 
-      default:
-        return state;
+    default:
+      return state;
     }
   };

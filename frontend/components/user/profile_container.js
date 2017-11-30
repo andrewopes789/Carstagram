@@ -5,13 +5,14 @@ import Profile from './profile';
 import { withRouter } from 'react-router-dom';
 import { createLike, deleteLike } from '../../actions/like_actions';
 import { createComment, deleteComment } from '../../actions/comment_actions';
+import { createFollow, deleteFollow } from '../../actions/follow_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
     comments: state.entities.comments,
     likes: state.entities.likes,
     userId: ownProps.match.params.userId,
-    user: state.entities.users.user,
+    user: state.entities.user,
     photos: Object.values(state.entities.photos),
     photosAsObject: state.entities.photos,
     currentUser: state.session.currentUser,
@@ -25,7 +26,9 @@ const mapDispatchToProps = dispatch => ({
   createLike: photoId => dispatch(createLike(photoId)),
   deleteLike: photoId => dispatch(deleteLike(photoId)),
   createComment: comment => dispatch(createComment(comment)),
-  deleteComment: commentId => dispatch(deleteComment(commentId))
+  deleteComment: commentId => dispatch(deleteComment(commentId)),
+  createFollow: followingId => dispatch(createFollow(followingId)),
+  deleteFollow: followingId => dispatch(deleteFollow(followingId))
 });
 
 export default withRouter(

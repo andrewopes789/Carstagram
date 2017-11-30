@@ -54,6 +54,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  def all_follows
+    user_followers + user_followings
+  end
+
   def feed_photos
     following_photos.sample(12)
   end
@@ -84,10 +88,14 @@ class User < ApplicationRecord
   end
 
   def followings_by_id
-    self.followings.map(&:id)
+    self.user_followings.map(&:id)
   end
 
   def followers_by_id
+    self.user_followers.map(&:id)
+  end
+
+  def user_followers_by_id
     self.followers.map(&:id)
   end
 

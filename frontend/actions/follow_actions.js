@@ -1,23 +1,17 @@
 import * as APIUtil from '../utils/follow_utils';
 
-export const RECEIVE_ALL_FOLLOWS = 'RECEIVE_ALL_FOLLOWS';
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 export const REMOVE_FOLLOW = 'REMOVE_FOLLOW';
 export const RECEIVE_FOLLOW_ERRORS = 'RECEIVE_FOLLOW_ERRORS';
 
-export const receiveAllFollows = follows => ({
-  type: RECEIVE_ALL_FOLLOWS,
-  follows
-});
-
-export const receiveFollow = follow => ({
+export const receiveFollow = payload => ({
   type: RECEIVE_FOLLOW,
-  follow
+  payload
 });
 
-export const removeFollow = followId => ({
+export const removeFollow = payload => ({
   type: REMOVE_FOLLOW,
-  followId
+  payload
 });
 
 export const receiveErrors = errors => ({
@@ -25,20 +19,15 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const fetchFollows = photoId => dispatch => (
-  APIUtil.fetchFollows(photoId)
-    .then(follows => dispatch(receiveAllFollows(follows)))
-);
-
-export const createFollow = inputFollow => dispatch => (
-  APIUtil.createFollow(inputFollow)
-    .then(follow => dispatch(receiveFollow(follow)))
+export const createFollow = inputFollowingId => dispatch => (
+  APIUtil.createFollow(inputFollowingId)
+    .then(payload => dispatch(receiveFollow(payload)))
     .catch(err => (
       dispatch(receiveErrors(err.responseJSON))
     ))
 );
 
-export const deleteFollow = followId => dispatch => (
-  APIUtil.deleteFollow(followId)
-    .then(follow => dispatch(removeFollow(followId)))
+export const deleteFollow = inputFollowingId => dispatch => (
+  APIUtil.deleteFollow(inputFollowingId)
+    .then(payload => dispatch(removeFollow(payload)))
 );
