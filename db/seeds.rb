@@ -63,7 +63,6 @@ all_photos = ['https://res.cloudinary.com/dn26kjpum/image/upload/v1511935203/h1d
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/6709291843_1e10b8cd67_b_lysrnm.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990922/bmw-918408_1280_1_ioxubx.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/Vehicle-Range-Rover-Range-Rover-Truck-Land-Car-2015696_ax2g2c.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/442840938_1280x720_mg8aa3.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990924/37581192422_8a5d09f552_b_xhkwhj.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990924/28853574286_1f46daf531_b_obcukl.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/37581177262_4812426979_b_mrnrg4.jpg',
