@@ -13,6 +13,7 @@ const FollowButton = (props) => {
     button = (
       <button
         className='unfollow-button'
+        onClick={()=>props.deleteFollow(props.user.id)}
       >Following</button>
     );
   } else {

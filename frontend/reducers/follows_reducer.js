@@ -19,11 +19,12 @@ export default (state=initialState, action) => {
       return merge({}, action.payload.follows);
 
     case RECEIVE_FOLLOW:
-      return merge({}, state, {[action.payload.follow.id]: action.payload.follow});
+      return merge({}, state,
+        {[action.payload.follow.id]: action.payload.follow});
 
     case REMOVE_FOLLOW:
       let newState2 = merge({}, state);
-      delete newState2[action.followId];
+      delete newState2[action.payload.follow.id];
       return newState2;
 
     default:

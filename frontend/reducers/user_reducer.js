@@ -23,8 +23,12 @@ export default (state=initialState, action) => {
       return merge({}, action.payload.user);
 
     case RECEIVE_FOLLOW:
-      const userId = Object.keys(action.payload.user)[0];
-      return merge({}, action.payload.user[userId]);
+      const userId1 = Object.keys(action.payload.user)[0];
+      return merge({}, action.payload.user[userId1]);
+
+    case REMOVE_FOLLOW:
+      const userId2 = Object.keys(action.payload.user)[0];
+      return merge({}, action.payload.user[userId2]);
 
     default:
       return state;

@@ -894,6 +894,7 @@ text-decoration: none;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   color: #262626;
+  cursor: pointer;
   background-color: white;
   font-family: Helvetica;
   font-size: 14px;

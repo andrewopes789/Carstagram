@@ -100,22 +100,22 @@ class ProfilePhotos extends React.Component {
               <div className='posts-followers-followings'>
 
                 <div className='profile-posts'>
-                  <strong>{this.props.photos.length}</strong> posts</div>
+                  <strong>{photos.length}</strong> posts</div>
 
                 <div className='profile-followers'>
                   <strong>
-                    {this.props.user.followers_by_id.length}</strong> followers</div>
+                    {user.followers_by_id.length}</strong> followers</div>
 
                 <div className='profile-followings'>
                   <strong>
-                    {this.props.user.followings_by_id.length}</strong> following</div>
+                    {user.followings_by_id.length}</strong> following</div>
 
               </div>
 
               <div className='profile-bottom-line'>
 
                 <div className='bottom-line-username'>
-                  {this.props.user.username}
+                  {user.username}
                 </div>
 
               </div>
