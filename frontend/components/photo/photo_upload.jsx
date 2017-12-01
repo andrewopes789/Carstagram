@@ -18,7 +18,7 @@ class PhotoUpload extends React.Component {
     cloudinary.openUploadWidget(
       window.cloudinary_options,
       (error, images) => {
-        if (error === null) {
+        if (error === null && images[0].secure_url !== '') {
           this.setState({img_url: images[0].secure_url});
         }
       }
@@ -30,7 +30,7 @@ class PhotoUpload extends React.Component {
     if (this.state.img_url !== '') {
       this.props.createPhoto(this.state)
       .then(() => this.props.history.push('/'));
-    } 
+    }
   }
 
   update(field) {

@@ -90,7 +90,7 @@ class RenderFeedPhoto extends React.Component {
     }
 
 
-    let shownComments = this.state.showAllComments ? (
+    let shownComments = (this.state.showAllComments || comments.length < 5) ? (
       <div>
         {
           comments.map(comment => (

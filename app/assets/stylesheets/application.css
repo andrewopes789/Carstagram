@@ -134,7 +134,7 @@
  }
 
  .comment-shown-container:first-child {
-   margin-top: -3px;
+   margin-top: 3px;
  }
 
  .comment-submit {

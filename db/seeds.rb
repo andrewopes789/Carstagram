@@ -12,7 +12,7 @@ User.create!(
   username: 'demo',
   email: 'demo@email.com',
   password: 'password',
-  img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_615/v1511644892/white_lshl6d.jpg'
+  img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/c_crop,g_center,h_300,w_300/v1512164488/car-chat-dribbble_o46dyt.jpg'
 )
 
 usernames = [
@@ -29,7 +29,7 @@ usernames.length.times do
     username: user.downcase,
     email: "info@#{user}.com",
     password: 'password',
-    img_url: Faker::Company.logo
+    img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/c_crop,g_center,h_300,w_300/v1512164488/car-chat-dribbble_o46dyt.jpg'
   )
 end
 
@@ -145,36 +145,36 @@ photo_ids = Photo.all.map(&:id)
 end
 
 comments = [
-  'what a beast 🙌🏼', 'What a beaut!', "This is a collector's item",
+  'what a beast', 'What a beaut!', "This is a collector's item",
   "Couldn't handle the cost of insurance from all the speeding tickets",
   "This makes me want to go out and buy a lottery ticket",
-  'Ohh I like this 😈👍🏼', 'goals', 'So expensive but so classy🙃',
-  'Beautiful spec!!', 'Yep. That’s the one on my wish list 😍',
-  'Little too much..?', 'At least i have a good model of it 😂', 'Amen',
+  'Ohh I like this', 'goals', 'So expensive but so classy',
+  'Beautiful spec!!', 'Yep. That’s the one on my wish list',
+  'Little too much..?', 'At least i have a good model of it', 'Amen',
   'OOOOH', 'Perfect car, perfect color', "Not if it's an automatic",
-  'Should be cheaper 2018s are are already on showroom floors.', 'Wow 🔥',
+  'Should be cheaper 2018s are are already on showroom floors.', 'Wow',
   'I’ve seen one in Atlanta they’re so nice', "Think it's ugly honestly",
   'Beautiful work of art! I wonder if Santa can fit it in his sleigh?',
-  'Asking price?', 'She’s beautiful ❤️', 'Grande máquina', 'Oh. I like!',
+  'Asking price?', 'She’s beautiful', 'Grande máquina', 'Oh. I like!',
   'Jaa alleen had m zelf eerder met groen gedaan beetje als Greg b eig
   dat Vind ik zo moo', 'Wowwwww I love ittt', 'Seems overpriced.',
-  'Seriously my dream car.. as long as the doors go 🆙🆙🆙',
+  'Seriously my dream car.. as long as the doors go UP',
   'I always thought these were like half million dollar cars. Lol',
-  'My goodness', 'Great combination. 👌', 'Ummmmmmm no',
+  'My goodness', 'Great combination.', 'Ummmmmmm no',
   "It'll be worth 100 in 3 years.. not done losing quite yet",
   'New account here featuring the best cars from around the world!',
   'In my opinion this car is the only one that can get away with this color',
   'Lol someone is selling it already?', 'Looks swapmeet',
   'Beautiful colour combination, rare and unique Automobile.',
-  'The colours are stunning', 'I’d buy it. Keep it maintained 👌',
+  'The colours are stunning', 'I’d buy it. Keep it maintained ',
   "it'll be 100k in 12 months", 'Wowowow', 'savagery',
   'These cars are the best value in the super car market',
   'finally something reasonable coming from this account',
   'What a beautiful car here for real', 'In 5 years these will depreciate
-  so much...', 'Why on earth 🌏 would you buy this automobile?',
-  'Not impressed at all.', 'Can u gift me this car ???💔😉', 'drooling', 'Sweet!',
+  so much...', 'Why on earth would you buy this automobile?',
+  'Not impressed at all.', 'Can u gift me this car ???', 'drooling', 'Sweet!',
   'if i were there i would buy this in a heart bit', 'Good lord',
-  'Such an overshadowed car, but those lines 😍',
+  'Such an overshadowed car, but those lines',
   'After hearing an LFA, I feel like all other cars sound so bad lol',
   'One of my favorite cars in the whole world of super cars',
   "We just got a custom red one of these in our inventory and it's super
@@ -186,10 +186,10 @@ comments = [
   "That's what i call 'awesomeness'", 'Super sharp! Hot spec.',
   'is it possible that i could just, ya know, have this?',
   'that color is superb', 'I need this in my life',
-  'Omg 😲.....soo much want!! ❤️❤️❤️❤️❤️❤️', 'where do I get one',
-  'Your content is 🔥 keep it up 👏 👏 👏',
+  'Omg .....soo much want!!', 'where do I get one',
+  'Your content is FIYA keep it up',
   'Interior is awesome. Went a little too crazy on the outside imo.',
-  'i️ can see why the price isn’t listed😂',
+  'i️ can see why the price isn’t listed',
   'If I was rich, this would be the first car in my garage forsure',
   'Does this have a spoiler which comes out a high speed?',
   'always something to dream about...',
