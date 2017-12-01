@@ -121,13 +121,13 @@ end
 
 Comment.delete_all
 
-# 500.times do
-#   Comment.create(
-#     body: Faker::Company.catch_phrase,
-#     user_id: user_ids.sample,
-#     photo_id: photo_ids.sample
-#   )
-# end
+500.times do
+  Comment.create(
+    body: Faker::Company.catch_phrase,
+    user_id: user_ids.sample,
+    photo_id: photo_ids.sample
+  )
+end
 
 Follow.delete_all
 
