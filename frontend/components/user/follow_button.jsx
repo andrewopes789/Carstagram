@@ -7,7 +7,8 @@ const FollowButton = (props) => {
     button = (
       <button
         className='follow-button'
-      >Edit Profile</button>
+        onClick={props.logout}
+      >Logout</button>
     );
   } else if (props.user.followed) {
     button = (

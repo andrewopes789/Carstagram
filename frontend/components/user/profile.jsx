@@ -86,13 +86,8 @@ class ProfilePhotos extends React.Component {
                   currentUser={currentUser}
                   user={user}
                   createFollow={this.props.createFollow}
-                  deleteFollow={this.props.deleteFollow}/>
-
-                <SettingsButton
-                  user={user}
-                  currentUser={currentUser}
-                  logout={this.props.logout}
-                />
+                  deleteFollow={this.props.deleteFollow}
+                  logout={this.props.logout}/>
 
               </div>
 

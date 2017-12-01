@@ -25,10 +25,6 @@ const siteNav = ({ currentUser }) => {
            <i className='fa fa-plus-square-o'></i>
          </Link>
 
-         <Link to='/photos' className='nav-icons'>
-           <i className='fa fa-heart-o'></i>
-         </Link>
-
          <Link to={`/users/${currentUser.id}`} className='nav-icons'>
            <i className='fa fa-user-o'></i>
          </Link>

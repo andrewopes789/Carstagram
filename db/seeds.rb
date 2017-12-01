@@ -15,12 +15,11 @@ User.create!(
   img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_615/v1511644892/white_lshl6d.jpg'
 )
 
-usernames = ['musclecarzone', 'downtownlamotors', 'hypercarsworldwide', 'bespokecoachworks',
-'fletcherjones', 'wisimonson', 'jimfalkbeverlyhills', 'ogaracoach',
-'carlover123','carspotters', 'v12power', 'stancenation', 'turbocharged',
-'supercars247', 'eurostance', 'amg_only', 'dupontregistry', 'theautocollection',
-'mulliner', 'penske', 'montecitomotorcars', 'carspottingmonaco', 'platinumla',
-'calabasaslm', '1oakmotors', 'rdbla']
+usernames = ['rusnakautogroup', 'fletcherjones', 'wisimonson', 'jimfalkbeverlyhills',
+'ogaracoach', 'cncmotors', 'indigoautogroup', 'robbreport', 'rdbla',
+'bwrentacar', 'theautogallery','deserteuropeanmotors', 'penske',
+'montecitomotorcars', 'platinummotorsport', 'calabasaslm', 'galpinmotors',
+'keyeseuropean', 'hornburggroup', 'phillipsauto']
 
 usernames.length.times do
   user = usernames.pop
@@ -36,43 +35,56 @@ user_ids = User.all.map(&:id)
 
 Photo.delete_all
 
-all_photos = ['https://res.cloudinary.com/dn26kjpum/image/upload/v1511935203/h1drb5mpgsqv5irb6rns.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511906460/kmnpynzfmrm4bezk1rf1.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511887380/ktnei1ukvjvn3dtatwaw.jpg',
+all_photos = [
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479712/Koenigsegg__Agera__One-1_at_Goodwood_2014_005_xgtwdv.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479711/1961_Aston_Martin_DB4_GT_Zagato_-_fvr_co20vi.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479708/Range_Rover_Velar_f4txmy.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479709/pexels-photo-434455_uyekrg.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479704/36902849424_57813a2c89_b_ppzhzn.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479358/adga_lkipor.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479144/pexels-photo_c1fiy3.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479143/BMW_Serie_6_rqqcte.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479004/hkbnk_ta4hcl.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511478893/6437529971_95a7bd9d6d_b_rm6ib5.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511478469/ferrari2_copy_g5nsmi.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479360/rolls1_d8ig1q.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479006/lambo1_vupwex.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479143/BMW_Concept_Vision_Efficient_Dynamics_Rear_zxsrxd.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479142/514733967_1280x720_leuuij.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479143/BMW_Serie_6_rqqcte.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479682/573581091_1280x720_mdx0y4.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479683/Aston_Martin_Vanquish__8186456260_dn4ong.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511479687/Aston_Martin_Vanquish_S_-_Flickr_-_Alexandre_Pre%CC%81vot__1_qm4hkb.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/pexels-photo-305070_cangxp.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990922/36902845414_e314eaefbf_b_eol7ky.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/6709291843_1e10b8cd67_b_lysrnm.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990922/bmw-918408_1280_1_ioxubx.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/Vehicle-Range-Rover-Range-Rover-Truck-Land-Car-2015696_ax2g2c.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990924/37581192422_8a5d09f552_b_xhkwhj.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990924/28853574286_1f46daf531_b_obcukl.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/37581177262_4812426979_b_mrnrg4.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990925/range-rover-2245374_1280_dywkll.jpg'
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990925/range-rover-2245374_1280_dywkll.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/auto_detail_the_suitcase_light_colors_blue_red_museum-670976_vgtpr4.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512085450/2008_Spyker_C8_Laviolette_-_Flickr_-_The_Car_Spy__2_fue28z.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512085450/auto-2863638_1280_pbpm8y.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512085524/lamborghini-2975652_1280_rlcw5d.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512085523/bmw-2970885_1280_ndywis.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512085523/bentley-2976046_1280_qpvhsm.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512085523/supercar-2975657_1280_hktjtq.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512085523/steering-wheel-2943929_1280_iu0k5p.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086235/dashboard-2934067_1280_fo9pgl.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086235/supercar-2932191_1280_xgatuu.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086235/steering-wheel-2927406_1280_zl93du.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086235/ferrari-2932197_1280_rjmkdg.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086235/ferrari-2934066_1280_wl8znl.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086235/bmw-2963683_1280_fnurss.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086249/ferrari-2812936_1280_fwwbdl.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086249/car-2854661_1280_zwxz6m.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086248/car-2918112_1280_gnxf06.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086248/steering-wheel-2902706_1280_pf9dhq.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512086249/speed-2747342_1280_lnwiev.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087031/wheel-2943925_1280_nrhaha.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087031/wheel-2943922_1280_chwmrf.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087031/porsche-2105408_1280_lipfs1.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087032/bmw-2970882_1280_fjqhnr.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087031/ferrari-2918113_1280_dentta.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087033/alloy-wheel-2417026_1280_e4a92k.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087033/automotive-1881498_1280_rzqkqa.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512087036/lamborghini-2943829_1280_fouzre.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088979/2018-Rolls-Royce-Phantom-VIII-Extended-Wheelbase-front-three-quarter-in-motion-04_xxx1i5.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088980/2018-Rolls-Royce-Phantom-VIII-rear-three-quarter-in-motion-02_ymddk7.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088976/rolls-royce-dawn-black-badge-2_nhqe9s.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088977/badge_3_ulaudj.jpg'
 ]
 
 all_photos.each do |photo|
   Photo.create!(
     img_url: photo,
-    caption: Faker::Company.catch_phrase,
+    caption: 'The finest example of our offerings',
     author_id: user_ids.sample
   )
 end
@@ -81,7 +93,7 @@ Like.delete_all
 
 photo_ids = Photo.all.map(&:id)
 
-500.times do
+1000.times do
   Like.create(
     user_id: user_ids.sample,
     photo_id: photo_ids.sample
@@ -90,13 +102,13 @@ end
 
 Comment.delete_all
 
-500.times do
-  Comment.create(
-    body: Faker::Company.catch_phrase,
-    user_id: user_ids.sample,
-    photo_id: photo_ids.sample
-  )
-end
+# 500.times do
+#   Comment.create(
+#     body: Faker::Company.catch_phrase,
+#     user_id: user_ids.sample,
+#     photo_id: photo_ids.sample
+#   )
+# end
 
 Follow.delete_all
 

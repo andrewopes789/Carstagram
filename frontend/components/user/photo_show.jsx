@@ -36,16 +36,23 @@ class PhotoShow extends React.Component {
       );
 
     return (
+
       <div key={comment.id} className='modal-comment-item'>
 
-        <Link to={`/users/${comment.commenter_id}`}
-          className='modal-comment-poster'>{comment.commenter_username}
-        </Link>&nbsp;
+        <div className='modal-comment-body'>
 
-        <div className='modal-comment-body'>{comment.body}</div>
+          <p className='modal-poster-and-body'>
+            <Link to={`/users/${comment.commenter_id}`}
+              className='modal-comment-poster'>{comment.commenter_username}
+            </Link>&nbsp;{comment.body}
+          </p>
+
+        </div>
+
         {deleteCommentButton}
 
       </div>
+
       );
   }
 
@@ -97,13 +104,14 @@ class PhotoShow extends React.Component {
 
               <div className='modal-comment-container'>
 
-                <div className='modal-top-detail'>
+                <div className='comment-item'>
+
                   <Link to={`/users/${photo.poster_id}`}
-                    className='modal-poster-lower-username'>
-                    {photo.poster_username}</Link>
-                  <div className='modal-caption'>
-                    {photo.caption}
-                  </div>
+                    className='comment-poster'>{photo.poster_username}
+                  </Link>&nbsp;
+
+                  <div className='comment-body'>{photo.caption}</div>
+
                 </div>
 
                 {

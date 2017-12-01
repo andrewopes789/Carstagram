@@ -48,9 +48,13 @@ class RenderFeedPhoto extends React.Component {
       <div key={comment.id} className='comment-item'>
 
         <Link to={`/users/${comment.commenter_id}`}
-          className='comment-poster'>{comment.commenter_username}</Link>&nbsp;
+          className='comment-poster'>{comment.commenter_username}
+        </Link>&nbsp;
+        
         <div className='comment-body'>{comment.body}</div>
+
         {deleteCommentButton}
+
       </div>
       );
   }

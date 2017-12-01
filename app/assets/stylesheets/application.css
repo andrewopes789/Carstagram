@@ -99,9 +99,12 @@
  .comment-item {
    display: flex;
    flex-direction: row;
+   font-family: Helvetica;
+   font-size: 14px;
    padding: 5px 0 6px 0;
    margin-top: -3px;
    text-align: left;
+   word-wrap: break-word;
  }
 
  .comment-poster {
@@ -236,7 +239,6 @@
  .image-form-container {
    display: flex;
    flex-direction: row;
-   margin: auto;
  }
 
  .image-placeholder {
@@ -253,10 +255,10 @@
  .image-show-container {
    display: flex;
    flex-direction: row;
-   margin: auto 15px auto auto;
-   width: 400px;
-   min-height: 400px;
-   max-height: 500px;
+   margin: auto 30px auto auto;
+   width: 500px;
+   min-height: 500px;
+   max-height: 600px;
    border: 1px solid #e6e6e6;
  }
 
@@ -363,6 +365,7 @@
   overflow: scroll;
   display: hidden;
   padding-left: 24px;
+  padding-right: 24px;
 }
 
 .modal-comment-input {
@@ -398,6 +401,8 @@
   flex-direction: row;
   padding: 5px 0 6px 0;
   text-align: left;
+  margin-top: -5px;
+  width: inherit;
 }
 
 .modal-comment-poster {
@@ -437,9 +442,6 @@
   margin-bottom: 0;
   width: 300px;
   background-color: white;
-}
-
-.modal-footer {
 }
 
 .modal-image {
@@ -500,6 +502,10 @@
   padding: 20px 0 20px 24px;
 }
 
+.modal-poster-and-body {
+  margin: 0;
+}
+
 .modal-poster-photo {
   height: 40px;
   width: 40px;
@@ -539,6 +545,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding-bottom: 6px;
+  padding-right: 5px;
   padding-top: 5px;
   word-wrap: break-word;
 }
@@ -618,11 +625,12 @@
 }
 
 .photo-detail {
-  align-content: center;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  margin: 5% auto auto auto;
-  padding: auto 170px auto 170px;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
 }
 
 .photo-header {
@@ -799,11 +807,10 @@ text-decoration: none;
 .session-all {
   display: flex;
   flex-direction: row;
-  margin: auto;
-}
-
-.session-all-container {
-  margin-top: 8%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
 .session-blurb {
@@ -870,8 +877,8 @@ text-decoration: none;
   flex-direction: column;
   background-image: url('http://res.cloudinary.com/dn26kjpum/image/upload/v1511462034/login_photo_tbxle2.jpg');
   min-height: 600px;
-  margin: auto 15px auto auto;
   border-radius: 35px;
+  margin-right: 30px;
   width: 454px;
 }
 
@@ -880,7 +887,6 @@ text-decoration: none;
   flex-direction: column;
   font-family: Helvetica;
   justify-content: center;
-  margin: auto auto auto 15px;
   width: 350px;
 }
 
