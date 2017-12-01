@@ -15,11 +15,13 @@ User.create!(
   img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/c_scale,w_615/v1511644892/white_lshl6d.jpg'
 )
 
-usernames = ['rusnakautogroup', 'fletcherjones', 'wisimonson', 'jimfalkbeverlyhills',
-'ogaracoach', 'cncmotors', 'indigoautogroup', 'robbreport', 'rdbla',
-'bwrentacar', 'theautogallery','deserteuropeanmotors', 'penske',
-'montecitomotorcars', 'platinummotorsport', 'calabasaslm', 'galpinmotors',
-'keyeseuropean', 'hornburggroup', 'phillipsauto']
+usernames = [
+'rusnakautogroup', 'fletcherjones', 'wisimonson', 'jimfalkbeverlyhills',
+'ogaracoach', 'cncmotors', 'indigoautogroup', 'galpinmotors',
+'bwrentacar', 'theautogallery', 'deserteuropeanmotors', 'penske',
+'montecitomotorcars', 'platinummotorsport', 'calabasasluxurym',
+'keyeseuropean', 'hornburggroup', 'phillipsauto'
+]
 
 usernames.length.times do
   user = usernames.pop
@@ -100,7 +102,8 @@ all_photos = [
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098840/crenshaw-selects-36jpg_emytdt.jpg'
 ]
 
-captions = ['The road will never be the same.', 'Never Follow.',
+captions = [
+  'The road will never be the same.', 'Never Follow.',
   'Sheer Driving Pleasure.', 'Inspiration comes standard.',
   'Drivers Wanted.', 'The Power of Dreams.',
   'Everything We Do is Driven By You.', 'There is no substitute.',
@@ -115,9 +118,11 @@ captions = ['The road will never be the same.', 'Never Follow.',
   'Break through.', 'Built for the road ahead.', 'New doors opened.',
   'Think. Feel. Drive.', "Driven by what's inside.", 'Passion for the road.',
   'Live life in your own lane.', 'Designed for Action.', 'Like nothing else.',
-  'Go Beyond.', "Everything you want. Nothing you don't", 'The power to surprise.',
-  'Precision crafted performance.', 'Driven by passion.', 'Power for your control.',
-  'Creating a higher standard.', "Isn't it time for a real car?"
+  'Go Beyond.', "Everything you want. Nothing you don't",
+  'The power to surprise.', 'Precision crafted performance.',
+  'Driven by passion.', 'Power for your control.', 'Unleash the beast',
+  'Creating a higher standard.', "Isn't it time for a real car?",
+  "The Best or Nothing.", 'Built for the Human Race.', 'No Compromises.'
 ]
 
 all_photos.each do |photo|
@@ -139,15 +144,68 @@ photo_ids = Photo.all.map(&:id)
   )
 end
 
+comments = [
+  'what a beast 🙌🏼', 'What a beaut!', "This is a collector's item",
+  "Couldn't handle the cost of insurance from all the speeding tickets",
+  "This makes me want to go out and buy a lottery ticket",
+  'Ohh I like this 😈👍🏼', 'goals', 'So expensive but so classy🙃',
+  'Beautiful spec!!', 'Yep. That’s the one on my wish list 😍',
+  'Little too much..?', 'At least i have a good model of it 😂', 'Amen',
+  'OOOOH', 'Perfect car, perfect color', "Not if it's an automatic",
+  'Should be cheaper 2018s are are already on showroom floors.', 'Wow 🔥',
+  'I’ve seen one in Atlanta they’re so nice', "Think it's ugly honestly",
+  'Beautiful work of art! I wonder if Santa can fit it in his sleigh?',
+  'Asking price?', 'She’s beautiful ❤️', 'Grande máquina', 'Oh. I like!',
+  'Jaa alleen had m zelf eerder met groen gedaan beetje als Greg b eig
+  dat Vind ik zo moo', 'Wowwwww I love ittt', 'Seems overpriced.',
+  'Seriously my dream car.. as long as the doors go 🆙🆙🆙',
+  'I always thought these were like half million dollar cars. Lol',
+  'My goodness', 'Great combination. 👌', 'Ummmmmmm no',
+  "It'll be worth 100 in 3 years.. not done losing quite yet",
+  'New account here featuring the best cars from around the world!',
+  'In my opinion this car is the only one that can get away with this color',
+  'Lol someone is selling it already?', 'Looks swapmeet',
+  'Beautiful colour combination, rare and unique Automobile.',
+  'The colours are stunning', 'I’d buy it. Keep it maintained 👌',
+  "it'll be 100k in 12 months", 'Wowowow', 'savagery',
+  'These cars are the best value in the super car market',
+  'finally something reasonable coming from this account',
+  'What a beautiful car here for real', 'In 5 years these will depreciate
+  so much...', 'Why on earth 🌏 would you buy this automobile?',
+  'Not impressed at all.', 'Can u gift me this car ???💔😉', 'drooling', 'Sweet!',
+  'if i were there i would buy this in a heart bit', 'Good lord',
+  'Such an overshadowed car, but those lines 😍',
+  'After hearing an LFA, I feel like all other cars sound so bad lol',
+  'One of my favorite cars in the whole world of super cars',
+  "We just got a custom red one of these in our inventory and it's super
+  clean! I really dig this car overall.", 'this is gorgeous',
+  'Big improvement on the interior. That exterior will have to grow on me...',
+  'I got $200 and a broken Ford Fusion. Straight trade', 'Sweet ride',
+  'Run Away from this car fast.', 'Such a nice spec!!',
+  'What a gorgeous color... Usually not my style but that looks great.',
+  "That's what i call 'awesomeness'", 'Super sharp! Hot spec.',
+  'is it possible that i could just, ya know, have this?',
+  'that color is superb', 'I need this in my life',
+  'Omg 😲.....soo much want!! ❤️❤️❤️❤️❤️❤️', 'where do I get one',
+  'Your content is 🔥 keep it up 👏 👏 👏',
+  'Interior is awesome. Went a little too crazy on the outside imo.',
+  'i️ can see why the price isn’t listed😂',
+  'If I was rich, this would be the first car in my garage forsure',
+  'Does this have a spoiler which comes out a high speed?',
+  'always something to dream about...',
+  "That's a really good edit on this."
+]
+
+
 Comment.delete_all
 
-# 500.times do
-#   Comment.create(
-#     body: Faker::Company.catch_phrase,
-#     user_id: user_ids.sample,
-#     photo_id: photo_ids.sample
-#   )
-# end
+1000.times do
+  Comment.create(
+    body: comments.sample,
+    user_id: user_ids.sample,
+    photo_id: photo_ids.sample
+  )
+end
 
 Follow.delete_all
 
