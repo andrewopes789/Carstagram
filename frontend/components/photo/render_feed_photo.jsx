@@ -24,6 +24,10 @@ class RenderFeedPhoto extends React.Component {
       this.state.body}).then(() => this.setState({body: ""}));
   }
 
+  selectCommentInput(textInput) {
+    textInput.focus();
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value} );
@@ -47,13 +51,17 @@ class RenderFeedPhoto extends React.Component {
     return (
       <div key={comment.id} className='comment-item'>
 
-        <Link to={`/users/${comment.commenter_id}`}
-          className='comment-poster'>{comment.commenter_username}
-        </Link>&nbsp;
-        
-        <div className='comment-body'>{comment.body}</div>
+        <div className='comment-poster-and-body'>
+          <p>
+            <Link to={`/users/${comment.commenter_id}`}
+              className='comment-poster'>{comment.commenter_username}
+            </Link>&nbsp;
 
-        {deleteCommentButton}
+            {comment.body}
+          </p>
+
+          {deleteCommentButton}
+        </div>
 
       </div>
       );
@@ -116,6 +124,8 @@ class RenderFeedPhoto extends React.Component {
         onClick={() => this.props.createLike(photo.id)}></i>
     );
 
+    let textInput;
+
     return (
       <div key={photo.id} className='feed-photo-container'>
 
@@ -132,7 +142,8 @@ class RenderFeedPhoto extends React.Component {
 
             {likeButton}
 
-            <i className='fa fa-comment-o feed-photo-button'></i>
+            <i className='fa fa-comment-o feed-photo-button'
+              onClick={()=>this.selectCommentInput(textInput)}></i>
 
           </div>
 
@@ -164,6 +175,7 @@ class RenderFeedPhoto extends React.Component {
           <section className='comment-input-container'>
             <form onSubmit={this.handleSubmit}>
               <input
+                ref={(input)=> {textInput = input;}}
                 className='comment-input'
                 placeholder='Add a comment...'
                 onChange={this.update('body')}

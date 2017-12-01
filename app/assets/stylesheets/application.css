@@ -18,6 +18,7 @@
    font-size: 16px;
    font-weight: 600;
    margin: -15px auto auto 0;
+   text-transform: lowercase;
  }
 
  .button-container {
@@ -67,9 +68,12 @@
  }
 
  .comment-body {
+   display: block;
    font-size: 14px;
    margin: auto auto auto 0;
    padding: 0;
+   word-wrap: break-word;
+   width: 500px;
  }
 
  .comment-input {
@@ -101,6 +105,7 @@
    flex-direction: row;
    font-family: Helvetica;
    font-size: 14px;
+   justify-content: space-between;
    padding: 5px 0 6px 0;
    margin-top: -3px;
    text-align: left;
@@ -112,6 +117,20 @@
    font-size: 14px;
    font-weight: 600;
    text-decoration: none;
+   text-transform: lowercase;
+ }
+
+ .comment-poster-and-body {
+   display: flex;
+   flex-direction: row;
+   width: 550px;
+   align-items: flex-start;
+ }
+
+ .comment-poster-and-body p {
+   margin: 0;
+   min-width: 550px;
+   width: 100%;
  }
 
  .comment-shown-container:first-child {
@@ -268,6 +287,7 @@
    font-weight: 600;
    margin: auto auto auto 0;
    text-decoration: none;
+   text-transform: lowercase;
  }
 
  .link {
@@ -350,12 +370,30 @@
   z-index: 1;
 }
 
-.modal-caption {
+.modal-caption-body {
+  display: inline;
+  font-size: 14px;
+  margin: auto auto auto 0;
+  padding: 0;
+}
+
+.modal-caption-item {
+  flex-direction: row;
   font-family: Helvetica;
   font-size: 14px;
-  margin-left: 0;
-  color: inherit;
+  padding: 5px 0 6px 0;
+  margin-top: -3px;
   text-align: left;
+  word-wrap: break-word;
+}
+
+.modal-caption-poster {
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: lowercase;
+  display: inline;
 }
 
 .modal-comment-container {
@@ -392,8 +430,11 @@
 }
 
 .modal-comment-body {
+  align-items: flex-start;
   font-family: Helvetica;
   font-size: 14px;
+  min-width: 235px;
+  word-wrap: break-word;
 }
 
 .modal-comment-item {
@@ -403,6 +444,7 @@
   text-align: left;
   margin-top: -5px;
   width: inherit;
+  justify-content: space-between;
 }
 
 .modal-comment-poster {
@@ -490,6 +532,10 @@
    width: 24px;
 }
 
+.modal-photo-button:hover {
+  cursor: pointer;
+}
+
 .modal-photo-buttons-container {
   padding-left: 24px;
   margin: auto;
@@ -528,6 +574,7 @@
   margin-left: 5px;
   text-decoration: none;
   color: inherit;
+  text-transform: lowercase;
 }
 
 .modal-poster-lower-username {
@@ -804,6 +851,7 @@ text-decoration: none;
 
 .profile-username {
   font-weight: lighter;
+  text-transform: lowercase;
 }
 
 .right-nav {

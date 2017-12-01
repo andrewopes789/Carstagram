@@ -24,7 +24,7 @@ usernames = ['rusnakautogroup', 'fletcherjones', 'wisimonson', 'jimfalkbeverlyhi
 usernames.length.times do
   user = usernames.pop
   User.create!(
-    username: user,
+    username: user.downcase,
     email: "info@#{user}.com",
     password: 'password',
     img_url: Faker::Company.logo
@@ -100,10 +100,30 @@ all_photos = [
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098840/crenshaw-selects-36jpg_emytdt.jpg'
 ]
 
+captions = ['The road will never be the same.', 'Never Follow.',
+  'Sheer Driving Pleasure.', 'Inspiration comes standard.',
+  'Drivers Wanted.', 'The Power of Dreams.',
+  'Everything We Do is Driven By You.', 'There is no substitute.',
+  'Engineered to Move the Human Spirit.', 'Born to Perform.',
+  'Unlike Any Other.', 'The Relentless Pursuit of Perfection.',
+  'The Ultimate Driving Machine.', 'Like Always. Like Never Before.',
+  'The future of the Automobile.', 'We have a better idea.',
+  'A different kind of company. A different kind of car.',
+  'Get the Feeling.', 'The Art of Performance.', 'Accelerating the Future.',
+  "Don't Dream It, Drive it.", 'The Strength of Experience.',
+  'Standard of the World.', 'Travel Well.', 'Fuel for the Soul.',
+  'Break through.', 'Built for the road ahead.', 'New doors opened.',
+  'Think. Feel. Drive.', "Driven by what's inside.", 'Passion for the road.',
+  'Live life in your own lane.', 'Designed for Action.', 'Like nothing else.',
+  'Go Beyond.', "Everything you want. Nothing you don't", 'The power to surprise.',
+  'Precision crafted performance.', 'Driven by passion.', 'Power for your control.',
+  'Creating a higher standard.', "Isn't it time for a real car?"
+]
+
 all_photos.each do |photo|
   Photo.create!(
     img_url: photo,
-    caption: 'An example of our finest offerings',
+    caption: captions.sample,
     author_id: user_ids.sample
   )
 end
@@ -121,13 +141,13 @@ end
 
 Comment.delete_all
 
-500.times do
-  Comment.create(
-    body: Faker::Company.catch_phrase,
-    user_id: user_ids.sample,
-    photo_id: photo_ids.sample
-  )
-end
+# 500.times do
+#   Comment.create(
+#     body: Faker::Company.catch_phrase,
+#     user_id: user_ids.sample,
+#     photo_id: photo_ids.sample
+#   )
+# end
 
 Follow.delete_all
 

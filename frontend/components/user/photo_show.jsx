@@ -14,13 +14,18 @@ class PhotoShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createComment(this.state).then(() => this.setState({body: ""}));
+    this.props.createComment({photo_id: this.state.photo_id,
+    body: this.state.body}).then(() => this.setState({body: ""}));
   }
 
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value} );
     };
+  }
+
+  selectCommentInput(textInput) {
+    textInput.focus();
   }
 
   renderComment (comment) {
@@ -81,6 +86,8 @@ class PhotoShow extends React.Component {
         onClick={()=>this.props.createLike(photo.id)}></i>
     );
 
+    let textInput;
+
     return(
       <div className='modal'>
 
@@ -104,13 +111,13 @@ class PhotoShow extends React.Component {
 
               <div className='modal-comment-container'>
 
-                <div className='comment-item'>
+                <div className='modal-caption-item'>
 
                   <Link to={`/users/${photo.poster_id}`}
-                    className='comment-poster'>{photo.poster_username}
+                    className='modal-caption-poster'>{photo.poster_username}
                   </Link>&nbsp;
 
-                  <div className='comment-body'>{photo.caption}</div>
+                  <div className='modal-caption-body'>{photo.caption}</div>
 
                 </div>
 
@@ -129,7 +136,8 @@ class PhotoShow extends React.Component {
 
                     {likeButton}
 
-                    <i className='fa fa-comment-o modal-photo-button'></i>
+                    <i className='fa fa-comment-o modal-photo-button'
+                      onClick={()=>this.selectCommentInput(textInput)}></i>
 
                   </div>
 
@@ -142,6 +150,7 @@ class PhotoShow extends React.Component {
                   <form onSubmit={this.handleSubmit}
                     className='modal-comment-input-container'>
                     <input
+                      ref={(input)=> {textInput = input;}}
                       className='comment-input'
                       placeholder='Add a comment...'
                       onChange={this.update('body')}
