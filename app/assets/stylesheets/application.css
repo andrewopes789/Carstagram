@@ -451,6 +451,11 @@
   object-fit: contain;
 }
 
+.modal-footer {
+  border-top: 1px solid #efefef;
+  padding-top: 5px;
+}
+
 .modal-likes-count {
   font-family: Helvetica;
   font-size: 14px;
@@ -470,7 +475,7 @@
   flex-direction: row;
   font-family: Helvetica;
   font-size: 10px;
-  padding: 5px 0 6px 24px;
+  padding: 5px 0 11px 24px;
   text-align: left;
   text-transform: uppercase;
 }
