@@ -78,13 +78,32 @@ all_photos = [
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088979/2018-Rolls-Royce-Phantom-VIII-Extended-Wheelbase-front-three-quarter-in-motion-04_xxx1i5.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088980/2018-Rolls-Royce-Phantom-VIII-rear-three-quarter-in-motion-02_ymddk7.jpg',
 'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088976/rolls-royce-dawn-black-badge-2_nhqe9s.jpg',
-'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088977/badge_3_ulaudj.jpg'
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512088977/badge_3_ulaudj.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098806/2017_rolls-royce_phantom-drophead-coupe_convertible_base_fq_oem_1_1280_a8mccx.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098806/AR-301239821_lihjgl.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098807/Maybach-57-RA-Bridge-1024x768_gjjns0.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098807/bentley-flying-spur-w12-sjpg_oavn0o.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098807/2017_bentley_bentayga_LIFE1_ot_1104161_1280_xvdhmq.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098808/la-fi-hy-rolls-royce-dawn-20160429_rwhgl6.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098808/black-badge-rolls-royce-wraith-02_xxlo7e.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098808/2016-mercedes-maybach-s600-front-three-quarter-in-motion-02_e4yaty.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098809/74255_2016_mercedesbenz_Maybach_lblo0f.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098810/1634657725001_4463809188001_B-Makingofcelestial-02-fullbleed-v1_zc3bop.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098810/2015-Bentley-Mulsanne-Speed-2016-Mercedes-Maybach-S600-front-end-05_a8v1xu.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098811/Rolls-Royce-Phantom-Series-II-33_mwoof3.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098811/2016-Bentley-Continental-GT-Speed-coupe-front-three-quarters-in-motion-03_yipr7z.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098811/Bentley-Bentayga-Mulliner-1-BENTLEY0716_xcx02t.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098813/porscheboxsterspyder01_clalck.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098813/mercedes-benz-s-class-first-drive-hero_jfbbtu.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098813/rolls-royce-dawn-3_0_yewr32.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098843/Bentley-Flying-Spur-5_kwrxdk.jpg',
+'https://res.cloudinary.com/dn26kjpum/image/upload/v1512098840/crenshaw-selects-36jpg_emytdt.jpg'
 ]
 
 all_photos.each do |photo|
   Photo.create!(
     img_url: photo,
-    caption: 'The finest example of our offerings',
+    caption: 'An example of our finest offerings',
     author_id: user_ids.sample
   )
 end
