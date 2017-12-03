@@ -1,6 +1,8 @@
 var path = require("path");
 var webpack = require("webpack");
 
+var config = require('config');
+
 var plugins = []; // if using any plugins for both dev and production
 var devPlugins = []; // if using any plugins for development
 
@@ -36,6 +38,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  plugins: plugins,
   devtool: 'source-maps',
   module: {
     loaders: [
