@@ -1,5 +1,5 @@
 url = photo.img_url
-url = url.sub('http://res.cloudinary.com/dn26kjpum/image/upload/','https://res.cloudinary.com/dn26kjpum/image/upload/c_thumb,h_600,w_800/')
+url = url.sub('res.cloudinary.com/dn26kjpum/image/upload/','res.cloudinary.com/dn26kjpum/image/upload/c_thumb,h_600,w_800/')
 
 json.id photo.id
 json.img_url url
