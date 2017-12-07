@@ -61,7 +61,7 @@
   }
 
  .close-modal:hover,
- .close-moadl:focus {
+ .close-modal:focus {
    color: #bbb;
    cursor: pointer;
    text-decoration: none;
