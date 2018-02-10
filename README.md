@@ -1,11 +1,18 @@
-# Carstagram README
-
-![Carstagram Logo](https://github.com/andrewopes789/carstagram/blob/master/carstagramlogo.png)
-
+<h1 align="center"> Carstagram </h1>
+<h4 align="center">
 Carstagram is an Instagram-inspired, photo sharing application for car enthusiasts to share photos of their favorite cars with other enthusiasts.
+</h4>
 
 The live site can be found [here](https://carstagram.herokuapp.com/#/).
 
+## Table of Contents
+
+- [Key Features](#key-features)
+- [Technologies Used](#technologies-used)
+- [Challenges](#challenges)
+- [Triumphs](#triumphs)
+- [Future Directions](#future-directions)
+ 
 ## Key Features
 * User Authentication
   * Sign up for a new account or sign in to an existing account.
