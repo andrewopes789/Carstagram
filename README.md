@@ -4,6 +4,14 @@ Carstagram is an Instagram-inspired, photo sharing application for car enthusias
 </h4>
 
 The live site can be found [here](https://carstagram.herokuapp.com/#/).
+
+## Table of Contents
+
+- [Key Features](#key-features)
+- [Technologies Used](#technologies-used)
+- [Challenges](#challenges)
+- [Triumphs](#triumphs)
+- [Future Directions](#future-directions)
  
 ## Key Features
 * User Authentication
