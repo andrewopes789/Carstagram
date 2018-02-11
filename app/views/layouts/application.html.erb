@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <link rel="shortcut icon" href="http://res.cloudinary.com/dn26kjpum/image/upload/v1518308816/car_wxuvj3.jpg">
+
     <script id='bootstrap-current-user' type='text/javascript'>
       <% if signed_in? %>
         window.currentUser = <%= render('api/users/show.json.jbuilder',
