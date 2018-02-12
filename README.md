@@ -22,7 +22,7 @@ The live site can be found [here](https://carstagram.herokuapp.com/#/).
  
 * Add/Delete Comments on Photos
 
-* Share photos of your favorite cars with your followers.
+* Post Photos
 
 * View Photos in More Detail
   * Click on a photo on any user's profile page to view an enhanced version of the image.
@@ -57,7 +57,11 @@ The live site can be found [here](https://carstagram.herokuapp.com/#/).
 
   * When the render function for my component was loading, a part of my render called upon the `followers_by_id`, `followings_by_id`,       and `photos_by_id` properties; however, since they were not initially loaded, my component broke. As a result, I added the  "placeholders" as show below.
 
-![](https://github.com/andrewopes789/carstagram/blob/master/user_reducer.png)
+<p align="center">
+<a href="https://andrewopes789.github.io/blinddate-website/">
+    <img alt="BlindDate" title="BlindDate" src="https://github.com/andrewopes789/carstagram/blob/master/user_reducer.png" >
+</a>
+</p> 
 
 ## Triumphs
 * A triumph I had was in rendering the comments of each post under the post's photo. I wanted the comments to initially render the most recent four, and then when the 'comment trigger' button was pressed, all of the comments would render. I also wanted the 'comment trigger' button to be dynamic in the following ways:
@@ -68,7 +72,11 @@ The live site can be found [here](https://carstagram.herokuapp.com/#/).
   
 * In order to accomplish this, I created multiple ternary operators to filter through the data and render the correct button, as shown below.
 
-![](https://github.com/andrewopes789/carstagram/blob/master/comments.png)
+<p align="center">
+<a href="https://andrewopes789.github.io/blinddate-website/">
+    <img alt="BlindDate" title="BlindDate" src="https://github.com/andrewopes789/carstagram/blob/master/comments.png" >
+</a>
+</p>
 
 ## Future Directions
 * Search Function
