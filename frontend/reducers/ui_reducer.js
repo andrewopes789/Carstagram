@@ -5,5 +5,6 @@ import errors from './errors_reducer';
 import loading from './loading_reducer';
 
 export default combineReducers({
-  loading
+  loading,
+  errors
 });
