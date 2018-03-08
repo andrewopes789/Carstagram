@@ -248,6 +248,18 @@
    cursor: pointer;
  }
 
+ .footer-item {
+   color: #262626;
+   text-decoration: none;
+   margin-left: 5px;
+   margin-right: 5px;
+ }
+
+ .footer-items {
+   margin: auto;
+   width: 40vw;
+ }
+
  .get-the-app {
    color: #262626;
    font-size: 14px;
@@ -891,6 +903,10 @@ text-decoration: none;
 
 .session-button:hover {
   cursor: pointer;
+}
+
+.session-footer {
+  text-align: center;
 }
 
 .session-form {

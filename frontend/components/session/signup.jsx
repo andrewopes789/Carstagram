@@ -125,6 +125,23 @@ class Signup extends React.Component {
               <p className='get-the-app'>Get the app.</p>
             </div>
           </div>
+
+          <footer className='session-footer'>
+            <div class='footer-items'>
+              <a href="http://hireandrewcho.today/"
+                class="footer-item" >
+                <span class="label">Portfolio</span>
+              </a>
+              <a href="https://github.com/andrewopes789"
+                class="footer-item" target="_blank">
+                <span class="label">Github</span>
+              </a>
+              <a href="https://www.linkedin.com/in/andrew-cho-64b082155/"
+                class="footer-item" target="_blank">
+                <span class="label">LinkedIn</span>
+              </a>
+            </div>
+          </footer>
       </div>
     );
   }
