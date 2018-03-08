@@ -127,7 +127,7 @@ class Signup extends React.Component {
           </div>
 
           <footer className='session-footer'>
-            <div class='footer-items'>
+            <div class='footer-items-left'>
               <a href="http://hireandrewcho.today/"
                 class="footer-item" >
                 <span class="label">Portfolio</span>
@@ -140,6 +140,9 @@ class Signup extends React.Component {
                 class="footer-item" target="_blank">
                 <span class="label">LinkedIn</span>
               </a>
+            </div>
+            <div class='footer-items-right'>
+              © 2018 Andrew Cho
             </div>
           </footer>
       </div>

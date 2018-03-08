@@ -249,15 +249,27 @@
  }
 
  .footer-item {
-   color: #262626;
+   color: #999;
    text-decoration: none;
-   margin-left: 5px;
-   margin-right: 5px;
+   margin-left: 10px;
+   margin-right: 10px;
  }
 
- .footer-items {
-   margin: auto;
-   width: 40vw;
+ .footer-item:hover {
+   color: #696969;
+   cursor: pointer;
+ }
+
+ .footer-items-left {
+   padding-bottom: 20px;
+   padding-top: 15px;
+   margin-left: 170px;
+ }
+
+ .footer-items-right {
+   padding-bottom: 20px;
+   padding-top: 15px;
+   margin-right: 170px;
  }
 
  .get-the-app {
@@ -906,7 +918,10 @@ text-decoration: none;
 }
 
 .session-footer {
-  text-align: center;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .session-form {
