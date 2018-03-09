@@ -251,8 +251,7 @@
  .footer-item {
    color: #999;
    text-decoration: none;
-   margin-left: 10px;
-   margin-right: 10px;
+   margin-right: 20px;
  }
 
  .footer-item:hover {
@@ -925,6 +924,7 @@ text-decoration: none;
   font-family: Helvetica;
   font-size: 15px;
   justify-content: center;
+  width: 100vw;
 }
 
 .session-form {
