@@ -32,6 +32,26 @@ class FeedPhotos extends React.Component {
             />
           ))
         }
+
+        <footer className='session-footer-feed'>
+          <div class='footer-items-left'>
+            <a href="http://hireandrewcho.today/"
+              class="footer-item" >
+              <span class="label">Portfolio</span>
+            </a>
+            <a href="https://github.com/andrewopes789"
+              class="footer-item" target="_blank">
+              <span class="label">Github</span>
+            </a>
+            <a href="https://www.linkedin.com/in/andrew-cho-64b082155/"
+              class="footer-item" target="_blank">
+              <span class="label">LinkedIn</span>
+            </a>
+          </div>
+          <div class='footer-items-right'>
+            © 2018 Andrew Cho
+          </div>
+        </footer>
       </div>
     );
   }

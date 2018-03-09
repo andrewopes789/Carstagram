@@ -58,39 +58,41 @@ class PhotoUpload extends React.Component {
     );
 
     return (
-      <section className='photo-detail'>
+      <div>
+        <section className='photo-detail'>
 
-        <div className='image-form-container'>
+          <div className='image-form-container'>
 
-          <div className='image-show-container'
-            onClick={this.handleUpload}>
-            {imageShow}
+            <div className='image-show-container'
+              onClick={this.handleUpload}>
+              {imageShow}
+            </div>
+
+            <form className='upload-form'>
+              <div className='new-post'>New Post</div>
+              <label>
+                <textarea
+                  className='caption-input'
+                  value={this.state.caption}
+                  placeholder='Write a caption...'
+                  onChange={this.update('caption')}
+                  />
+              </label>
+
+              <label>
+                <button
+                  onClick={this.handleSubmit}
+                  className='upload-button'>Share</button>
+              </label>
+
+              <ul>
+                {this.errors()}
+              </ul>
+
+            </form>
           </div>
 
-          <form className='upload-form'>
-            <div className='new-post'>New Post</div>
-            <label>
-              <textarea
-                className='caption-input'
-                value={this.state.caption}
-                placeholder='Write a caption...'
-                onChange={this.update('caption')}
-                />
-            </label>
-
-            <label>
-              <button
-                onClick={this.handleSubmit}
-                className='upload-button'>Share</button>
-            </label>
-
-            <ul>
-              {this.errors()}
-            </ul>
-
-          </form>
-        </div>
-        
+        </section>
         <footer className='session-footer'>
           <div class='footer-items-left'>
             <a href="http://hireandrewcho.today/"
@@ -110,7 +112,7 @@ class PhotoUpload extends React.Component {
             © 2018 Andrew Cho
           </div>
         </footer>
-      </section>
+      </div>
     );
   }
 }
