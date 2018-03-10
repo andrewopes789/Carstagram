@@ -14,7 +14,7 @@ class Message < ApplicationRecord
              foreign_key: :sender_id,
              class_name: :User
 
-  belongs_to :recipient_id,
+  belongs_to :recipient,
              foreign_key: :recipient_id,
              class_name: :User
 end
