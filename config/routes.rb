@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: %i(create show) do
+      resources :messages, only: %i(index create)
       member do
         post 'follow', to: "follows#create"
         delete 'follow', to: "follows#destroy"
