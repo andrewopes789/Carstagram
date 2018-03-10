@@ -21,36 +21,44 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :photos,
-    foreign_key: :author_id,
-    class_name: :Photo
+           foreign_key: :author_id,
+           class_name: :Photo
 
   has_many :likes,
-    foreign_key: :user_id,
-    class_name: :Like
+           foreign_key: :user_id,
+           class_name: :Like
 
   has_many :comments,
-    foreign_key: :user_id,
-    class_name: :Comment
+           foreign_key: :user_id,
+           class_name: :Comment
 
   has_many :user_followers,
-    foreign_key: :following_id,
-    class_name: :Follow
+           foreign_key: :following_id,
+           class_name: :Follow
 
   has_many :user_followings,
-    foreign_key: :follower_id,
-    class_name: :Follow
+           foreign_key: :follower_id,
+           class_name: :Follow
 
   has_many :followers,
-    through: :user_followers,
-    source: :follower
+           through: :user_followers,
+           source: :follower
 
   has_many :followings,
-    through: :user_followings,
-    source: :following
+           through: :user_followings,
+           source: :following
 
   has_many :following_photos,
-    through: :followings,
-    source: :photos
+           through: :followings,
+           source: :photos
+
+  has_many :sent_messages,
+           foreign_key: :sender_id,
+           class_name: :Message
+
+  has_many :received_messages,
+           foreign_key: :recipient_id,
+           class_name: :Message
 
   after_initialize :ensure_session_token
 

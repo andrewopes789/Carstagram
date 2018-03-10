@@ -4,7 +4,7 @@
 #
 #  id           :integer          not null, primary key
 #  follower_id  :integer          not null
-#  following_id :integer          not nullç
+#  following_id :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
