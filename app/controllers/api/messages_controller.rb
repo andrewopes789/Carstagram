@@ -2,8 +2,7 @@ class Api::MessagesController < ApplicationController
   before_action :require_signed_in!
 
   def index
-    @messages = User.find(params[:user_id]).sent_messages +
-                User.find(params[:user_id]).received_messages
+    @messages = current_user.sent_messages + current_user.received_messages
   end
 
   def create

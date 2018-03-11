@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api, defaults: { format: :json } do
+    resources :messages, only: %i(index)
     resources :users, only: %i(create show) do
-      resources :messages, only: %i(index create)
+      resources :messages, only: %i(create)
       member do
         post 'follow', to: "follows#create"
         delete 'follow', to: "follows#destroy"

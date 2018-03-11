@@ -14,6 +14,7 @@ import SigninContainer from './session/signin_container';
 import FeedPhotoContainer from './photo/feed_photo_container';
 import PhotoUploadContainer from './photo/photo_upload_container';
 import ProfileContainer from './user/profile_container';
+import MessageContainer from './message/message_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <ProtectedRoute exact path='/photos' component={FeedPhotoContainer}/>
         <ProtectedRoute path='/users/:userId' component={ProfileContainer}/>
         <ProtectedRoute path='/photos/new' component={PhotoUploadContainer}/>
+        <ProtectedRoute path='/messages' component={MessageContainer}/>
       </Switch>
     </div>
   );
