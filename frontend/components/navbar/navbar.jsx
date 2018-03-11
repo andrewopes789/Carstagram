@@ -20,6 +20,9 @@ const siteNav = ({ currentUser }) => {
        </div>
 
        <div className='right-nav'>
+         <Link to='/messages' className='nav-icons'>
+           <i className='fa fa-inbox'></i>
+         </Link>
 
          <Link to='/photos/new' className='nav-icons'>
            <i className='fa fa-plus-square-o'></i>

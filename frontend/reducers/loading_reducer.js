@@ -13,6 +13,11 @@ import {
   START_LOADING_ALL_USERS
 } from '../actions/user_actions';
 
+import {
+  RECEIVE_MESSAGES,
+  START_LOADING_MESSAGES
+} from '../actions/message_actions';
+
 const initialState = {
   indexLoading: false,
   detailLoading: false
@@ -42,6 +47,11 @@ export default (state=initialState, action) => {
     case RECEIVE_ALL_USERS:
       return Object.assign({}, state, {indexLoading: false});
 
+    case START_LOADING_MESSAGES:
+      return Object.assign({}, state, {indexLoading: true});
+    case RECEIVE_MESSAGES:
+      return Object.assign({}, state, {indexLoading: false});
+      
     default:
       return state;
   }

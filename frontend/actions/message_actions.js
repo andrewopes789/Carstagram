@@ -1,7 +1,8 @@
-import * as APIUtil from '../utils/comment_utils';
+import * as APIUtil from '../utils/message_utils';
 
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
+export const START_LOADING_MESSAGES = 'START_LOADING_MESSAGES';
 
 export const receiveMessage = message => ({
   type: RECEIVE_MESSAGE,
@@ -13,10 +14,15 @@ export const receiveMessages = messages => ({
   messages
 });
 
-export const fetchMessages = () => dispatch => (
+export const startLoadingMessages = () => ({
+  type: START_LOADING_MESSAGES
+});
+
+export const fetchMessages = () => dispatch => {
+  dispatch(startLoadingMessages());
   APIUtil.fetchMessages()
-    .then(messages => dispatch(receiveMessages(messages)))
-);
+    .then(messages => dispatch(receiveMessages(messages)));
+};
 
 export const createMessage = inputMessage => dispatch => (
   APIUtil.createMessage(inputMessage)
