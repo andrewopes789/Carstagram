@@ -142,7 +142,7 @@ class Signup extends React.Component {
               </a>
             </div>
             <div class='footer-items-right'>
-              © 2018 Andrew Cho
+              © Andrew Cho 2018
             </div>
           </footer>
       </div>
