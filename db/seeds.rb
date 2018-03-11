@@ -222,3 +222,20 @@ Follow.delete_all
     following_id: following_id
   )
 end
+
+Message.delete_all
+
+500.times do
+  sender_id = user_ids.sample
+  recipient_id = user_ids.sample
+
+  until sender_id != recipient_id
+    recipient_id = user_ids.sample
+  end
+
+  Message.create(
+    sender_id: sender_id,
+    recipient_id: recipient_id,
+    body: comments.sample
+  )
+end

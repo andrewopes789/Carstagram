@@ -127,21 +127,21 @@ class Signup extends React.Component {
           </div>
 
           <footer className='session-footer'>
-            <div class='footer-items-left'>
+            <div className='footer-items-left'>
               <a href="http://hireandrewcho.today/"
-                class="footer-item" >
-                <span class="label">Portfolio</span>
+                className="footer-item" >
+                <span className="label">Portfolio</span>
               </a>
               <a href="https://github.com/andrewopes789"
-                class="footer-item" target="_blank">
-                <span class="label">Github</span>
+                className="footer-item" target="_blank">
+                <span className="label">Github</span>
               </a>
               <a href="https://www.linkedin.com/in/andrew-cho-64b082155/"
-                class="footer-item" target="_blank">
-                <span class="label">LinkedIn</span>
+                className="footer-item" target="_blank">
+                <span className="label">LinkedIn</span>
               </a>
             </div>
-            <div class='footer-items-right'>
+            <div className='footer-items-right'>
               © Andrew Cho 2018
             </div>
           </footer>
