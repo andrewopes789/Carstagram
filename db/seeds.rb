@@ -223,7 +223,7 @@ Follow.delete_all
   )
 end
 
-Message.delete_all
+Chatroom.delete_all
 
 500.times do
   sender_id = user_ids.sample
@@ -233,9 +233,8 @@ Message.delete_all
     recipient_id = user_ids.sample
   end
 
-  Message.create(
+  Chatroom.create(
     sender_id: sender_id,
-    recipient_id: recipient_id,
-    body: comments.sample
+    recipient_id: recipient_id
   )
 end

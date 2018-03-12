@@ -1,17 +1,17 @@
-class Api::ChatroomController < ApplicationController
+class Api::ChatroomsController < ApplicationController
   before_action :require_signed_in!
   def index
-    @chatrooms = current_user.sent_chatroom + current_user.received_chatrooms
+    @chatrooms = current_user.sent_chatrooms + current_user.received_chatrooms
   end
 
   def create
-    if Chatroom.between(params[:sender_id], params[:recipient_id]).present?
-      @chatroom = Chatroom.between(params[:sender_id],
+    if Chatroom.between(current_user.id, params[:recipient_id]).present?
+      @chatroom = Chatroom.between(current_user.id,
                                    params[:recipient_id]).first
     elsif Chatroom.between(params[:recipient_id],
-                           params[:sender_id]).present?
+                           current_user.id).present?
       @chatroom = Chatroom.between(params[:recipient_id],
-                                   params[:sender_id]).first
+                                   current_user.id).first
     else
       @chatroom = Chatroom.new(chatroom_params)
 
@@ -26,6 +26,6 @@ class Api::ChatroomController < ApplicationController
   private
 
   def chatroom_params
-    params.require(:chatroom).permit(:sender_id, :recipient_id)
+    params.require(:chatroom).permit(:recipient_id)
   end
 end
