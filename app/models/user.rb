@@ -60,6 +60,15 @@ class User < ApplicationRecord
            foreign_key: :recipient_id,
            class_name: :Message
 
+  has_many :sent_chatrooms,
+           foreign_key: :sender_id,
+           class_name: :Chatroom
+
+  has_many :received_chatrooms,
+           foreign_key: :recipient_id,
+           class_name: :Chatroom
+
+
   after_initialize :ensure_session_token
 
   def all_follows
