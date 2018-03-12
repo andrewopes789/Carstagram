@@ -1,35 +1,31 @@
 class Api::ChatroomController < ApplicationController
   before_action :require_signed_in!
   def index
-    @photo = Photo.find(params[:photo_id])
-    @comments = @photo.comments
+    @chatrooms = current_user.sent_chatroom + current_user.received_chatrooms
   end
 
   def create
-    user_id = current_user.id
-    photo_id = params[:photo_id]
-    @comment = Comment.new(user_id: user_id, photo_id: photo_id, body: comment_params[:body])
-
-    if @comment.save
-      render :show
+    if Chatroom.between(params[:sender_id], params[:recipient_id]).present?
+      @chatroom = Chatroom.between(params[:sender_id],
+                                   params[:recipient_id]).first
+    elsif Chatroom.between(params[:recipient_id],
+                           params[:sender_id]).present?
+      @chatroom = Chatroom.between(params[:recipient_id],
+                                   params[:sender_id]).first
     else
-      render json: @comment, status: :unprocessable_entity
-    end
-  end
+      @chatroom = Chatroom.new(chatroom_params)
 
-  def destroy
-    @comment = Comment.find(params[:id])
-
-    if @comment.destroy
-      render :destroy
-    else
-      render json: @comment.errors.full_messages, status: 422
+      if @chatroom.save
+        render :show
+      else
+        render json: @chatroom.errors.full_messages
+      end
     end
   end
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:body)
+  def chatroom_params
+    params.require(:chatroom).permit(:sender_id, :recipient_id)
   end
 end
