@@ -17,18 +17,28 @@ class Chatroom extends React.Component {
       this.props.loading ?
       <LoadingIcon /> :
       <div>
-        <section className='chatroom-items'>
-          {
-            this.props.chatrooms.map(chatroom => (
-              <ChatroomItem
-                key={chatroom.id}
-                chatroom={chatroom}
-                currentUser={this.props.currentUser}
-              />
-            ))
-          }
-        </section>
-        <footer className='session-footer'>
+        <div className='messages-container'>
+          <section className='chatroom-items'>
+            {
+              this.props.chatrooms.map(chatroom => (
+                <ChatroomItem
+                  key={chatroom.id}
+                  chatroom={chatroom}
+                  currentUser={this.props.currentUser}
+                  />
+              ))
+            }
+          </section>
+          <div className='message-display-container'>
+            <div className='message-display'>
+              <i className='fa fa-inbox message-image'></i>
+              <div className='message-display-placeholder'>
+                Select a message from the left to get started.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer className='chatroom-footer'>
           <div className='footer-items-left'>
             <a href="http://hireandrewcho.today/"
               className="footer-item" >
