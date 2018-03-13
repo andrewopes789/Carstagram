@@ -50,6 +50,11 @@
    width: 100%;
  }
 
+ .chatroom_items {
+   display: flex;
+   flex-direction: column;
+ }
+
  .close-modal {
    position: absolute;
    top: 5px;

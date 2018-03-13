@@ -1,4 +1,7 @@
 import React from 'react';
+import LoadingIcon from '../photo/loading_icon';
+import { Link } from 'react-router-dom';
+import ChatroomItem from './chatroom_item';
 
 class Chatroom extends React.Component {
   constructor(props) {
@@ -11,10 +14,19 @@ class Chatroom extends React.Component {
 
   render() {
     return (
+      this.props.loading ?
+      <LoadingIcon /> :
       <div>
-        <section className='photo-detail'>
-          These are your chatrooms y'all
-
+        <section className='chatroom-items'>
+          {
+            this.props.chatrooms.map(chatroom => (
+              <ChatroomItem
+                key={chatroom.id}
+                chatroom={chatroom}
+                currentUser={this.props.currentUser}
+              />
+            ))
+          }
         </section>
         <footer className='session-footer'>
           <div className='footer-items-left'>
