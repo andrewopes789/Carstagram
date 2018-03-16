@@ -33,7 +33,7 @@ class Chatroom extends React.Component {
             <div className='message-display'>
               <i className='fa fa-inbox message-image'></i>
               <div className='message-display-placeholder'>
-                Messages are a beta feature and will be up and running as soon as we can!
+                Messages coming soon!
               </div>
             </div>
           </div>
