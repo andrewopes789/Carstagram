@@ -16,6 +16,7 @@ import PhotoUploadContainer from './photo/photo_upload_container';
 import ProfileContainer from './user/profile_container';
 import ChatroomContainer from './chatroom/chatroom_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
+import FooterContainer from './footer/footer_container';
 
 const App = () => {
   return(
@@ -32,6 +33,9 @@ const App = () => {
         <ProtectedRoute path='/photos/new' component={PhotoUploadContainer}/>
         <ProtectedRoute path='/messages' component={ChatroomContainer}/>
       </Switch>
+      <footer>
+        <FooterContainer />
+      </footer>
     </div>
   );
 };
