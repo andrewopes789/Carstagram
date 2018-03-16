@@ -4,6 +4,10 @@ class Api::ChatroomsController < ApplicationController
     @chatrooms = current_user.sent_chatrooms + current_user.received_chatrooms
   end
 
+  def show
+    @chatroom = Chatroom.find(params[:id])
+  end
+
   def create
     if Chatroom.between(current_user.id, params[:recipient_id]).present?
       @chatroom = Chatroom.between(current_user.id,

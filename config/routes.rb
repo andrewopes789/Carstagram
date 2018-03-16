@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :messages, only: %i(index)
-    resources :chatrooms, only: %i(index)
+    resources :chatrooms, only: %i(index show)
     resources :users, only: %i(create show) do
       resources :chatrooms, only: %i(create)
       resources :messages, only: %i(create)
