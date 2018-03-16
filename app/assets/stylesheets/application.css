@@ -438,10 +438,11 @@
   flex-direction: row;
   position: fixed;
   top: 75px;
+  width: 100vw;
 }
 
 .message-display {
-  margin-top: 100px;
+  margin-top: 30vh;
 }
 
 .message-display-container {
