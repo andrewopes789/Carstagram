@@ -5,6 +5,10 @@ class Api::MessagesController < ApplicationController
     @messages = current_user.sent_messages + current_user.received_messages
   end
 
+  def show
+    @message = Message.find(params[:id])
+  end
+
   def create
     sender_id = current_user.id
     recipient_id = params[:user_id]

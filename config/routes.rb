@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api, defaults: { format: :json } do
-    resources :messages, only: %i(index)
+    resources :messages, only: %i(index show)
     resources :chatrooms, only: %i(index show)
     resources :users, only: %i(create show) do
       resources :chatrooms, only: %i(create)
