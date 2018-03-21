@@ -11,6 +11,12 @@ class ChatroomShow extends React.Component {
     this.props.fetchChatroom(this.props.chatroomId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.match.params.chatroomId !== this.props.chatroomId) {
+      this.props.fetchChatroom(newProps.match.params.chatroomId);
+    }
+  }
+
   render() {
     return (
       this.props.loading ?
