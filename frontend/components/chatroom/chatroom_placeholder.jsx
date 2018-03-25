@@ -11,7 +11,7 @@ class ChatroomPlaceholder extends React.Component {
         <div className='message-display'>
           <i className='fa fa-inbox message-image'></i>
           <div className='message-display-placeholder'>
-            Messages
+            Direct Messages
           </div>
         </div>
       </div>
