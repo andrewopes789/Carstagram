@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "static_pages#root"
+  mount ActionCable.server => '/cable'
 
   namespace :api, defaults: { format: :json } do
     resources :messages, only: %i(show)
@@ -23,4 +24,9 @@ Rails.application.routes.draw do
     end
     resources :comments, only: %i(destroy)
   end
+
+  #channels
+  post '/api/channels/add_subscriber/:id' => 'api/channels#add_subscriber',
+    as: 'api_channel_add_subscriber',
+    defaults: { format: :json }
 end

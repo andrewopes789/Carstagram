@@ -99,7 +99,7 @@
    display: flex;
    flex-direction: column;
    overflow: scroll;
-   width: 300px;
+   width: 35vw;
  }
 
  .close-modal {
@@ -453,18 +453,48 @@
   text-align: center;
 }
 
-.message-image {
-  color: gray;
-  font-size: 60px;
-  margin-bottom: 30px;
-}
-
 .message-display-placeholder {
   color: gray;
   font-family: Helvetica;
   font-size: 20px;
   font-style: italic;
   text-align: center;
+}
+
+.message-image {
+  color: gray;
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+.message-item-container {
+  margin: 10px;
+}
+
+.message-item-received {
+  background: #d3d3d3;
+  border-radius: 10px;
+  max-width: 60%;
+  padding: 10px;
+}
+
+.message-item-sent {
+  background: #007AFF;
+  border-radius: 10px;
+  color: white;
+  max-width: 60%;
+  margin: auto 10px auto auto;
+  padding: 10px;
+}
+
+.message-show-container {
+  overflow: scroll;
+  width: 100%;
+}
+
+.message-text {
+  font-family: Helvetica;
+  text-overflow: wrap;
 }
 
 .modal {
@@ -1013,6 +1043,7 @@ text-decoration: none;
   font-family: Helvetica;
   font-size: 15px;
   justify-content: center;
+  max-height: 53px;
   position: fixed;
   width: 100vw;
 }

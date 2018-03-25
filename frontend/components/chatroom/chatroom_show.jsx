@@ -35,16 +35,33 @@ class ChatroomShow extends React.Component {
 
   render() {
     let messages = this.props.messages;
+    let currentUser = this.props.currentUser;
 
     return (
       this.props.loading ?
       <LoadingIcon /> :
-      <div>
+      <div className='message-show-container'>
         {
-          messages.map(message =>
-            <div key={message.id}>
-              {message.body}
-            </div>
+          messages.map(message => {
+            if (message.sender_id === currentUser.id) {
+              return (
+                <div key={message.id} className='message-item-container'>
+                  <div className='message-item-sent'>
+                    <span className='message-text'>{message.body}</span>
+                  </div>
+                </div>
+              );
+            } else {
+              return (
+                <div key={message.id} className='message-item-container'>
+                  <div className='message-item-received'>
+                    <span className='message-text'>{message.body}</span>
+                  </div>
+                </div>
+              );
+            }
+          }
+
           )
         }
       </div>
