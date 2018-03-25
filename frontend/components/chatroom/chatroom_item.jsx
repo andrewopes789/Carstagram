@@ -12,8 +12,10 @@ class ChatroomItem extends React.Component {
 
     return (
       <div key={chatroom.id} className='chatroom-item-container'>
-        <img className='chatroom-item-image' src={image}/>
-        <div className='chatroom-item-username'>{username}</div>
+        <Link to={`chatrooms/${chatroom.id}`}>
+          <img className='chatroom-item-image' src={image}/>
+          <div className='chatroom-item-username'>{username}</div>
+        </Link>
       </div>
     );
   }
