@@ -9,6 +9,7 @@ class Api::MessagesController < ApplicationController
     sender_id = current_user.id
     recipient_id = params[:user_id]
     @message = Message.new(
+      chatroom_id: message_params[:chatroom_id],
       sender_id: sender_id,
       recipient_id: recipient_id,
       body: message_params[:body])
@@ -23,6 +24,6 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:body, :chatroom_id)
   end
 end

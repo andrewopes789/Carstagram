@@ -6,7 +6,8 @@ class ChatroomShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: ''
+      body: '',
+      chatroom_id: this.props.chatroomId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -18,7 +19,7 @@ class ChatroomShow extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.chatroomId !== this.props.chatroomId) {
-      this.props.fetchMessages(newProps.match.params.chatroomId);
+      this.props.fetchChatroom(newProps.match.params.chatroomId);
     }
   }
 
