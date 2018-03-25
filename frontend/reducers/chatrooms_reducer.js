@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
 
 import {
-  RECEIVE_CHATROOMS,
-  RECEIVE_CHATROOM
+  RECEIVE_CHATROOMS
 } from '../actions/chatroom_actions';
 
 import { merge } from 'lodash';
@@ -15,9 +14,6 @@ export default (state=initialState, action) => {
   switch (action.type) {
     case RECEIVE_CHATROOMS:
       return merge({}, action.chatrooms);
-
-    case RECEIVE_CHATROOM:
-      return merge({}, state, action.chatroom);
 
     default:
       return state;

@@ -13,7 +13,7 @@ class ChatroomItem extends React.Component {
     return (
       <Link
         key={chatroom.id}
-        to={`/messages/${chatroom.id}`}
+        to={`/chatrooms/${chatroom.id}`}
         className='chatroom-item-container'>
             <img className='chatroom-item-image' src={image}/>
             <div className='chatroom-item-username'>{username}</div>

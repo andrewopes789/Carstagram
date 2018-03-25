@@ -23,8 +23,8 @@ const siteNav = ({ currentUser }) => {
          <Link to='/photos/new' className='nav-icons'>
            <i className='fa fa-plus-square-o'></i>
          </Link>
-         
-         <Link to='/messages' className='nav-icons'>
+
+         <Link to='/chatrooms' className='nav-icons'>
            <i className='fa fa-inbox'></i>
          </Link>
 

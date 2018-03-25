@@ -31,7 +31,7 @@ const App = () => {
         <ProtectedRoute exact path='/photos' component={FeedPhotoContainer}/>
         <ProtectedRoute path='/users/:userId' component={ProfileContainer}/>
         <ProtectedRoute path='/photos/new' component={PhotoUploadContainer}/>
-        <ProtectedRoute path='/messages' component={ChatroomContainer}/>
+        <ProtectedRoute path='/chatrooms' component={ChatroomContainer}/>
       </Switch>
       <footer>
         <FooterContainer />

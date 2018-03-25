@@ -4,9 +4,9 @@ export const RECEIVE_CHATROOMS = 'RECEIVE_CHATROOMS';
 export const RECEIVE_CHATROOM = 'RECEIVE_CHATROOM';
 export const START_LOADING_CHATROOMS = 'START_LOADING_CHATROOMS';
 
-export const receiveChatroom = chatroom => ({
+export const receiveChatroom = messages => ({
   type: RECEIVE_CHATROOM,
-  chatroom
+  messages
 });
 
 export const receiveChatrooms = chatrooms => ({
