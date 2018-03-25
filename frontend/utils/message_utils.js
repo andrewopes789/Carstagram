@@ -1,7 +1,7 @@
-export const fetchMessages = () => (
+export const fetchMessages = chatroomId => (
   $.ajax({
     method: 'GET',
-    url: '/api/messages'
+    url: `/api/messages/${chatroomId}`
   })
 );
 

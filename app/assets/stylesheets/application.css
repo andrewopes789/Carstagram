@@ -65,8 +65,10 @@
 
  .chatroom-item-container {
    border-top: 1px solid #e6e6e6;
+   color: black;
    display: flex;
    flex-direction: row;
+   text-decoration: none;
    padding-top: 15px;
    padding-bottom: 60px;
  }

@@ -18,9 +18,9 @@ export const startLoadingMessages = () => ({
   type: START_LOADING_MESSAGES
 });
 
-export const fetchMessages = () => dispatch => {
+export const fetchMessages = chatroomId => dispatch => {
   dispatch(startLoadingMessages());
-  APIUtil.fetchMessages()
+  APIUtil.fetchMessages(chatroomId)
     .then(messages => dispatch(receiveMessages(messages)));
 };
 

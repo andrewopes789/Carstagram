@@ -11,12 +11,13 @@ class ChatroomItem extends React.Component {
                    chatroom.recipient_username : chatroom.sender_username;
 
     return (
-      <div key={chatroom.id} className='chatroom-item-container'>
-        <Link to={`chatrooms/${chatroom.id}`}>
-          <img className='chatroom-item-image' src={image}/>
-          <div className='chatroom-item-username'>{username}</div>
-        </Link>
-      </div>
+      <Link
+        key={chatroom.id}
+        to={`/messages/${chatroom.id}`}
+        className='chatroom-item-container'>
+            <img className='chatroom-item-image' src={image}/>
+            <div className='chatroom-item-username'>{username}</div>
+    </Link>
     );
   }
 }

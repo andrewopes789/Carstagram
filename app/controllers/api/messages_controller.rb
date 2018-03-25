@@ -2,7 +2,8 @@ class Api::MessagesController < ApplicationController
   before_action :require_signed_in!
 
   def index
-    @messages = current_user.sent_messages + current_user.received_messages
+    @chatroom = Chatroom.find(params[:id])
+    @messages = Message.where(chatroom_id: @chatroom.id)
   end
 
   def show
