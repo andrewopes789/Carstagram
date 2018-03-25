@@ -5,10 +5,15 @@ import { Link } from 'react-router-dom';
 class ChatroomShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      body: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentWillMount() {
-    this.props.fetchMessages(this.props.chatroomId);
+    this.props.fetchChatroom(this.props.chatroomId);
   }
 
   componentWillReceiveProps(newProps) {
@@ -17,11 +22,30 @@ class ChatroomShow extends React.Component {
     }
   }
 
+  handleSubmit() {
+
+  }
+
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.target.value} );
+    };
+  }
+
   render() {
+    let messages = this.props.messages;
+
     return (
       this.props.loading ?
       <LoadingIcon /> :
       <div>
+        {
+          messages.map(message =>
+            <div key={message.id}>
+              {message.body}
+            </div>
+          )
+        }
       </div>
     );
   }

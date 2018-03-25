@@ -3,16 +3,22 @@ import ChatroomShow from './chatroom_show';
 import {
   fetchChatroom
 } from '../../actions/chatroom_actions';
+import {
+  createMessage
+} from '../../actions/message_actions';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  chatrooms: Object.values(state.entities.chatrooms),
-  chatroomId: -1,
-  loading: state.ui.loading.itemLoading
+  messages: Object.values(state.entities.messages),
+  loading: state.ui.loading.detailLoading,
+  chatroomId: ownProps.match.params.chatroomId
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchChatroom: chatroomId => dispatch(fetchChatroom(chatroomId))
+  fetchChatroom: chatroomId => dispatch(fetchChatroom(chatroomId)),
+  createMessage: message => dispatch(createMessage(message))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatroomShow);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ChatroomShow));

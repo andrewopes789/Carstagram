@@ -20,7 +20,9 @@ import {
 
 import {
   RECEIVE_CHATROOMS,
-  START_LOADING_CHATROOMS
+  RECEIVE_CHATROOM,
+  START_LOADING_CHATROOMS,
+  START_LOADING_CHATROOM
 } from '../actions/chatroom_actions';
 
 const initialState = {
@@ -56,6 +58,11 @@ export default (state=initialState, action) => {
       return Object.assign({}, state, {indexLoading: true});
     case RECEIVE_MESSAGES:
       return Object.assign({}, state, {indexLoading: false});
+
+    case START_LOADING_CHATROOM:
+      return Object.assign({}, state, {detailLoading: true});
+    case RECEIVE_CHATROOM:
+      return Object.assign({}, state, {detailLoading: false});
 
     case START_LOADING_CHATROOMS:
       return Object.assign({}, state, {indexLoading: true});

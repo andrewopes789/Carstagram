@@ -225,7 +225,7 @@ end
 
 Chatroom.delete_all
 
-500.times do
+50.times do
   sender_id = user_ids.sample
   recipient_id = user_ids.sample
 
@@ -236,5 +236,28 @@ Chatroom.delete_all
   Chatroom.create(
     sender_id: sender_id,
     recipient_id: recipient_id
+  )
+end
+
+chatrooms = Chatroom.all
+
+1000.times do
+  chatroom = chatrooms.sample
+  chatroom_id = chatroom.id
+  participants = [chatroom.sender_id, chatroom.recipient_id]
+  sender_id = participants.sample
+  recipient_id = participants.sample
+
+  until sender_id != recipient_id
+    recipient_id = participants.sample
+  end
+
+  body = comments.sample
+
+  Message.create(
+    sender_id: sender_id,
+    recipient_id: recipient_id,
+    chatroom_id: chatroom_id,
+    body: body
   )
 end

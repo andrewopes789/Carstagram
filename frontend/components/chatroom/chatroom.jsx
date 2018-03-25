@@ -2,6 +2,10 @@ import React from 'react';
 import LoadingIcon from '../photo/loading_icon';
 import { Link } from 'react-router-dom';
 import ChatroomItem from './chatroom_item';
+import { ProtectedRoute } from '../../utils/route_utils';
+import { Route } from 'react-router-dom';
+import ChatroomPlaceholderContainer from './chatroom_placeholder_container';
+import ChatroomShowContainer from './chatroom_show_container';
 
 class Chatroom extends React.Component {
   constructor(props) {
@@ -29,14 +33,13 @@ class Chatroom extends React.Component {
               ))
             }
           </section>
-          <div className='message-display-container'>
-            <div className='message-display'>
-              <i className='fa fa-inbox message-image'></i>
-              <div className='message-display-placeholder'>
-                Messages coming soon!
-              </div>
-            </div>
-          </div>
+          <Route
+            exact path='/chatrooms'
+            component={ChatroomPlaceholderContainer}/>
+
+          <ProtectedRoute
+            path='/chatrooms/:chatroomId'
+            component={ChatroomShowContainer}/>
         </div>
       </div>
     );
