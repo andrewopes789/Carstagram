@@ -8,7 +8,7 @@ export const fetchMessages = chatroomId => (
 export const createMessage = message => (
   $.ajax({
     method: 'POST',
-    url: `/api/users/${message.recipient_id}/messages`,
+    url: `/api/chatrooms/${message.chatroom_id}/messages`,
     data: { message }
   })
 );

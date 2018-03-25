@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :messages, only: %i(show)
-    resources :chatrooms, only: %i(index show)
+    resources :chatrooms, only: %i(index show) do
+      resources :messages, only: %i(create)
+    end
+
     resources :users, only: %i(create show) do
       resources :chatrooms, only: %i(create)
-      resources :messages, only: %i(create)
       member do
         post 'follow', to: "follows#create"
         delete 'follow', to: "follows#destroy"
