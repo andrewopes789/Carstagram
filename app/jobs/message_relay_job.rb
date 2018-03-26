@@ -1,5 +1,5 @@
 class MessageRelayJob < ApplicationJob
-  def perform(message, interface)
+  def perform(message)
     message = Api::MessagesController.render(
       partial: 'api/messages/message',
       locals: { message: message }
@@ -10,7 +10,7 @@ class MessageRelayJob < ApplicationJob
     #   locals: { user: message.user }
     # )
 
-    ActionCable.server.broadcast("channel_#{interface.channel_id}",
+    ActionCable.server.broadcast("channel_#{message.chatroom_id}",
                                  message: JSON.parse(message))
   end
 end

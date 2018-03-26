@@ -8,7 +8,8 @@
 #
 
 class Message < ApplicationRecord
-  # after_commit { MessageRelayJob.perform_later(self, self.interface) }
+  after_commit { MessageRelayJob.perform_later(self) }
+
   validates :sender_id, :recipient_id, :chatroom_id, :body, presence: true
 
   belongs_to :sender,
@@ -22,4 +23,9 @@ class Message < ApplicationRecord
   belongs_to :chatroom,
              foreign_key: :chatroom_id,
              class_name: :Chatroom
+
+
+  def body
+    self[:body]
+  end
 end

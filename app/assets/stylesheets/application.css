@@ -469,8 +469,10 @@
 }
 
 .message-input {
+  border-top: 1px solid #e6e6e6;
+  border-left: none;
+  border-right: none;
   font-size: 20px;
-  border: none;
   bottom: 53px;
   padding: 10px;
   position: fixed;
@@ -480,7 +482,6 @@
 
 .message-input-container {
   background: white;
-  border-top: 1px solid #e6e6e6;
   width: 100%;
 }
 
@@ -505,7 +506,7 @@
 }
 
 .messages-only {
-  margin-top: 79px;
+  margin-top: 78px;
   margin-bottom: 54px;
 }
 
@@ -527,7 +528,7 @@
   display: flex;
   flex-direction: row;
   text-decoration: none;
-  padding-top: 10px;
+  padding-top: 9px;
   padding-bottom: 10px;
   position: fixed;
   width: 100%;
