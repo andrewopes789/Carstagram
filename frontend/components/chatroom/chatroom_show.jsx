@@ -69,28 +69,15 @@ class ChatroomShow extends React.Component {
 
         <div className='messages-only'>
           {
-            messages.map(message => {
-              if (message.sender_id === currentUser.id) {
-                return (
+            messages.map(message => (
                   <div key={message.id} className='message-item-container'>
                     <div className='message-item-sent'>
                       <span className='message-text'>{message.body}</span>
                     </div>
                   </div>
-                );
-              } else {
-                return (
-                  <div key={message.id} className='message-item-container'>
-                    <div className='message-item-received'>
-                      <span className='message-text'>{message.body}</span>
-                    </div>
-                  </div>
-                );
-              }
-            }
-
-          )
-        }
+              )
+            )
+          }
         </div>
 
         <div className='message-input-container'>
@@ -111,3 +98,20 @@ class ChatroomShow extends React.Component {
 }
 
 export default ChatroomShow;
+
+// if (message.sender_id === currentUser.id) {
+//   return (
+//     <div key={message.id} className='message-item-container'>
+//       <div className='message-item-sent'>
+//         <span className='message-text'>{message.body}</span>
+//       </div>
+//     </div>
+//   );
+// } else {
+//   return (
+//     <div key={message.id} className='message-item-container'>
+//       <div className='message-item-received'>
+//         <span className='message-text'>{message.body}</span>
+//       </div>
+//     </div>
+//   );

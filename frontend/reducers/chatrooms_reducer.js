@@ -5,6 +5,10 @@ import {
   RECEIVE_CHATROOM
 } from '../actions/chatroom_actions';
 
+import {
+  RECEIVE_MESSAGE
+} from '../actions/message_actions';
+
 import { merge } from 'lodash';
 
 const initialState = {

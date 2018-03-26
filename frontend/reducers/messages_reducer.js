@@ -21,7 +21,7 @@ export default (state=initialState, action) => {
       return merge({}, state, action.messages);
 
     case RECEIVE_MESSAGE:
-      return merge({}, state, action.message);
+      return merge({}, state, {[action.message.id]: action.message});
 
     case RECEIVE_CHATROOM:
       return merge({}, action.payload.messages);
