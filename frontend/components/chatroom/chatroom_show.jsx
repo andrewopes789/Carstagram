@@ -40,19 +40,19 @@ class ChatroomShow extends React.Component {
     let messages = this.props.messages;
     let currentUser = this.props.currentUser;
     let chatroom = this.props.chatroom;
-    let photo = null;
-    let username = null;
-    let id = null;
+    let photo;
+    let username;
+    let id;
 
-    // if (chatroom.sender_id === currentUser.id) {
-    //   photo = chatroom.recipient_img;
-    //   username = chatroom.recipient_username;
-    //   id = chatroom.recipient_id;
-    // } else {
-    //   photo = chatroom.sender_img;
-    //   username = chatroom.sender_username;
-    //   id = chatroom.sender_id;
-    // }
+    if (chatroom.member1_id === currentUser.id) {
+      photo = chatroom.member2_img;
+      username = chatroom.member2_username;
+      id = chatroom.member2_id;
+    } else {
+      photo = chatroom.member1_img;
+      username = chatroom.member1_username;
+      id = chatroom.member2_id;
+    }
 
     return (
       this.props.loading ?

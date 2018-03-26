@@ -469,6 +469,7 @@
 }
 
 .message-input {
+  border-bottom: none;
   border-top: 1px solid #e6e6e6;
   border-left: none;
   border-right: none;
