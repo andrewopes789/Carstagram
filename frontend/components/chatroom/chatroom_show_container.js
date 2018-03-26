@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   messages: Object.values(state.entities.messages),
   loading: state.ui.loading.detailLoading,
+  chatroom: state.entities.chatrooms.single,
   chatroomId: ownProps.match.params.chatroomId
 });
 

@@ -89,6 +89,7 @@
 
  .chatroom-item-username {
    font-family: Helvetica;
+   font-size: 16px;
    margin: auto auto auto 5px;
    padding-top: 15px;
    padding-bottom: 10px;
@@ -470,15 +471,16 @@
 .message-input {
   font-size: 20px;
   border: none;
-  border-top: 1px solid #e6e6e6;
   bottom: 53px;
   padding: 10px;
   position: fixed;
-  width: 100%;
+  width: 71vw;
   word-wrap: break-word;
 }
 
 .message-input-container {
+  background: white;
+  border-top: 1px solid #e6e6e6;
   width: 100%;
 }
 
@@ -503,7 +505,46 @@
 }
 
 .messages-only {
+  margin-top: 79px;
   margin-bottom: 54px;
+}
+
+.message-recipient-img {
+  border: 1px solid #e6e6e6;
+  border-radius: 100%;
+  font-size: 16px;
+  margin: auto 10px auto 10px;
+  object-fit: contain;
+  height: 45px;
+  width: 45px;
+}
+
+.message-recipient-info {
+  background: white;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+.message-recipient-username {
+  color: black;
+  font-family: Helvetica;
+  margin: auto auto auto 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+
+.message-recipient-username:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .message-show-container {

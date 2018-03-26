@@ -39,11 +39,34 @@ class ChatroomShow extends React.Component {
   render() {
     let messages = this.props.messages;
     let currentUser = this.props.currentUser;
+    let chatroom = this.props.chatroom;
+    let photo;
+    let username;
+    let id;
+
+    if (chatroom.sender_id === currentUser.id) {
+      photo = chatroom.recipient_img;
+      username = chatroom.recipient_username;
+      id = chatroom.recipient_id;
+    } else {
+      photo = chatroom.sender_img;
+      username = chatroom.sender_username;
+      id = chatroom.sender_id;
+    }
 
     return (
       this.props.loading ?
       <LoadingIcon /> :
       <div className='message-show-container'>
+        <div className='message-recipient-info'>
+          <img src={photo} className='message-recipient-img'/>
+          <Link
+            to={`/users/${id}`}
+            className='message-recipient-username'>
+            {username}
+          </Link>
+        </div>
+
         <div className='messages-only'>
           {
             messages.map(message => {
@@ -70,17 +93,18 @@ class ChatroomShow extends React.Component {
         }
         </div>
 
-        <form
-          onSubmit={this.handleSubmit}
-          className='message-input-container'
-          >
-          <input
-            className='message-input'
-            placeholder='Write a message...'
-            onChange={this.update('body')}
-            value={this.state.body}
-            />
-        </form>
+        <div className='message-input-container'>
+          <form
+            onSubmit={this.handleSubmit}
+            >
+            <input
+              className='message-input'
+              placeholder='Write a message...'
+              onChange={this.update('body')}
+              value={this.state.body}
+              />
+          </form>
+        </div>
       </div>
     );
   }
