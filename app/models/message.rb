@@ -8,7 +8,7 @@
 #
 
 class Message < ApplicationRecord
-  after_commit { MessageRelayJob.perform_later(self, self.interface) }
+  # after_commit { MessageRelayJob.perform_later(self, self.interface) }
   validates :sender_id, :recipient_id, :chatroom_id, :body, presence: true
 
   belongs_to :sender,

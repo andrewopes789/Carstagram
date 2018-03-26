@@ -69,8 +69,8 @@
    display: flex;
    flex-direction: row;
    text-decoration: none;
-   padding-top: 15px;
-   padding-bottom: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
  }
 
  .chatroom-item-container:hover {
@@ -467,6 +467,21 @@
   margin-bottom: 30px;
 }
 
+.message-input {
+  font-size: 20px;
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  bottom: 53px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.message-input-container {
+  width: 100%;
+}
+
 .message-item-container {
   margin: 10px;
 }
@@ -485,6 +500,10 @@
   max-width: 60%;
   margin: auto 10px auto auto;
   padding: 10px;
+}
+
+.messages-only {
+  margin-bottom: 54px;
 }
 
 .message-show-container {

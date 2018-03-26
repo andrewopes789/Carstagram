@@ -23,8 +23,11 @@ class ChatroomShow extends React.Component {
     }
   }
 
-  handleSubmit() {
-
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createMessage({body: this.state.body,
+      chatroom_id: this.state.chatroom_id})
+      .then(() => this.setState({body: ''}));
   }
 
   update(field) {
@@ -41,29 +44,43 @@ class ChatroomShow extends React.Component {
       this.props.loading ?
       <LoadingIcon /> :
       <div className='message-show-container'>
-        {
-          messages.map(message => {
-            if (message.sender_id === currentUser.id) {
-              return (
-                <div key={message.id} className='message-item-container'>
-                  <div className='message-item-sent'>
-                    <span className='message-text'>{message.body}</span>
+        <div className='messages-only'>
+          {
+            messages.map(message => {
+              if (message.sender_id === currentUser.id) {
+                return (
+                  <div key={message.id} className='message-item-container'>
+                    <div className='message-item-sent'>
+                      <span className='message-text'>{message.body}</span>
+                    </div>
                   </div>
-                </div>
-              );
-            } else {
-              return (
-                <div key={message.id} className='message-item-container'>
-                  <div className='message-item-received'>
-                    <span className='message-text'>{message.body}</span>
+                );
+              } else {
+                return (
+                  <div key={message.id} className='message-item-container'>
+                    <div className='message-item-received'>
+                      <span className='message-text'>{message.body}</span>
+                    </div>
                   </div>
-                </div>
-              );
+                );
+              }
             }
-          }
 
           )
         }
+        </div>
+
+        <form
+          onSubmit={this.handleSubmit}
+          className='message-input-container'
+          >
+          <input
+            className='message-input'
+            placeholder='Write a message...'
+            onChange={this.update('body')}
+            value={this.state.body}
+            />
+        </form>
       </div>
     );
   }
