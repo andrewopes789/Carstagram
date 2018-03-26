@@ -8,11 +8,12 @@ class Api::MessagesController < ApplicationController
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     sender_id = current_user.id
+    members = @chatroom.members.map(&:id)
     recipient_id =
-      if @chatroom.sender_id == sender_id
-        @chatroom.recipient_id
+      if members[0] == sender_id
+        members[1]
       else
-        @chatroom.sender_id
+        members[0]
       end
 
     @message = Message.new(

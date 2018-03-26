@@ -225,26 +225,27 @@ end
 
 Chatroom.delete_all
 
-50.times do
-  sender_id = user_ids.sample
-  recipient_id = user_ids.sample
+100.times do
+  Chatroom.create()
+end
 
-  until sender_id != recipient_id
-    recipient_id = user_ids.sample
-  end
+chatroom_ids = Chatroom.all.map(&:id)
 
-  Chatroom.create(
-    sender_id: sender_id,
-    recipient_id: recipient_id
+ChatroomMembership.delete_all
+
+user_ids.each do |id|
+  ChatroomMembership.create(
+    member_id: id,
+    chatroom_id: chatroom_ids.sample
   )
 end
 
-chatrooms = Chatroom.all
+Message.delete_all
 
 1000.times do
-  chatroom = chatrooms.sample
-  chatroom_id = chatroom.id
-  participants = [chatroom.sender_id, chatroom.recipient_id]
+  chatroom_id = chatroom_ids.sample
+  chatroom = Chatroom.find(chatroom_id)
+  participants = chatroom.members.map(&:id)
   sender_id = participants.sample
   recipient_id = participants.sample
 

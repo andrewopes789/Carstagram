@@ -1,7 +1,7 @@
 class Api::ChatroomsController < ApplicationController
   before_action :require_signed_in!
   def index
-    @chatrooms = current_user.sent_chatrooms + current_user.received_chatrooms
+    @chatrooms = current_user.chatrooms
   end
 
   def show
@@ -10,28 +10,16 @@ class Api::ChatroomsController < ApplicationController
   end
 
   def create
-    if Chatroom.where(sender_id: current_user.id,
-                      recipient_id: params[:recipient_id]).present?
-      @chatroom = Chatroom.where(sender_id: current_user.id,
-                                 recipient_id: params[:recipient_id])
-    elsif Chatroom.where(sender_id: params[:recipient_id],
-                         recipient_id: current_user.id).present?
-      @chatroom = Chatroom.where(sender_id: params[:recipient_id],
-                                 recipient_id: current_user.id)
+    @chatroom = Chatroom.new
+    if @chatroom.save
+      ChatroomMembership.new(chatroom_id: @chatroom.id,
+                             member_id: current_user.id)
+      ChatroomMembership.new(chatroom_id: @chatroom.id,
+                             member_id: params[:user_id])
+      render :show
     else
-      @chatroom = Chatroom.new(chatroom_params)
-
-      if @chatroom.save
-        render :show
-      else
-        render json: @chatroom.errors.full_messages
-      end
+      render json: @chatroom.errors.full_messages, status: 422
     end
   end
 
-  private
-
-  def chatroom_params
-    params.require(:chatroom).permit(:recipient_id)
-  end
 end

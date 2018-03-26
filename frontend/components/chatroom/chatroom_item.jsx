@@ -4,11 +4,8 @@ import { Link } from 'react-router-dom';
 class ChatroomItem extends React.Component {
   render () {
     let chatroom = this.props.chatroom;
-    let image = chatroom.sender_id === this.props.currentUser.id ?
-                chatroom.recipient_img : chatroom.sender_img;
-
-    let username = chatroom.sender_id === this.props.currentUser.id ?
-                   chatroom.recipient_username : chatroom.sender_username;
+    let image = null;
+    let username = null;
 
     return (
       <Link

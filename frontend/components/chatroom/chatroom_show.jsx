@@ -40,19 +40,19 @@ class ChatroomShow extends React.Component {
     let messages = this.props.messages;
     let currentUser = this.props.currentUser;
     let chatroom = this.props.chatroom;
-    let photo;
-    let username;
-    let id;
+    let photo = null;
+    let username = null;
+    let id = null;
 
-    if (chatroom.sender_id === currentUser.id) {
-      photo = chatroom.recipient_img;
-      username = chatroom.recipient_username;
-      id = chatroom.recipient_id;
-    } else {
-      photo = chatroom.sender_img;
-      username = chatroom.sender_username;
-      id = chatroom.sender_id;
-    }
+    // if (chatroom.sender_id === currentUser.id) {
+    //   photo = chatroom.recipient_img;
+    //   username = chatroom.recipient_username;
+    //   id = chatroom.recipient_id;
+    // } else {
+    //   photo = chatroom.sender_img;
+    //   username = chatroom.sender_username;
+    //   id = chatroom.sender_id;
+    // }
 
     return (
       this.props.loading ?
@@ -69,14 +69,25 @@ class ChatroomShow extends React.Component {
 
         <div className='messages-only'>
           {
-            messages.map(message => (
+            messages.map(message => {
+              if (message.sender_id === currentUser.id) {
+                return (
                   <div key={message.id} className='message-item-container'>
                     <div className='message-item-sent'>
                       <span className='message-text'>{message.body}</span>
                     </div>
                   </div>
-              )
-            )
+                );
+              } else {
+                return (
+                  <div key={message.id} className='message-item-container'>
+                    <div className='message-item-received'>
+                      <span className='message-text'>{message.body}</span>
+                    </div>
+                  </div>
+                );
+              }
+            })
           }
         </div>
 
@@ -98,20 +109,3 @@ class ChatroomShow extends React.Component {
 }
 
 export default ChatroomShow;
-
-// if (message.sender_id === currentUser.id) {
-//   return (
-//     <div key={message.id} className='message-item-container'>
-//       <div className='message-item-sent'>
-//         <span className='message-text'>{message.body}</span>
-//       </div>
-//     </div>
-//   );
-// } else {
-//   return (
-//     <div key={message.id} className='message-item-container'>
-//       <div className='message-item-received'>
-//         <span className='message-text'>{message.body}</span>
-//       </div>
-//     </div>
-//   );

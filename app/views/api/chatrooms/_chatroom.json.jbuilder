@@ -1,7 +1,7 @@
 json.id chatroom.id
-json.sender_id chatroom.sender_id
-json.recipient_id chatroom.recipient_id
-json.sender_username chatroom.sender.username
-json.recipient_username chatroom.recipient.username
-json.sender_img chatroom.sender.img_url
-json.recipient_img chatroom.recipient.img_url
+json.member1_id chatroom.members.map(&:id)[0]
+json.member2_id chatroom.members.map(&:id)[1]
+json.member1_username chatroom.members.map(&:username)[0]
+json.member2_username chatroom.members.map(&:username)[1]
+json.member1_username chatroom.members.map(&:img_url)[0]
+json.member2_username chatroom.members.map(&:img_url)[1]
