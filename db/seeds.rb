@@ -8,7 +8,7 @@
 
 User.delete_all
 
-User.create!(
+demo = User.create!(
   username: 'demo',
   email: 'demo@email.com',
   password: 'password',
@@ -137,7 +137,7 @@ Like.delete_all
 
 photo_ids = Photo.all.map(&:id)
 
-10.times do
+1000.times do
   Like.create(
     user_id: user_ids.sample,
     photo_id: photo_ids.sample
@@ -199,17 +199,17 @@ comments = [
 
 Comment.delete_all
 
-# 1000.times do
-#   Comment.create(
-#     body: comments.sample,
-#     user_id: user_ids.sample,
-#     photo_id: photo_ids.sample
-#   )
-# end
+1000.times do
+  Comment.create(
+    body: comments.sample,
+    user_id: user_ids.sample,
+    photo_id: photo_ids.sample
+  )
+end
 
 Follow.delete_all
 
-100.times do
+1000.times do
   follower_id = user_ids.sample
   following_id = user_ids.sample
 
@@ -223,7 +223,7 @@ Follow.delete_all
   )
 end
 
-Chatroom.delete_all
+# Chatroom.delete_all
 
 # 500.times do
 #   Chatroom.create()
@@ -231,26 +231,26 @@ Chatroom.delete_all
 #
 # chatroom_ids = Chatroom.all.map(&:id)
 
-10.times do
-  Chatroom.create()
-end
+# 10.times do
+#   Chatroom.create()
+# end
 
-chatroom_ids = Chatroom.all.map(&:id)
+# chatroom_ids = Chatroom.all.map(&:id)
 
-ChatroomMembership.delete_all
-
-ChatroomMembership.create(
-  member_id: 115,
-  chatroom_id: chatroom_ids[0]
-)
-
-ChatroomMembership.create(
-  member_id: 116,
-  chatroom_id: chatroom_ids[0]
-)
+# ChatroomMembership.delete_all
 
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
+#   chatroom_id: chatroom_ids[0]
+# )
+#
+# ChatroomMembership.create(
+#   member_id: 116,
+#   chatroom_id: chatroom_ids[0]
+# )
+#
+# ChatroomMembership.create(
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[1]
 # )
 #
@@ -260,7 +260,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[2]
 # )
 #
@@ -270,7 +270,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[3]
 # )
 #
@@ -280,7 +280,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[4]
 # )
 #
@@ -290,7 +290,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[5]
 # )
 #
@@ -300,7 +300,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[6]
 # )
 #
@@ -310,7 +310,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[7]
 # )
 #
@@ -320,7 +320,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[8]
 # )
 #
@@ -330,7 +330,7 @@ ChatroomMembership.create(
 # )
 #
 # ChatroomMembership.create(
-#   member_id: 115,
+#   member_id: demo.id,
 #   chatroom_id: chatroom_ids[9]
 # )
 #
@@ -338,7 +338,7 @@ ChatroomMembership.create(
 #   member_id: 125,
 #   chatroom_id: chatroom_ids[9]
 # )
-
+#
 # 500.times do
 #   ChatroomMembership.create(
 #     member_id: user_ids.sample,
@@ -346,30 +346,9 @@ ChatroomMembership.create(
 #   )
 # end
 
-Message.delete_all
+# Message.delete_all
 
-100.times do
-  chatroom_id = chatroom_ids.sample
-  chatroom = Chatroom.find(chatroom_id)
-  participants = chatroom.members.map(&:id)
-  sender_id = participants.sample
-  recipient_id = participants.sample
-
-  until sender_id != recipient_id
-    recipient_id = participants.sample
-  end
-
-  body = comments.sample
-
-  Message.create(
-    sender_id: sender_id,
-    recipient_id: recipient_id,
-    chatroom_id: chatroom_id,
-    body: body
-  )
-end
-
-# 1000.times do
+# 500.times do
 #   chatroom_id = chatroom_ids.sample
 #   chatroom = Chatroom.find(chatroom_id)
 #   participants = chatroom.members.map(&:id)

@@ -1,0 +1,4 @@
+json.id chatroom_membership.id
+json.member_id chatroom_membership.member_id
+json.chatroom_id chatroom_membership.chatroom_id
+json.member_username chatroom_membership.member.username
