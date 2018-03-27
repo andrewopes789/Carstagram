@@ -3,6 +3,7 @@ import Chatroom from './chatroom';
 import {
   fetchChatrooms
 } from '../../actions/chatroom_actions';
+import { setSocket } from '../../actions/action_cable';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
@@ -11,7 +12,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchChatrooms: () => dispatch(fetchChatrooms())
+  fetchChatrooms: () => dispatch(fetchChatrooms()),
+  setSocket: () => dispatch(setSocket(dispatch))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chatroom);

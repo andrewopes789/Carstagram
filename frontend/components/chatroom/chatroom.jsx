@@ -12,6 +12,10 @@ class Chatroom extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.setSocket();
+  }
+
   componentWillMount() {
     this.props.fetchChatrooms();
   }
