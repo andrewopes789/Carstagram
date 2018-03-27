@@ -299,6 +299,7 @@
  }
 
  .follow-button:hover {
+   border: 1px solid black;
    cursor: pointer;
  }
 
@@ -557,6 +558,19 @@
 .message-text {
   font-family: Helvetica;
   text-overflow: wrap;
+}
+
+.message-user {
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 3px;
+  font-size: 15px;
+  margin: auto auto auto 10px;
+  padding: 4px 10px;
+}
+
+.message-user:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .modal {

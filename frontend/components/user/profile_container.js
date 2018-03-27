@@ -3,9 +3,24 @@ import { fetchUser } from '../../actions/user_actions';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
 import { withRouter } from 'react-router-dom';
-import { createLike, deleteLike } from '../../actions/like_actions';
-import { createComment, deleteComment } from '../../actions/comment_actions';
-import { createFollow, deleteFollow } from '../../actions/follow_actions';
+import {
+  createLike,
+  deleteLike
+} from '../../actions/like_actions';
+import {
+  createComment,
+  deleteComment
+} from '../../actions/comment_actions';
+import {
+  createFollow,
+  deleteFollow
+} from '../../actions/follow_actions';
+import {
+  createChatroomMembership
+} from '../../actions/chatroom_membership_actions';
+import {
+  createChatroom
+} from '../../actions/chatroom_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -28,7 +43,10 @@ const mapDispatchToProps = dispatch => ({
   createComment: comment => dispatch(createComment(comment)),
   deleteComment: commentId => dispatch(deleteComment(commentId)),
   createFollow: followingId => dispatch(createFollow(followingId)),
-  deleteFollow: followingId => dispatch(deleteFollow(followingId))
+  deleteFollow: followingId => dispatch(deleteFollow(followingId)),
+  createChatroomMembership: membership =>
+                            dispatch(createChatroomMembership(membership)),
+  createChatroom: chatroom => dispatch(createChatroom(chatroom))
 });
 
 export default withRouter(

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LoadingIcon from '../photo/loading_icon';
 import PhotoShow from './photo_show';
 import FollowButton from './follow_button';
-import SettingsButton from './settings_button';
+import OptionsButton from './options_button';
 import RenderPhoto from './render_photo';
 
 class ProfilePhotos extends React.Component {
@@ -88,6 +88,11 @@ class ProfilePhotos extends React.Component {
                   createFollow={this.props.createFollow}
                   deleteFollow={this.props.deleteFollow}
                   logout={this.props.logout}/>
+
+                <OptionsButton
+                  currentUser={currentUser}
+                  user={user}
+                  />
 
               </div>
 
