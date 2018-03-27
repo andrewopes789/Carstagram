@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import LoadingIcon from '../photo/loading_icon';
 import PhotoShow from './photo_show';
 import FollowButton from './follow_button';
-import OptionsButton from './options_button';
 import RenderPhoto from './render_photo';
 
 class ProfilePhotos extends React.Component {
@@ -14,6 +13,7 @@ class ProfilePhotos extends React.Component {
       searchId: -1
     };
     this.pushHistory = this.pushHistory.bind(this);
+    this.handleMessageSend = this.handleMessageSend.bind(this);
   }
 
   componentWillMount () {
@@ -42,11 +42,22 @@ class ProfilePhotos extends React.Component {
     });
   }
 
+  handleMessageSend() {
+    this.props.createChatroom(this.props.user.id)
+      .then(this.props.history.push(`/chatrooms/${this.props.chatroom.id}`));
+  }
+
   render () {
     const user = this.props.user;
     const currentUser = this.props.currentUser;
     const photos = this.props.photos;
     if (!this.props.photos) { return null; }
+    let button = user.id !== currentUser.id ? (
+      <i
+        className='fa fa-ellipsis-h message-user'
+        onClick={this.handleMessageSend}
+        />
+     ) : null;
 
     return (
       this.props.loading ? <LoadingIcon /> :
@@ -89,11 +100,7 @@ class ProfilePhotos extends React.Component {
                   deleteFollow={this.props.deleteFollow}
                   logout={this.props.logout}/>
 
-                <OptionsButton
-                  currentUser={currentUser}
-                  user={user}
-                  />
-
+                {button}
               </div>
 
 

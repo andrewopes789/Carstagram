@@ -12,10 +12,9 @@ export const fetchChatroom = chatroomId => (
   })
 );
 
-export const createChatroom = chatroom => (
+export const createChatroom = userId => (
   $.ajax({
     method: 'POST',
-    url: `/api/users/${chatroom.recipient_id}/chatrooms`,
-    data: { chatroom }
+    url: `/api/users/${userId}/chatrooms`
   })
 );
