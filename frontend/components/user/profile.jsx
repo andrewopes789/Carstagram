@@ -42,9 +42,9 @@ class ProfilePhotos extends React.Component {
     });
   }
 
-  handleMessageSend() {
-    this.props.createChatroom(this.props.user.id)
-      .then(this.props.history.push(`/chatrooms/${this.props.chatroom.id}`));
+  handleMessageSend(newProps) {
+    this.props.createChatroom(this.props.user.id);
+      // .then(this.props.history.push(`/chatrooms/${this.props.chatroom.id}`));
   }
 
   render () {
