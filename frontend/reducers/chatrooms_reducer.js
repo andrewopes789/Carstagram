@@ -24,7 +24,9 @@ export default (state=initialState, action) => {
       return Object.assign({}, state, {index: action.chatrooms});
 
     case RECEIVE_CHATROOM:
-      return Object.assign({}, state, {single: action.payload.chatroom});
+      return Object.assign({}, state, {single: action.payload.chatroom,
+        index: merge({}, state.index,
+          {[action.payload.chatroom.id]: action.payload.chatroom})});
     default:
       return state;
     }
