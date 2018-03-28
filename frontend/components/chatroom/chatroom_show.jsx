@@ -74,6 +74,7 @@ class ChatroomShow extends React.Component {
               if (message.sender_id === currentUser.id) {
                 return (
                   <div key={message.id} className='message-item-container'>
+                    <div className='message-sent-time'>{message.time} ago</div>
                     <div className='message-item-sent'>
                       <span className='message-text'>{message.body}</span>
                     </div>
@@ -81,9 +82,12 @@ class ChatroomShow extends React.Component {
                 );
               } else {
                 return (
-                  <div key={message.id} className='message-item-container'>
-                    <div className='message-item-received'>
-                      <span className='message-text'>{message.body}</span>
+                  <div>
+                    <div key={message.id} className='message-item-container'>
+                      <div className='message-item-received'>
+                        <span className='message-text'>{message.body}</span>
+                      </div>
+                      <div className='message-received-time'>{message.time} ago</div>
                     </div>
                   </div>
                 );

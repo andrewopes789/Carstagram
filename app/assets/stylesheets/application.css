@@ -488,12 +488,14 @@
 }
 
 .message-item-container {
+  display: flex;
   margin: 10px;
 }
 
 .message-item-received {
   background: #d3d3d3;
   border-radius: 10px;
+  display: inline-block;
   max-width: 60%;
   padding: 10px;
 }
@@ -502,14 +504,22 @@
   background: #007AFF;
   border-radius: 10px;
   color: white;
+  display: table;
+  margin: auto 10px auto 0px;
   max-width: 60%;
-  margin: auto 10px auto auto;
   padding: 10px;
 }
 
 .messages-only {
   margin-top: 78px;
   margin-bottom: 54px;
+}
+
+.message-received-time {
+  color: darkslategray;
+  font-size: 14px;
+  font-family: Helvetica;
+  margin: auto auto auto 5px;
 }
 
 .message-recipient-img {
@@ -548,6 +558,14 @@
 .message-recipient-username:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.message-sent-time {
+  color: darkslategray;
+  display: table;
+  font-size: 14px;
+  font-family: Helvetica;
+  margin: auto 5px auto auto;
 }
 
 .message-show-container {
