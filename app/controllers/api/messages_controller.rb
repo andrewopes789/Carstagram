@@ -6,20 +6,35 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.find(params[:chatroom_id])
-    sender_id = current_user.id
-    members = @chatroom.members.map(&:id)
-    recipient_id =
-      if members[0] == sender_id
-        members[1]
-      else
-        members[0]
+    @chatroom = nil
+
+    p params[:chatroom_id]
+    p params[:id]
+
+    if @chatroom.nil?
+      user = User.find(params[:recipient_id])
+      current_user.chatrooms.each do |chatroom|
+        if chatroom.members.include?(user)
+          @chatroom = chatroom
+          return
+        end
       end
+    end
+
+    if @chatroom.nil?
+      @chatroom = Chatroom.new
+      if @chatroom.save
+        ChatroomMembership.new(chatroom_id: @chatroom.id,
+                               member_id: current_user.id).save
+        ChatroomMembership.new(chatroom_id: @chatroom.id,
+                               member_id: params[:recipient_id]).save
+      end
+    end
 
     @message = Message.new(
-      chatroom_id: message_params[:chatroom_id],
-      sender_id: sender_id,
-      recipient_id: recipient_id,
+      chatroom_id: @chatroom.id,
+      sender_id: current_user.id,
+      recipient_id: message_params[:recipient_id],
       body: message_params[:body]
     )
 
@@ -33,6 +48,6 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body, :chatroom_id)
+    params.require(:message).permit(:body, :chatroom_id, :recipient_id)
   end
 end

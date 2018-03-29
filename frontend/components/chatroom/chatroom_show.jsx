@@ -26,8 +26,18 @@ class ChatroomShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createMessage({body: this.state.body,
-      chatroom_id: this.state.chatroom_id})
+    let chatroom = this.props.chatroom;
+    let currentUser = this.props.currentUser;
+    let recipientId;
+    if (chatroom.member1_id === currentUser.id) {
+      recipientId = chatroom.member2_id;
+    } else {
+      recipientId = chatroom.member1_id;
+    }
+    this.props.createMessage({
+      body: this.state.body,
+      chatroom_id: this.state.chatroom_id,
+      recipient_id: recipientId})
       .then(() => this.setState({body: ''}));
   }
 
@@ -87,7 +97,9 @@ class ChatroomShow extends React.Component {
                       <div className='message-item-received'>
                         <span className='message-text'>{message.body}</span>
                       </div>
-                      <div className='message-received-time'>{message.time} ago</div>
+                      <div
+                        className='message-received-time'
+                        >{message.time} ago</div>
                     </div>
                   </div>
                 );

@@ -35,7 +35,9 @@ export const fetchChatroom = chatroomId => dispatch => {
     .then(messages => dispatch(receiveChatroom(messages)));
 };
 
-export const createChatroom = inputChatroom => dispatch => (
+export const createChatroom = inputChatroom => dispatch => {
   APIUtil.createChatroom(inputChatroom)
-    .then(chatroom => dispatch(receiveChatroom(chatroom)))
-);
+    .then(chatroom => {
+      dispatch(receiveChatroom(chatroom));
+    });
+};

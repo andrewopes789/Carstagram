@@ -4,16 +4,19 @@ import LoadingIcon from '../photo/loading_icon';
 import PhotoShow from './photo_show';
 import FollowButton from './follow_button';
 import RenderPhoto from './render_photo';
+import MessageForm from '../chatroom/message_form.jsx';
 
 class ProfilePhotos extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       photoModalOpen: false,
+      messageModalOpen: false,
       searchId: -1
     };
     this.pushHistory = this.pushHistory.bind(this);
-    this.handleMessageSend = this.handleMessageSend.bind(this);
+    this.openMessageModal = this.openMessageModal.bind(this);
+    this.closeMessageModal = this.closeMessageModal.bind(this);
   }
 
   componentWillMount () {
@@ -42,9 +45,12 @@ class ProfilePhotos extends React.Component {
     });
   }
 
-  handleMessageSend(newProps) {
-    this.props.createChatroom(this.props.user.id);
-      // .then(this.props.history.push(`/chatrooms/${this.props.chatroom.id}`));
+  openMessageModal() {
+    this.setState({messageModalOpen: true});
+  }
+
+  closeMessageModal() {
+    this.setState({messageModalOpen: false});
   }
 
   render () {
@@ -55,7 +61,7 @@ class ProfilePhotos extends React.Component {
     let button = user.id !== currentUser.id ? (
       <i
         className='fa fa-ellipsis-h message-user'
-        onClick={this.handleMessageSend}
+        onClick={this.openMessageModal}
         />
      ) : null;
 
@@ -79,6 +85,15 @@ class ProfilePhotos extends React.Component {
               photo={this.props.photosAsObject[this.state.searchId]}
             /> : ""
 
+          }
+
+          { this.state.messageModalOpen ?
+            <MessageForm
+              closeMessageModal={this.closeMessageModal}
+              createMessage={this.props.createMessage}
+              openMessageModal={this.openMessageModal}
+              user={user}
+            /> : ""
           }
 
           <header className='profile-header'>
