@@ -22,6 +22,10 @@ The live site can be found [here](https://carstagram.herokuapp.com/#/).
  
 * Add/Delete Comments on Photos
 
+* Direct Message Other Users
+  * Click on the "message" button on any user's profile page to send them a direct message.
+  * Access messages through direct message button on navigation bar.
+
 * Post Photos
 
 * View Photos in More Detail
@@ -81,6 +85,3 @@ The live site can be found [here](https://carstagram.herokuapp.com/#/).
 ## Future Directions
 * Search Function
   * Users will be able to search for other users on the application.
-  
-* Direct Messaging
-  * Users will be able to share photos and private messages with other user(s) in a built-in messaging platform.
