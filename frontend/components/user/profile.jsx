@@ -59,10 +59,11 @@ class ProfilePhotos extends React.Component {
     const photos = this.props.photos;
     if (!this.props.photos) { return null; }
     let button = user.id !== currentUser.id ? (
-      <i
-        className='fa fa-ellipsis-h message-user'
+      <button
+        className='message-user'
         onClick={this.openMessageModal}
-        />
+      >
+      Message</button>
      ) : null;
 
     return (
@@ -90,6 +91,8 @@ class ProfilePhotos extends React.Component {
           { this.state.messageModalOpen ?
             <MessageForm
               closeMessageModal={this.closeMessageModal}
+              chatroom={this.props.chatroom}
+              createChatroom={this.props.createChatroom}
               createMessage={this.props.createMessage}
               openMessageModal={this.openMessageModal}
               user={user}

@@ -6,10 +6,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
-    @chatroom = nil
-
-    p params[:chatroom_id]
-    p params[:id]
+    @chatroom = Chatroom.find(params[:chatroom_id])
 
     if @chatroom.nil?
       user = User.find(params[:recipient_id])

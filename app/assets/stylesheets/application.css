@@ -582,7 +582,9 @@
 .message-user {
   border: 1px solid rgb(216, 216, 216);
   border-radius: 3px;
-  font-size: 15px;
+  font-family: Helvetica;
+  font-size: 14px;
+  height: 28px;
   margin: auto auto auto 10px;
   padding: 4px 10px;
 }
