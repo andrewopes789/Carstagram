@@ -70,9 +70,13 @@ class MessageForm extends React.Component {
                 />
             </form>
 
-            <button onClick={this.handleSubmit}>
-              Yoooo
-            </button>
+            <div className='modal-message-send-container'>
+              <button
+                onClick={this.handleSubmit}
+                className='modal-message-send'>
+                Send
+              </button>
+            </div>
           </div>
 
         </div>
