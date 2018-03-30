@@ -65,6 +65,7 @@ class ChatroomShow extends React.Component {
       id = chatroom.member2_id;
     }
 
+    let messagePointer;
     return (
       this.props.loading ?
       <LoadingIcon /> :
@@ -84,9 +85,10 @@ class ChatroomShow extends React.Component {
               if (message.sender_id === currentUser.id) {
                 return (
                   <div key={message.id} className='message-item-container'>
-                    <div className='message-sent-time'>{message.time} ago</div>
                     <div className='message-item-sent'>
                       <span className='message-text'>{message.body}</span>
+                      <div
+                        className='message-sent-time'>{message.time} ago</div>
                     </div>
                   </div>
                 );
@@ -96,10 +98,10 @@ class ChatroomShow extends React.Component {
                     <div key={message.id} className='message-item-container'>
                       <div className='message-item-received'>
                         <span className='message-text'>{message.body}</span>
+                        <div
+                          className='message-received-time'
+                          >{message.time} ago</div>
                       </div>
-                      <div
-                        className='message-received-time'
-                        >{message.time} ago</div>
                     </div>
                   </div>
                 );

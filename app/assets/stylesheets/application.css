@@ -506,7 +506,7 @@
   border-radius: 10px;
   color: white;
   display: table;
-  margin: auto 10px auto 0px;
+  margin: auto 10px auto auto;
   max-width: 60%;
   padding: 10px;
 }
@@ -520,7 +520,7 @@
   color: darkslategray;
   font-size: 14px;
   font-family: Helvetica;
-  margin: auto auto auto 5px;
+  margin: 2px auto auto 0;
 }
 
 .message-recipient-img {
@@ -562,11 +562,11 @@
 }
 
 .message-sent-time {
-  color: darkslategray;
+  color: lightgray;
   display: table;
   font-size: 14px;
   font-family: Helvetica;
-  margin: auto 5px auto auto;
+  margin: 2px 0 auto auto;
 }
 
 .message-show-container {
@@ -576,7 +576,7 @@
 
 .message-text {
   font-family: Helvetica;
-  text-overflow: wrap;
+  word-break: break-all;
 }
 
 .message-user {

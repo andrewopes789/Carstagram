@@ -15,7 +15,7 @@ class MessageForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.state.body !== "") {
+    if (this.refs.messageModal && this.state.body !== "") {
       this.props.createMessage({
         recipient_id: this.state.recipient_id,
         chatroom_id: newProps.chatroom.id,
@@ -39,7 +39,7 @@ class MessageForm extends React.Component {
   render () {
 
     return(
-      <div className='modal'>
+      <div ref='messageModal' className='modal'>
 
         <span className='close-modal'
           onClick={this.props.closeMessageModal}>&times;</span>
