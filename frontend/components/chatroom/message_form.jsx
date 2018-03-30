@@ -7,7 +7,7 @@ class MessageForm extends React.Component {
     this.state = {
       recipient_id: this.props.user.id,
       chatroom_id: -1,
-      body: ''
+      body: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -15,11 +15,14 @@ class MessageForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.props.createMessage({
-      recipient_id: this.state.recipient_id,
-      chatroom_id: newProps.chatroom.id,
-      body: this.state.body})
-      .then(() => this.setState({body: ""}));
+    if (this.state.body !== "") {
+      this.props.createMessage({
+        recipient_id: this.state.recipient_id,
+        chatroom_id: newProps.chatroom.id,
+        body: this.state.body})
+        .then(() => this.setState({body: ""}));
+      this.props.closeMessageModal();
+    }
   }
 
   handleSubmit(e) {
