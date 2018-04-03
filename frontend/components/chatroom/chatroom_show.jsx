@@ -81,27 +81,26 @@ class ChatroomShow extends React.Component {
 
         <div className='messages-only'>
           {
-            messages.map(message => {
+            messages.map((message, idx) => {
               if (message.sender_id === currentUser.id) {
                 return (
                   <div key={message.id} className='message-item-container'>
                     <div className='message-item-sent'>
                       <span className='message-text'>{message.body}</span>
                       <div
-                        className='message-sent-time'>{message.time} ago</div>
+                        className='message-sent-time'
+                        >{new Date(message.time).toLocaleString()}</div>
                     </div>
                   </div>
                 );
               } else {
                 return (
-                  <div>
-                    <div key={message.id} className='message-item-container'>
-                      <div className='message-item-received'>
-                        <span className='message-text'>{message.body}</span>
-                        <div
-                          className='message-received-time'
-                          >{message.time} ago</div>
-                      </div>
+                  <div key={message.id} className='message-item-container'>
+                    <div className='message-item-received'>
+                      <span className='message-text'>{message.body}</span>
+                      <div
+                        className='message-received-time'
+                        >{new Date(message.time).toLocaleString()}</div>
                     </div>
                   </div>
                 );

@@ -7,4 +7,4 @@ json.sender_img message.sender.img_url
 json.recipient_img message.recipient.img_url
 json.chatroom_id message.chatroom_id
 json.body message.body
-json.time time_ago_in_words(message.created_at)
+json.time message.created_at
