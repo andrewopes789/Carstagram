@@ -47,6 +47,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'pry-rails'
   gem 'selenium-webdriver'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
+  gem 'shoulda-matchers'
 end
 
 group :development do
