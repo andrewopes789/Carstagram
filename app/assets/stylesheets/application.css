@@ -226,6 +226,7 @@
   .dropdown-content {
     background: white;
     border: 1px solid #dbdbdb;
+    border-bottom: none;
     border-radius: 3px;
     display: block;
     font-family: Helvetica;
@@ -235,7 +236,6 @@
   }
 
   .dropdown-content div {
-    border-bottom: 1px solid #e6e6e6;
     color: black;
     display: block;
     float: none;
@@ -1194,6 +1194,22 @@ text-decoration: none;
 .profile-username {
   font-weight: lighter;
   text-transform: lowercase;
+}
+
+.result-item-container {
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+}
+
+.result-item-photo {
+  border: 1px solid #e6e6e6;
+  border-radius: 100%;
+  height: 30px;
+  float: left;
+  margin: auto 10px auto auto;
+  object-fit: contain;
+  width: 30px;
 }
 
 .right-nav {
