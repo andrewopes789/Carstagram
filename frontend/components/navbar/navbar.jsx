@@ -15,6 +15,24 @@ class siteNav extends React.Component {
   render() {
     let currentUser = this.props.currentUser;
     let searchResults = this.props.searchResults;
+    let dropdownContent;
+
+    if (searchResults.length === 0) {
+      dropdownContent = null;
+    } else {
+      dropdownContent = (
+        <div className='dropdown-content'>
+          {
+            this.props.searchResults.map(result => (
+              <ResultRender
+                key={result.id}
+                result={result}
+                />
+            ))
+          }
+        </div>
+      );
+    }
     return (
       currentUser ?
       <div className='nav-bar-container'>
@@ -39,17 +57,7 @@ class siteNav extends React.Component {
                 placeholder='Search'
                 onChange={this.handleSearch}
               />
-              <div className='dropdown-content'>
-                {
-                  this.props.searchResults.map(result => (
-                    <ResultRender
-                      key={result.id}
-                      result={result}
-                    />
-                  ))
-                }
-              </div>
-
+              {dropdownContent}
             </div>
 
             <div className='right-nav'>
