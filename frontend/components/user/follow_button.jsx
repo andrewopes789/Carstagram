@@ -19,7 +19,7 @@ const FollowButton = (props) => {
     );
   } else {
     button = (
-      <button className='follow-button follow'
+      <button className='follow'
       onClick={()=>props.createFollow(props.user.id)}
       >Follow</button>
     );

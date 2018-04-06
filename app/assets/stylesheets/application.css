@@ -324,6 +324,13 @@
  background-color: #3897f0;
  border-color: #3897f0;
  color: #fff;
+ border-radius: 3px;
+ font-family: Helvetica;
+ font-size: 14px;
+ font-weight: 600;
+ height: 28px;
+ margin: auto 10px auto 20px;
+ padding: 0 24px 0 24px;
 }
 
 .follow-button {
