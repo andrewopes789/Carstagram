@@ -18,7 +18,7 @@ class Api::SessionsController < ApplicationController
     if @user
       sign_out
     else
-      render json: ["Please sign in"], status: 404
+      render json: ["Please sign in to continue."], status: 404
     end
   end
 end
