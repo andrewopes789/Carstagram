@@ -26,24 +26,31 @@ class Chatroom extends React.Component {
       <LoadingIcon /> :
       <div>
         <div className='messages-container'>
-          <section className='chatroom-items'>
-            {
-              this.props.chatrooms.map(chatroom => (
-                <ChatroomItem
-                  key={chatroom.id}
-                  chatroom={chatroom}
-                  currentUser={this.props.currentUser}
-                  />
-              ))
-            }
-          </section>
-          <Route
-            exact path='/chatrooms'
-            component={ChatroomPlaceholder}/>
+          <div className='chatroom-leftside'>
+            <div className='chatroom-leftside-header'>
+              <span>Direct Messages</span>
+            </div>
+            <section className='chatroom-items'>
+              {
+                this.props.chatrooms.map(chatroom => (
+                  <ChatroomItem
+                    key={chatroom.id}
+                    chatroom={chatroom}
+                    currentUser={this.props.currentUser}
+                    />
+                ))
+              }
+            </section>
+          </div>
+          <div>
+            <Route
+              exact path='/chatrooms'
+              component={ChatroomPlaceholder}/>
 
-          <ProtectedRoute
-            path='/chatrooms/:chatroomId'
-            component={ChatroomShowContainer}/>
+            <ProtectedRoute
+              path='/chatrooms/:chatroomId'
+              component={ChatroomShowContainer}/>
+          </div>
         </div>
       </div>
     );
