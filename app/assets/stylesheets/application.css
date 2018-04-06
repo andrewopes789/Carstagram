@@ -317,7 +317,8 @@
  }
 
  .follow-button {
-   border: 1px solid lightgray;
+   background: white;
+   border: 1px solid rgb(216, 216, 216);
    border-radius: 3px;
    font-family: Helvetica;
    font-size: 14px;
@@ -608,13 +609,14 @@
 }
 
 .message-user {
+  background: white;
   border: 1px solid rgb(216, 216, 216);
   border-radius: 3px;
   font-family: Helvetica;
   font-size: 14px;
   height: 28px;
   margin: auto auto auto 10px;
-  padding: 4px 10px;
+  padding: 0 10px;
 }
 
 .message-user:hover {
@@ -783,10 +785,13 @@
 }
 
 .modal-message-input {
+  border: 1px solid #e6e6e6;
+  font-family: Helvetica;
   font-size: 16px;
   height: 40vh;
   margin: 10px 20px 10px 20px;
   padding: 10px;
+  text-align: start;
   width: 60vw;
 }
 
@@ -1115,6 +1120,7 @@ text-decoration: none;
 }
 
 .profile-main {
+  background: #fafafa;
   display: flex;
   flex-direction: row;
 }
