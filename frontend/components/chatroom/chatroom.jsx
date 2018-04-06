@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ChatroomItem from './chatroom_item';
 import { ProtectedRoute } from '../../utils/route_utils';
 import { Route } from 'react-router-dom';
-import ChatroomPlaceholderContainer from './chatroom_placeholder_container';
+import ChatroomPlaceholder from './chatroom_placeholder';
 import ChatroomShowContainer from './chatroom_show_container';
 
 class Chatroom extends React.Component {
@@ -39,7 +39,7 @@ class Chatroom extends React.Component {
           </section>
           <Route
             exact path='/chatrooms'
-            component={ChatroomPlaceholderContainer}/>
+            component={ChatroomPlaceholder}/>
 
           <ProtectedRoute
             path='/chatrooms/:chatroomId'
