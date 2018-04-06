@@ -1,47 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const siteNav = ({ currentUser }) => {
- return (
-   <div className='nav-bar-container'>
+class siteNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: ''
+    };
+    this.handleSearch = this.handleSearch.bind(this);
+  }
 
-     <div className='nav-bar'>
+  handleSearch(e) {
+    if (e.target.value.length !== 0) {
+      this.props.searchDB(e.target.value);
+    }
+  }
 
-       <div className='left-nav'>
+  render() {
+    let currentUser = this.props.currentUser;
+    return (
+      currentUser ?
+      <div className='nav-bar-container'>
 
-         <Link to="/photos" className='nav-bar-logo'>
-           <i className='fa fa-automobile'></i>&nbsp;
-         </Link>
+        <div className='nav-bar'>
 
-         <Link to="/photos" className='nav-bar-written-logo'>
-           Carstagram
-         </Link>
+          <div className='left-nav'>
 
-       </div>
+            <Link to="/photos" className='nav-bar-logo'>
+              <i className='fa fa-automobile'></i>&nbsp;
+              </Link>
 
-       <div className='right-nav'>
-         <Link to='/photos/new' className='nav-icons'>
-           <i className='fa fa-plus-square-o'></i>
-         </Link>
+              <Link to="/photos" className='nav-bar-written-logo'>
+                Carstagram
+              </Link>
 
-         <Link to='/chatrooms' className='nav-icons'>
-           <i className='fa fa-inbox'></i>
-         </Link>
+            </div>
 
-         <Link to={`/users/${currentUser.id}`} className='nav-icons'>
-           <i className='fa fa-user-o'></i>
-         </Link>
+            <div>
+              <input
+                placeholder='Search for a user...'
+                onChange={this.handleSearch}
+              />
+            </div>
 
-       </div>
+            <div className='right-nav'>
+              <Link to='/photos/new' className='nav-icons'>
+                <i className='fa fa-plus-square-o'></i>
+              </Link>
 
-     </div>
+              <Link to='/chatrooms' className='nav-icons'>
+                <i className='fa fa-inbox'></i>
+              </Link>
 
-   </div>
-  );
-};
+              <Link to={`/users/${currentUser.id}`} className='nav-icons'>
+                <i className='fa fa-user-o'></i>
+              </Link>
 
-const NavBar = ({ currentUser, logout }) => (
-  currentUser ? siteNav({currentUser, logout}) : null
-);
+            </div>
 
-export default NavBar;
+          </div>
+
+        </div> : null
+      );
+  }
+}
+
+export default siteNav;

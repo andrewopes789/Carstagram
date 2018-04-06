@@ -70,6 +70,13 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  def self.top_results(query_param)
+    param = query_param.downcase.split('')
+    param = param.join('%')
+    param = param + '%'
+    User.where('lower(username) LIKE ?', param).limit(5)
+  end
+
   def all_follows
     user_followers + user_followings
   end

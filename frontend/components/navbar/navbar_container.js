@@ -1,10 +1,15 @@
 import { connect } from 'react-redux';
 import NavBar from './navbar';
+import {
+  searchDB
+} from '../../actions/search_actions';
 
-const mapStateToProps = ({ session }) => {
-  return ({
-    currentUser: session.currentUser
-  });
-};
+const mapStateToProps = ({ session }) => ({
+  currentUser: session.currentUser
+});
 
-export default connect(mapStateToProps, null)(NavBar);
+const mapDispatchToProps = dispatch => ({
+  searchDB: query => dispatch(searchDB(query))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

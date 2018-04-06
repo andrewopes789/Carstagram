@@ -7,6 +7,7 @@ import likes from './likes_reducer';
 import follows from './follows_reducer';
 import messages from './messages_reducer';
 import chatrooms from './chatrooms_reducer';
+import searchResults from './searches_reducer';
 
 export default combineReducers({
   user,
@@ -15,5 +16,6 @@ export default combineReducers({
   likes,
   follows,
   messages,
-  chatrooms
+  chatrooms,
+  searchResults
 });
