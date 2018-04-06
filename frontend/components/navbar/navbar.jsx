@@ -1,23 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ResultRender from './result_render';
 
 class siteNav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      searchQuery: ''
-    };
     this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleSearch(e) {
-    if (e.target.value.length !== 0) {
-      this.props.searchDB(e.target.value);
-    }
+    this.props.searchDB(e.target.value);
   }
 
   render() {
     let currentUser = this.props.currentUser;
+    let searchResults = this.props.searchResults;
     return (
       currentUser ?
       <div className='nav-bar-container'>
@@ -36,11 +33,23 @@ class siteNav extends React.Component {
 
             </div>
 
-            <div>
+            <div className='dropdown'>
               <input
-                placeholder='Search for a user...'
+                className='search-bar'
+                placeholder='Search'
                 onChange={this.handleSearch}
               />
+              <div className='dropdown-content'>
+                {
+                  this.props.searchResults.map(result => (
+                    <ResultRender
+                      key={result.id}
+                      result={result}
+                    />
+                  ))
+                }
+              </div>
+
             </div>
 
             <div className='right-nav'>

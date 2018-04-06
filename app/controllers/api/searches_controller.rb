@@ -1,6 +1,10 @@
 class Api::SearchesController < ApplicationController
   def index
-    @results = User.top_results(params[:query])
+    if params[:query].length.zero?
+      @results = []
+    else
+      @results = User.top_results(params[:query])
+    end
   end
 
   private

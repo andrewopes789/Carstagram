@@ -144,9 +144,10 @@
    border-top: 1px solid #e6e6e6;
    display: flex;
    flex-direction: row;
-   width: 568px;
    padding-bottom: 16px;
    padding-top: 16px;
+   text-align: left;
+   width: 568px;
  }
 
  .comment-input-container form {
@@ -217,6 +218,30 @@
    line-height: inherit;
  }
 
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown-content {
+    display: block;
+    position: absolute;
+    background: #f9f9f9;
+    z-index: 1;
+  }
+
+  .dropdown-content div {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    font-family: 'Optima';
+    font-size: 15px;
+    font-weight: normal;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+   }
+
  .errors {
    color: #ed4956;
    display: flex;
@@ -239,6 +264,7 @@
  }
 
  .feed-photos-all {
+   background: #fafafa;
    display: flex;
    flex-direction: column;
    font-family: Helvetica;
@@ -277,6 +303,7 @@
  }
 
  .feed-photo-text {
+   background: white;
    margin: auto;
    width: 568px;
    padding-left: 16px;
@@ -290,6 +317,7 @@
  }
 
  .follow-button {
+   border: 1px solid lightgray;
    border-radius: 3px;
    font-family: Helvetica;
    font-size: 14px;
@@ -916,12 +944,11 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 25px;
   justify-content: center;
   margin: auto;
   min-width: 385px;
   max-width: 930px;
-  padding: 16px 170px 26px 170px;
+  padding: 26px 40px;
 }
 
 .nav-bar-container {
@@ -988,6 +1015,7 @@
 }
 
 .photo-header {
+  background: white;
   border-bottom: 1px solid #e6e6e6;
   display: flex;
   flex-direction: row;
@@ -1116,6 +1144,7 @@ text-decoration: none;
 }
 
 .profile-photos {
+  background: #fafafa;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1157,6 +1186,19 @@ text-decoration: none;
 
 .right-nav {
   margin: auto 0 auto auto;
+}
+
+.search-bar {
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  color: #262626;
+  font-family: Helvetica;
+  font-size: 14px;
+  min-width: 125px;
+  padding: 7px 17px;
+  text-align: center;
+  width: 215px;
 }
 
 .session-all {

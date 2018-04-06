@@ -4,8 +4,9 @@ import {
   searchDB
 } from '../../actions/search_actions';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+const mapStateToProps = ({session, entities}) => ({
+  currentUser: session.currentUser,
+  searchResults: Object.values(entities.searchResults)
 });
 
 const mapDispatchToProps = dispatch => ({
