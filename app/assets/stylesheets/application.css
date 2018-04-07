@@ -422,6 +422,53 @@
  cursor: pointer;
 }
 
+.follow-item-container {
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px;
+}
+
+.follow-item-img {
+  border: 1px solid #e6e6e6;
+  border-radius: 100%;
+  height: 40px;
+  object-fit: contain;
+  width: 40px;
+}
+
+.follow-item-username {
+  font-family: Helvetica;
+  font-size: 16px;
+  margin: auto auto auto 10px;
+}
+
+.follow-item-username:hover {
+  cursor: pointer;
+}
+
+.follow-modal-contents {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  margin: auto;
+  width: 60vw;
+}
+
+.follow-modal-header {
+  font-family: Helvetica;
+  font-size: 18px;
+  margin: auto auto auto 0;
+  padding: 15px;
+  text-align: left;
+}
+
+.follow-modal-users {
+  border-top: 1.5px solid #e6e6e6;
+  overflow: scroll;
+}
+
 .footer-item {
  color: #999;
  text-decoration: none;
