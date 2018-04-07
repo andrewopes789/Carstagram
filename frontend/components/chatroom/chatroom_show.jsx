@@ -7,7 +7,8 @@ class ChatroomShow extends React.Component {
     super(props);
     this.state = {
       body: '',
-      chatroom_id: this.props.chatroomId
+      chatroom_id: this.props.chatroomId,
+      showRight: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -72,8 +73,9 @@ class ChatroomShow extends React.Component {
       <div className='message-show-container'>
         <div className='message-recipient-info'>
           <Link
+            className='message-recipient-username'
             to={`/users/${id}`}
-            className='message-recipient-username'>
+            >
             {username}
           </Link>
         </div>

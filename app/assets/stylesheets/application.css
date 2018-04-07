@@ -101,6 +101,7 @@
 }
 
 .chatroom-leftside {
+  background: white;
   border-right: 1px solid #e6e6e6;
   display: flex;
   flex-direction: column;
@@ -112,10 +113,6 @@
   text-align: center;
   letter-spacing: 1px;
   padding: 15px;
-}
-
-.chatroom-middle {
-  width: 100%;
 }
 
 .close-modal {
@@ -506,12 +503,13 @@
 }
 
 .messages-container {
+  background: #efefef;
   border-top: 1px solid #e6e6e6;
   bottom: 53px;
   display: flex;
   flex-direction: row;
   position: fixed;
-  top: 75px;
+  top: 89px;
   width: 100vw;
 }
 
@@ -538,6 +536,10 @@
   margin-bottom: 30px;
 }
 
+.message-info {
+  margin: auto 5px auto auto;
+}
+
 .message-input {
   background: white;
   border-bottom: none;
@@ -548,7 +550,6 @@
   font-size: 20px;
   bottom: 53px;
   padding: 10px;
-  position: fixed;
   width: 100%;
   word-wrap: break-word;
 }
@@ -577,13 +578,11 @@
   color: white;
   display: table;
   margin: auto 10px auto auto;
-  max-width: 60%;
   padding: 10px;
 }
 
 .messages-only {
-  margin-top: 78px;
-  margin-bottom: 54px;
+  overflow: scroll;
 }
 
 .message-received-time {
@@ -609,9 +608,8 @@
   color: black;
   display: flex;
   flex-direction: row;
-  text-decoration: none;
   padding: 15px;
-  position: fixed;
+  text-decoration: none;
   width: 100%;
 }
 
@@ -636,7 +634,8 @@
 }
 
 .message-show-container {
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -1046,12 +1045,13 @@
 
 .photo-detail {
   align-items: center;
+  border-top: 1px solid #e6e6e6;
   bottom: 53px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: fixed;
-  top: 75px;
+  top: 89px;
   width: 100vw;
 }
 
@@ -1404,7 +1404,7 @@ text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   line-height: 28px;
-  margin: 6px 17px 6px 17px;
+  margin: 6px 17px 12px 17px;
   text-align: center;
   width: 268px;
 }
