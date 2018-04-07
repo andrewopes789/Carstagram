@@ -7,6 +7,14 @@ class ChatroomItem extends React.Component {
     let currentUser = this.props.currentUser;
     let photo;
     let username;
+    let timeStamp = new Date(chatroom.last_message_time).toLocaleString();
+    let length = timeStamp.length;
+    let start = length - 12;
+    if (timeStamp[start] === ',') {
+      start = length - 11;
+    }
+    let end = length - 6;
+    let time = timeStamp.substring(start, end) + ' ' + timeStamp.slice(-2);
 
     if (chatroom.member1_id === currentUser.id) {
       photo = chatroom.member2_img;
@@ -22,6 +30,7 @@ class ChatroomItem extends React.Component {
         className='chatroom-item-container'>
             <img className='chatroom-item-image' src={photo}/>
             <div className='chatroom-item-username'>{username}</div>
+            <div>{time}</div>
     </Link>
     );
   }

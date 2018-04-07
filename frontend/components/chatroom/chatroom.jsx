@@ -28,6 +28,7 @@ class Chatroom extends React.Component {
 
   render() {
     let searchResults = this.props.searchResults;
+    let chatrooms = this.props.chatrooms.sort(chat => chat.last_message_time);
     let dropdownContent;
 
     if (searchResults.length === 0) {
@@ -65,7 +66,7 @@ class Chatroom extends React.Component {
             </div>
             <section className='chatroom-items'>
               {
-                this.props.chatrooms.map(chatroom => (
+                chatrooms.map(chatroom => (
                   <ChatroomItem
                     key={chatroom.id}
                     chatroom={chatroom}

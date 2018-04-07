@@ -21,7 +21,11 @@ export default (state=initialState, action) => {
       return merge({}, state, action.messages);
 
     case RECEIVE_MESSAGE:
-      return merge({}, state, {[action.message.id]: action.message});
+      let newState = merge({}, state);
+      delete newState[action.payload.message.id];
+      return merge({}, newState, {
+        [action.payload.message.id]: action.payload.message
+      });
 
     case RECEIVE_CHATROOM:
       return merge({}, action.payload.messages);

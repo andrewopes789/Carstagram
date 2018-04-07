@@ -27,6 +27,13 @@ export default (state=initialState, action) => {
       return Object.assign({}, state, {single: action.payload.chatroom,
         index: merge({}, state.index,
           {[action.payload.chatroom.id]: action.payload.chatroom})});
+
+    case RECEIVE_MESSAGE:
+      let newState = merge({}, state);
+      delete newState[action.payload.chatroom.id];
+      return merge({}, newState, {index: {
+        [action.payload.chatroom.id]: action.payload.chatroom
+      }});
     default:
       return state;
     }

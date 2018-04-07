@@ -4,9 +4,9 @@ export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const START_LOADING_MESSAGES = 'START_LOADING_MESSAGES';
 
-export const receiveMessage = message => ({
+export const receiveMessage = payload => ({
   type: RECEIVE_MESSAGE,
-  message
+  payload
 });
 
 export const receiveMessages = messages => ({
