@@ -21,7 +21,7 @@ class MessageForm extends React.Component {
         chatroom_id: newProps.chatroom.id,
         body: this.state.body})
         .then(() => this.setState({body: ""}));
-      this.props.closeMessageModal();
+      this.props.closeModal();
     }
   }
 
@@ -42,7 +42,7 @@ class MessageForm extends React.Component {
       <div ref='messageModal' className='modal'>
 
         <span className='close-modal'
-          onClick={this.props.closeMessageModal}>&times;</span>
+          onClick={this.props.closeModal}>&times;</span>
 
         <div className='modal-contents'>
 

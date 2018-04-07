@@ -12,11 +12,13 @@ class ProfilePhotos extends React.Component {
     this.state = {
       photoModalOpen: false,
       messageModalOpen: false,
+      followersModalOpen: false,
+      followingsModalOpen: false,
       searchId: -1
     };
     this.pushHistory = this.pushHistory.bind(this);
     this.openMessageModal = this.openMessageModal.bind(this);
-    this.closeMessageModal = this.closeMessageModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillMount () {
@@ -49,8 +51,12 @@ class ProfilePhotos extends React.Component {
     this.setState({messageModalOpen: true});
   }
 
-  closeMessageModal() {
-    this.setState({messageModalOpen: false});
+  closeModal() {
+    this.setState({
+      messageModalOpen: false,
+      followersModalOpen: false,
+      followingsModalOpen: false
+    });
   }
 
   render () {
@@ -90,7 +96,7 @@ class ProfilePhotos extends React.Component {
 
           { this.state.messageModalOpen ?
             <MessageForm
-              closeMessageModal={this.closeMessageModal}
+              closeModal={this.closeModal}
               chatroom={this.props.chatroom}
               createChatroom={this.props.createChatroom}
               createMessage={this.props.createMessage}
