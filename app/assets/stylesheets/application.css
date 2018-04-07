@@ -582,6 +582,7 @@
 }
 
 .messages-only {
+  flex: 1;
   overflow: scroll;
 }
 
