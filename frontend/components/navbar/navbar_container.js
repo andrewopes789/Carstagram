@@ -3,6 +3,7 @@ import NavBar from './navbar';
 import {
   searchDB
 } from '../../actions/search_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({session, entities}) => ({
   currentUser: session.currentUser,
@@ -13,4 +14,6 @@ const mapDispatchToProps = dispatch => ({
   searchDB: query => dispatch(searchDB(query))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default withRouter(
+  connect(mapStateToProps,
+    mapDispatchToProps)(NavBar));

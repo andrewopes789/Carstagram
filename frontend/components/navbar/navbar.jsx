@@ -5,23 +5,34 @@ import ResultRender from './result_render';
 class siteNav extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      searchContent: ''
+    };
     this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.match !== this.props.match) {
+      this.setState({ searchContent: '' });
+      this.props.searchDB('');
+    }
   }
 
   handleSearch(e) {
     this.props.searchDB(e.target.value);
+    this.setState( { searchContent: e.target.value });
   }
 
   render() {
     let currentUser = this.props.currentUser;
     let searchResults = this.props.searchResults;
+    console.log('state', this.state.searchContent);
     let dropdownContent;
-
     if (searchResults.length === 0) {
       dropdownContent = null;
     } else {
       dropdownContent = (
-        <div className='dropdown-content'>
+        <div className='dropdown-content' onClick={this.clearBar}>
           {
             this.props.searchResults.map(result => (
               <ResultRender
@@ -56,6 +67,7 @@ class siteNav extends React.Component {
                 className='search-bar'
                 placeholder='Search'
                 onChange={this.handleSearch}
+                value={this.state.searchContent}
               />
               {dropdownContent}
             </div>

@@ -5,11 +5,13 @@ import ChatroomItem from './chatroom_item';
 import { ProtectedRoute } from '../../utils/route_utils';
 import { Route } from 'react-router-dom';
 import ChatroomPlaceholder from './chatroom_placeholder';
+import ResultRender from '../navbar/result_render';
 import ChatroomShowContainer from './chatroom_show_container';
 
 class Chatroom extends React.Component {
   constructor(props) {
     super(props);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -20,7 +22,30 @@ class Chatroom extends React.Component {
     this.props.fetchChatrooms();
   }
 
+  handleSearch(e) {
+    this.props.searchDB(e.target.value);
+  }
+
   render() {
+    let searchResults = this.props.searchResults;
+    let dropdownContent;
+
+    if (searchResults.length === 0) {
+      dropdownContent = null;
+    } else {
+      dropdownContent = (
+        <div className='dropdown-content' onClick={this.clearBar}>
+          {
+            this.props.searchResults.map(result => (
+              <ResultRender
+                key={result.id}
+                result={result}
+                />
+            ))
+          }
+        </div>
+      );
+    }
     return (
       this.props.loading ?
       <LoadingIcon /> :
@@ -29,6 +54,13 @@ class Chatroom extends React.Component {
           <div className='chatroom-leftside'>
             <div className='chatroom-leftside-header'>
               <span>Direct Messages</span>
+            </div>
+            <div className='dropdown'>
+              <input
+                className='chatroom-search'
+                placeholder='Search'
+                onChange={this.handleSearch}
+              />
             </div>
             <section className='chatroom-items'>
               {
