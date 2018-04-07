@@ -34,7 +34,7 @@ class Chatroom extends React.Component {
       dropdownContent = null;
     } else {
       dropdownContent = (
-        <div className='dropdown-content' onClick={this.clearBar}>
+        <div className='chatroom-dropdown-content' onClick={this.clearBar}>
           {
             this.props.searchResults.map(result => (
               <ResultRender
@@ -61,6 +61,7 @@ class Chatroom extends React.Component {
                 placeholder='Search'
                 onChange={this.handleSearch}
               />
+              {dropdownContent}
             </div>
             <section className='chatroom-items'>
               {

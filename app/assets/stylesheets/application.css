@@ -39,6 +39,32 @@
  padding: 2% 3% 20% 3%;
 }
 
+.chatroom-dropdown-content {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-bottom: none;
+  border-radius: 3px;
+  display: block;
+  font-family: Helvetica;
+  margin-top: 42px;
+  position: absolute;
+  width: 271px;
+  z-index: 1;
+}
+
+.chatroom-dropdown-content div {
+  color: black;
+  background: #fafafa;
+  display: block;
+  float: none;
+  font-size: 14px;
+  padding: 7px 17px;
+  font-weight: normal;
+  min-width: 125px;
+  text-decoration: none;
+  text-align: left;
+ }
+
 .chatroom-footer {
  background: white;
  border-top: 1px solid #e6e6e6;
@@ -96,8 +122,9 @@
 }
 
 .chatroom-items {
- min-width: 300px;
- overflow: scroll;
+  border-top: 1px solid #e6e6e6;
+  min-width: 300px;
+  overflow: scroll;
 }
 
 .chatroom-leftside {
@@ -117,16 +144,22 @@
 
 .chatroom-search {
   background: #fafafa;
-  border-bottom: 1px solid #e6e6e6;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  color: #262626;
+  float: left;
   font-family: Helvetica;
   font-size: 14px;
-  padding: 20px 10px;
+  overflow: hidden;
+  padding: 15px 10px;
   text-align: center;
-  width: 280px;
+  width: 250px;
 }
 
 .chatroom-search-container {
   display: flex;
+  margin: auto;
+  padding: 10px 0;
 }
 
 .close-modal {
