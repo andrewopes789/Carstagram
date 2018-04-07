@@ -30,7 +30,7 @@ class ChatroomItem extends React.Component {
         className='chatroom-item-container'>
             <img className='chatroom-item-image' src={photo}/>
             <div className='chatroom-item-username'>{username}</div>
-            <div>{time}</div>
+            <div className='chatroom-item-time'>{time}</div>
     </Link>
     );
   }

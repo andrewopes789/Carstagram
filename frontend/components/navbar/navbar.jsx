@@ -72,6 +72,10 @@ class siteNav extends React.Component {
             </div>
 
             <div className='right-nav'>
+              <Link to='/photos' className='nav-icons'>
+                <i className='fa fa-compass'></i>
+              </Link>
+
               <Link to='/photos/new' className='nav-icons'>
                 <i className='fa fa-plus-square-o'></i>
               </Link>

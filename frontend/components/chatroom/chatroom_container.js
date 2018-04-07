@@ -12,7 +12,7 @@ import {
 
 const mapStateToProps = ({ session, entities, ui }) => ({
   currentUser: session.currentUser,
-  chatrooms: Object.values(entities.chatrooms.index),
+  chatrooms: Object.values(Object.values(entities.chatrooms.index)),
   searchResults: Object.values(entities.searchResults.chatSearch),
   loading: ui.loading.indexLoading
 });

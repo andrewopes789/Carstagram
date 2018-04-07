@@ -115,6 +115,13 @@
  width: 40px;
 }
 
+.chatroom-item-time {
+  color: #262626;
+  font-family: Helvetica;
+  font-size: 14px;
+  margin: auto 5px auto auto;
+}
+
 .chatroom-item-username {
  font-family: Helvetica;
  font-size: 16px;
@@ -151,14 +158,14 @@
   font-family: Helvetica;
   font-size: 14px;
   overflow: hidden;
-  padding: 15px 10px;
+  padding: 7px 10px;
   text-align: center;
   width: 250px;
 }
 
 .chatroom-search-container {
   display: flex;
-  margin: auto;
+  margin: 0 auto 0 auto;
   padding: 10px 0;
 }
 

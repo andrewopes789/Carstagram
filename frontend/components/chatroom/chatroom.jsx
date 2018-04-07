@@ -28,7 +28,9 @@ class Chatroom extends React.Component {
 
   render() {
     let searchResults = this.props.searchResults;
+    console.log('before', this.props.chatrooms);
     let chatrooms = this.props.chatrooms.sort(chat => chat.last_message_time);
+    console.log('after', this.props.chatrooms);
     let dropdownContent;
 
     if (searchResults.length === 0) {
