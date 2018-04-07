@@ -115,6 +115,20 @@
   padding: 15px;
 }
 
+.chatroom-search {
+  background: #fafafa;
+  border-bottom: 1px solid #e6e6e6;
+  font-family: Helvetica;
+  font-size: 14px;
+  padding: 20px 10px;
+  text-align: center;
+  width: 280px;
+}
+
+.chatroom-search-container {
+  display: flex;
+}
+
 .close-modal {
  position: absolute;
  top: 5px;

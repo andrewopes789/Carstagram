@@ -55,7 +55,7 @@ class Chatroom extends React.Component {
             <div className='chatroom-leftside-header'>
               <span>Direct Messages</span>
             </div>
-            <div className='dropdown'>
+            <div className='chatroom-search-container'>
               <input
                 className='chatroom-search'
                 placeholder='Search'
