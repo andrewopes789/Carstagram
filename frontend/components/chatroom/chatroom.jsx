@@ -42,7 +42,7 @@ class Chatroom extends React.Component {
               }
             </section>
           </div>
-          <div>
+          <div className='chatroom-middle'>
             <Route
               exact path='/chatrooms'
               component={ChatroomPlaceholder}/>

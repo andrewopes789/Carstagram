@@ -71,7 +71,6 @@ class ChatroomShow extends React.Component {
       <LoadingIcon /> :
       <div className='message-show-container'>
         <div className='message-recipient-info'>
-          <img src={photo} className='message-recipient-img'/>
           <Link
             to={`/users/${id}`}
             className='message-recipient-username'>
