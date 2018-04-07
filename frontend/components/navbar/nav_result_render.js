@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class ResultRender extends React.Component {
+class NavResultRender extends React.Component {
   render() {
     let result = this.props.result;
     return (
@@ -17,4 +17,4 @@ class ResultRender extends React.Component {
   }
 }
 
-export default ResultRender;
+export default NavResultRender;

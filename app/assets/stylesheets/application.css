@@ -632,6 +632,7 @@
   color: white;
   display: table;
   margin: auto 10px auto auto;
+  max-width: 60%;
   padding: 10px;
 }
 

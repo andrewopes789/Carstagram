@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResultRender from './result_render';
+import NavResultRender from './nav_result_render';
 
 class siteNav extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class siteNav extends React.Component {
         <div className='dropdown-content' onClick={this.clearBar}>
           {
             this.props.searchResults.map(result => (
-              <ResultRender
+              <NavResultRender
                 key={result.id}
                 result={result}
                 />

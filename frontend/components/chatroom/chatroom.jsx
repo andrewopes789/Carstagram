@@ -5,13 +5,14 @@ import ChatroomItem from './chatroom_item';
 import { ProtectedRoute } from '../../utils/route_utils';
 import { Route } from 'react-router-dom';
 import ChatroomPlaceholder from './chatroom_placeholder';
-import ResultRender from '../navbar/result_render';
+import ChatResultRender from './chat_result_render';
 import ChatroomShowContainer from './chatroom_show_container';
 
 class Chatroom extends React.Component {
   constructor(props) {
     super(props);
     this.handleSearch = this.handleSearch.bind(this);
+    this.makeChatroom = this.makeChatroom.bind(this);
   }
 
   componentDidMount() {
@@ -26,23 +27,30 @@ class Chatroom extends React.Component {
     this.props.searchDBChat(e.target.value);
   }
 
+  makeChatroom(e) {
+    if (e.target !== e.currentTarget) {
+      let id = e.target.id;
+      this.props.createChatroom(id);
+    }
+    e.stopPropagation();
+  }
+
   render() {
     let searchResults = this.props.searchResults;
-    console.log('before', this.props.chatrooms);
     let chatrooms = this.props.chatrooms.sort(chat => chat.last_message_time);
-    console.log('after', this.props.chatrooms);
     let dropdownContent;
 
     if (searchResults.length === 0) {
       dropdownContent = null;
     } else {
       dropdownContent = (
-        <div className='chatroom-dropdown-content' onClick={this.clearBar}>
+        <div className='chatroom-dropdown-content' onClick={this.makeChatroom}>
           {
             this.props.searchResults.map(result => (
-              <ResultRender
+              <ChatResultRender
                 key={result.id}
                 result={result}
+                createChatroom={this.props.createChatroom}
                 />
             ))
           }

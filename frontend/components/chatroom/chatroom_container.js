@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Chatroom from './chatroom';
 import {
-  fetchChatrooms
+  fetchChatrooms,
+  createChatroom
 } from '../../actions/chatroom_actions';
 import {
   searchDBChat
@@ -9,6 +10,7 @@ import {
 import {
   setSocket
 } from '../../actions/action_cable';
+
 
 const mapStateToProps = ({ session, entities, ui }) => ({
   currentUser: session.currentUser,
@@ -20,7 +22,8 @@ const mapStateToProps = ({ session, entities, ui }) => ({
 const mapDispatchToProps = dispatch => ({
   fetchChatrooms: () => dispatch(fetchChatrooms()),
   setSocket: () => dispatch(setSocket(dispatch)),
-  searchDBChat: query => dispatch(searchDBChat(query))
+  searchDBChat: query => dispatch(searchDBChat(query)),
+  createChatroom: userId => dispatch(createChatroom(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chatroom);
