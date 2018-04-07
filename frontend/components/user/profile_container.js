@@ -33,7 +33,8 @@ const mapStateToProps = (state, ownProps) => {
     photosAsObject: state.entities.photos,
     currentUser: state.session.currentUser,
     loading: state.ui.loading.detailLoading,
-    chatroom: state.entities.chatrooms.single
+    chatroom: state.entities.chatrooms.single,
+    follows: state.entities.follows
   });
 };
 

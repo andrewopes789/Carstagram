@@ -5,6 +5,8 @@ import PhotoShow from './photo_show';
 import FollowButton from './follow_button';
 import RenderPhoto from './render_photo';
 import MessageForm from '../chatroom/message_form.jsx';
+import FollowersIndex from './followers_index';
+import FollowingsIndex from './followings_index';
 
 class ProfilePhotos extends React.Component {
   constructor (props) {
@@ -18,6 +20,8 @@ class ProfilePhotos extends React.Component {
     };
     this.pushHistory = this.pushHistory.bind(this);
     this.openMessageModal = this.openMessageModal.bind(this);
+    this.openFollowersModal = this.openFollowersModal.bind(this);
+    this.openFollowingsModal = this.openFollowingsModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -51,6 +55,14 @@ class ProfilePhotos extends React.Component {
     this.setState({messageModalOpen: true});
   }
 
+  openFollowersModal() {
+    this.setState({followersModalOpen: true});
+  }
+
+  openFollowingsModal() {
+    this.setState({followingsModalOpen: true});
+  }
+
   closeModal() {
     this.setState({
       messageModalOpen: false,
@@ -60,9 +72,12 @@ class ProfilePhotos extends React.Component {
   }
 
   render () {
-    const user = this.props.user;
-    const currentUser = this.props.currentUser;
-    const photos = this.props.photos;
+    let user = this.props.user;
+    let currentUser = this.props.currentUser;
+    let photos = this.props.photos;
+    let follows = this.props.follows;
+    let followers = user.followers_by_id.map(id => follows[id]);
+    let followings = user.followings_by_id.map(id => follows[id]);
     if (!this.props.photos) { return null; }
     let button = user.id !== currentUser.id ? (
       <button
@@ -95,6 +110,7 @@ class ProfilePhotos extends React.Component {
           }
 
           { this.state.messageModalOpen ?
+
             <MessageForm
               closeModal={this.closeModal}
               chatroom={this.props.chatroom}
@@ -103,6 +119,25 @@ class ProfilePhotos extends React.Component {
               openMessageModal={this.openMessageModal}
               user={user}
             /> : ""
+
+          }
+
+          { this.state.followersModalOpen ?
+
+            <FollowersIndex
+              closeModal={this.closeModal}
+              followers={followers}
+            /> : ""
+
+          }
+
+          { this.state.followingsModalOpen ?
+
+            <FollowingsIndex
+              closeModal={this.closeModal}
+              followings={followings}
+            /> : ""
+
           }
 
           <header className='profile-header'>
@@ -133,11 +168,15 @@ class ProfilePhotos extends React.Component {
                 <div className='profile-posts'>
                   <strong>{photos.length}</strong> posts</div>
 
-                <div className='profile-followers'>
+                <div
+                  className='profile-followers'
+                  onClick={this.openFollowersModal}>
                   <strong>
                     {user.followers_by_id.length}</strong> followers</div>
 
-                <div className='profile-followings'>
+                <div
+                  className='profile-followings'
+                  onClick={this.openFollowingsModal}>
                   <strong>
                     {user.followings_by_id.length}</strong> following</div>
 
