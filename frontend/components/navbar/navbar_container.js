@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import NavBar from './navbar';
 import {
-  searchDB
+  searchDBNav
 } from '../../actions/search_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({session, entities}) => ({
   currentUser: session.currentUser,
-  searchResults: Object.values(entities.searchResults)
+  searchResults: Object.values(entities.searchResults.navSearch)
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchDB: query => dispatch(searchDB(query))
+  searchDBNav: query => dispatch(searchDBNav(query))
 });
 
 export default withRouter(

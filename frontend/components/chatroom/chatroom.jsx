@@ -23,7 +23,7 @@ class Chatroom extends React.Component {
   }
 
   handleSearch(e) {
-    this.props.searchDB(e.target.value);
+    this.props.searchDBChat(e.target.value);
   }
 
   render() {

@@ -14,19 +14,18 @@ class siteNav extends React.Component {
   componentWillReceiveProps(newProps) {
     if (newProps.match !== this.props.match) {
       this.setState({ searchContent: '' });
-      this.props.searchDB('');
+      this.props.searchDBNav('');
     }
   }
 
   handleSearch(e) {
-    this.props.searchDB(e.target.value);
+    this.props.searchDBNav(e.target.value);
     this.setState( { searchContent: e.target.value });
   }
 
   render() {
     let currentUser = this.props.currentUser;
     let searchResults = this.props.searchResults;
-    console.log('state', this.state.searchContent);
     let dropdownContent;
     if (searchResults.length === 0) {
       dropdownContent = null;

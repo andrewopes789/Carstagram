@@ -4,7 +4,7 @@ import {
   fetchChatrooms
 } from '../../actions/chatroom_actions';
 import {
-  searchDB
+  searchDBChat
 } from '../../actions/search_actions';
 import {
   setSocket
@@ -13,14 +13,14 @@ import {
 const mapStateToProps = ({ session, entities, ui }) => ({
   currentUser: session.currentUser,
   chatrooms: Object.values(entities.chatrooms.index),
-  searchResults: Object.values(entities.searchResults),
+  searchResults: Object.values(entities.searchResults.chatSearch),
   loading: ui.loading.indexLoading
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchChatrooms: () => dispatch(fetchChatrooms()),
   setSocket: () => dispatch(setSocket(dispatch)),
-  searchDB: query => dispatch(searchDB(query))
+  searchDBChat: query => dispatch(searchDBChat(query))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chatroom);
