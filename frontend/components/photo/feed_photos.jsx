@@ -8,7 +8,7 @@ class FeedPhotos extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      page: 1
+      pageId: 1
     };
     this.fetchNextPhotos = this.fetchNextPhotos.bind(this);
   }
@@ -22,8 +22,8 @@ class FeedPhotos extends React.Component {
   }
 
   fetchNextPhotos() {
-    this.props.fetchFeedPhotos(this.state.page);
-    this.setState = ({ page: this.state.page += 1 });
+    this.props.fetchFeedPhotos(this.state.pageId);
+    this.setState = ({ page: this.state.pageId += 1 });
   }
 
   render () {
@@ -33,7 +33,7 @@ class FeedPhotos extends React.Component {
       <LoadingIcon /> :
       <div className='feed-photos-all'>
         {
-          this.props.photos.reverse().map(photo => (
+          photos.map(photo => (
             <RenderFeedPhoto
               key={photo.id}
               comments={this.props.comments}
@@ -50,7 +50,7 @@ class FeedPhotos extends React.Component {
 
         <Waypoint
           onEnter={this.fetchNextPhotos}
-        />
+          />
       </div>
     );
   }

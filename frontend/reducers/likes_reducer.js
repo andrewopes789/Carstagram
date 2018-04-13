@@ -18,7 +18,7 @@ export default (state=initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_FEED_PHOTOS:
-      return merge({}, action.payload.likes);
+      return merge({}, state, action.payload.likes);
     case RECEIVE_USER:
       return merge({}, action.payload.likes);
 

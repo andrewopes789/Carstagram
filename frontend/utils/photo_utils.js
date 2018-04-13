@@ -1,8 +1,8 @@
-export const fetchFeedPhotos = page => (
+export const fetchFeedPhotos = pageId => (
   $.ajax({
     method: 'GET',
     url: '/api/photos',
-    data: { page }
+    data: { pageId }
   })
 );
 

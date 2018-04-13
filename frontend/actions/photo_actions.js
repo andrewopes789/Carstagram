@@ -40,9 +40,9 @@ export const startLoadingSinglePhoto = () => ({
   type: START_LOADING_SINGLE_PHOTO
 });
 
-export const fetchFeedPhotos = page => dispatch => {
+export const fetchFeedPhotos = pageId => dispatch => {
   dispatch(startLoadingFeedPhotos());
-  return APIUtil.fetchFeedPhotos(page)
+  return APIUtil.fetchFeedPhotos(pageId)
     .then(photos => dispatch(receiveFeedPhotos(photos)));
 };
 
