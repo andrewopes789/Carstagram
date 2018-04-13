@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
   def index
     users_array = [current_user.id] + current_user.followings_by_id
-    @photos = Photo.where(author_id: users_array).order(created_at: :desc).page(params[:page]).per(5)
+    @photos = Photo.where(author_id: users_array).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def show

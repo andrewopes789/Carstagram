@@ -71,7 +71,7 @@ class RenderFeedPhoto extends React.Component {
     let photo = this.props.photo;
     if (!photo.comments_by_id || !this.props.comments) { return null; }
 
-    let comments = photo.comments_by_id.sort().map(id => (
+    let comments = photo.comments_by_id.map(id => (
       this.props.comments[id]
     ));
 

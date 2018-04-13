@@ -5,7 +5,7 @@ import { createComment, deleteComment } from '../../actions/comment_actions';
 import FeedPhotos from './feed_photos';
 
 const mapStateToProps = state => ({
-    photos: Object.values(state.entities.photos),
+    photos: Object.values(state.entities.photos.feed),
     likes: state.entities.likes,
     comments: state.entities.comments,
     loading: state.ui.loading.indexLoading,
@@ -13,8 +13,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFeedPhotos: () => dispatch(fetchFeedPhotos()),
-  deleteFeedPhotos: () => dispatch(deleteFeedPhotos()),
+  fetchFeedPhotos: pageId => dispatch(fetchFeedPhotos(pageId)),
   createLike: photoId => dispatch(createLike(photoId)),
   deleteLike: photoId => dispatch(deleteLike(photoId)),
   createComment: comment => dispatch(createComment(comment)),

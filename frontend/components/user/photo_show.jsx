@@ -64,7 +64,7 @@ class PhotoShow extends React.Component {
   render () {
     const photo = this.props.photo;
 
-    const comments = photo.comments_by_id.sort().map(id =>
+    const comments = photo.comments_by_id.map(id =>
       this.props.comments[id]);
 
     const likes = photo.likes_by_id.map(id =>
