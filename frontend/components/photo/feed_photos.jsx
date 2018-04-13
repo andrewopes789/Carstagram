@@ -9,6 +9,10 @@ class FeedPhotos extends React.Component {
   }
 
   componentWillMount() {
+    this.props.deleteFeedPhotos();
+  }
+  
+  componentDidMount() {
     this.props.fetchFeedPhotos();
   }
 

@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 
 import {
   RECEIVE_FEED_PHOTOS,
+  CLEAR_FEED_PHOTOS,
   RECEIVE_PHOTO,
   REMOVE_PHOTO
 } from '../actions/photo_actions';
@@ -42,9 +43,11 @@ export default (state=initialState, action) => {
 
     case RECEIVE_USER:
       return merge({}, action.payload.photos);
-      
+
+    case CLEAR_FEED_PHOTOS:
+      return {};
     case RECEIVE_FEED_PHOTOS:
-      return merge({}, action.payload.photos);
+      return merge({}, state, action.payload.photos);
     case RECEIVE_PHOTO:
       return merge({}, state, action.photo);
     case REMOVE_PHOTO:
