@@ -37,6 +37,7 @@ gem 'clearance'
 gem 'faker'
 gem 'figaro'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'paperclip-cloudinary'
 gem 'rails_12factor'
 

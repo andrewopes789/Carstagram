@@ -81,8 +81,8 @@ class User < ApplicationRecord
     user_followers + user_followings
   end
 
-  def feed_photos
-    following_photos.sample(12)
+  def followings_by_id
+    followings.map(&:id)
   end
 
   def self.find_by_credentials(username, password)
