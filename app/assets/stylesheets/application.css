@@ -198,10 +198,12 @@
 .comment-input {
  align-items: center;
  border: none;
+ font-family: Arial;
  font-size: 14px;
  margin: auto;
  height: 18px;
  resize: none;
+ text-align: left;
  width: 542px;
 }
 

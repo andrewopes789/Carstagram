@@ -59,7 +59,7 @@ export default (state=initialState, action) => {
       });
 
     case RECEIVE_FEED_PHOTOS:
-      return merge({}, state, {
+      return merge(state, {
         feed: action.payload.photos,
         userDetail: {}
       });
