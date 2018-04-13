@@ -21,57 +21,36 @@ import { RECEIVE_USER } from '../actions/user_actions';
 
 import { merge } from 'lodash';
 
-const initialState = {
-  feed: {},
-  userDetail: {}
-};
+const initialState = {};
 
 export default (state=initialState, action) => {
   Object.freeze(state);
 
   switch (action.type) {
     case RECEIVE_LIKE:
-      return merge({}, state, {
-        feed: {[action.photo.id]: action.photo},
-        userDetail: {[action.photo.id]: action.photo }
-      });
+      return merge({}, state, { [action.photo.id]: action.photo });
     case REMOVE_LIKE:
       let dupState = merge({}, state);
-      dupState.feed[action.photo.id] = action.photo;
-      dupState.userDetail[action.photo.id] = action.photo;
+      dupState[action.photo.id] = action.photo;
       return dupState;
 
     case RECEIVE_COMMENT:
-      return merge({}, state, {
-        feed: {[action.photo.id]: action.photo},
-        userDetail: {[action.photo.id]: action.photo}
-      });
+      return merge({}, state, { [action.photo.id]: action.photo} );
     case REMOVE_COMMENT:
       let copyState = merge({}, state);
-      copyState.feed[action.photo.id] = action.photo;
-      copyState.userDetail[action.photo.id] = action.photo;
+      copyState[action.photo.id] = action.photo;
       return copyState;
 
     case RECEIVE_USER:
-      return merge({}, {
-        feed: {},
-        userDetail: action.payload.photos
-      });
+      return merge({}, action.payload.photos);
 
     case RECEIVE_FEED_PHOTOS:
-      return merge(state, {
-        feed: action.payload.photos,
-        userDetail: {}
-      });
+      return merge({}, state, action.payload.photos);
     case RECEIVE_PHOTO:
-      return merge({}, state, {
-        feed: {[action.photo.id]: action.photo},
-        userDetail: {[action.photo.id]: action.photo }
-      });
+      return merge({}, state, {[action.photo.id]: action.photo});
     case REMOVE_PHOTO:
       let newState1 = merge({}, state);
-      delete newState1.feed[action.photoId];
-      delete newState1.userDetail[action.photoId];
+      delete newState1[action.photoId];
       return newState1;
     default:
       return state;

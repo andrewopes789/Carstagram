@@ -13,6 +13,10 @@ class FeedPhotos extends React.Component {
     this.fetchNextPhotos = this.fetchNextPhotos.bind(this);
   }
 
+  componentWillMount() {
+    this.props.deleteFeedPhotos();
+  }
+
   componentDidMount() {
     this.fetchNextPhotos();
   }
@@ -25,11 +29,11 @@ class FeedPhotos extends React.Component {
   render () {
     let photos = this.props.photos;
     return (
-      this.props.loading || !photos ?
+      this.props.loading ?
       <LoadingIcon /> :
       <div className='feed-photos-all'>
         {
-          this.props.photos.map(photo => (
+          this.props.photos.reverse().map(photo => (
             <RenderFeedPhoto
               key={photo.id}
               comments={this.props.comments}
