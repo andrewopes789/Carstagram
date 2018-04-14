@@ -29,8 +29,8 @@ export const fetchUser = userId => dispatch => {
     .then(user => dispatch(receiveUser(user)));
 };
 
-export const fetchUsers = () => dispatch => {
+export const fetchUsers = pageId => dispatch => {
   dispatch(startLoadingUsers());
-  APIUtil.fetchUsers()
+  APIUtil.fetchUsers(pageId)
     .then(users => dispatch(receiveUsers(users)));
 };

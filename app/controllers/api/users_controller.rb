@@ -1,4 +1,9 @@
 class Api::UsersController < ApplicationController
+  def index
+    @users = User.page(params[:pageId]).per(12)
+    @photos = Photo.sample(12)
+  end
+
   def create
     @user = User.new(user_params)
 

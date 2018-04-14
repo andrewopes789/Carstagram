@@ -50,7 +50,7 @@ export const deleteFeedPhotos = () => dispatch => {
   dispatch(clearFeedPhotos());
 };
 
-export const fetchPhotos = id => dispatch => {
+export const fetchPhoto = id => dispatch => {
   dispatch(startLoadingSinglePhoto());
   APIUtil.fetchPhotos(id)
     .then(photo => dispatch(receivePhoto(photo)));
