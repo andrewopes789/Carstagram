@@ -63,7 +63,11 @@ class Discover extends React.Component {
           /> : ""
 
         }
+        <span className='explore-subheader'>Discover People</span>
+        <div>
+        </div>
 
+        <span className='explore-subheader'>Explore</span>
         <div className='profile-photos'>
           {
             this.props.photos.map(photo => (
