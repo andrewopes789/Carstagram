@@ -319,6 +319,35 @@
  cursor: pointer;
 }
 
+.explore-main {
+  align-items: center;
+  background: #fafafa;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  padding-top: 60px;
+  flex-direction: column;
+}
+
+.explore-photos {
+  background: #fafafa;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px 166px 58px 162px;
+  width: 997px;
+}
+
+.explore-subheader {
+  color: #999;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: left;
+  width: 940px;
+}
+
 .errors {
  color: #ed4956;
  display: flex;

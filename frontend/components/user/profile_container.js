@@ -28,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
     comments: state.entities.comments,
     likes: state.entities.likes,
     userId: ownProps.match.params.userId,
-    user: state.entities.detail.user,
+    user: state.entities.user.detail,
     photos: Object.values(state.entities.photos),
     photosAsObject: state.entities.photos,
     currentUser: state.session.currentUser,

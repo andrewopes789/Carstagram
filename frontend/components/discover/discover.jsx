@@ -47,7 +47,7 @@ class Discover extends React.Component {
     return (
       this.props.loading ? <LoadingIcon /> :
 
-      <main className='profile-main'>
+      <main className='explore-main'>
         { this.state.photoModalOpen ?
 
           <PhotoShow
@@ -68,7 +68,7 @@ class Discover extends React.Component {
         </div>
 
         <span className='explore-subheader'>Explore</span>
-        <div className='profile-photos'>
+        <div className='explore-photos'>
           {
             this.props.photos.map(photo => (
 
