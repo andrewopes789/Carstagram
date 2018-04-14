@@ -21,6 +21,10 @@ class FeedPhotos extends React.Component {
     this.fetchNextPhotos();
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   fetchNextPhotos() {
     this.props.fetchFeedPhotos(this.state.pageId);
     this.setState = ({ page: this.state.pageId += 1 });
@@ -48,12 +52,14 @@ class FeedPhotos extends React.Component {
           ))
         }
 
-        <Waypoint
-          onEnter={this.fetchNextPhotos}
-          />
       </div>
     );
   }
 }
 
 export default FeedPhotos;
+
+
+// <Waypoint
+//   onEnter={this.fetchNextPhotos}
+//   />

@@ -28,7 +28,7 @@ export default (state=initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_LIKE:
-      return merge({}, state, { [action.photo.id]: action.photo });
+      return merge({}, state, { [action.photo.id]: action.photo } );
     case REMOVE_LIKE:
       let dupState = merge({}, state);
       dupState[action.photo.id] = action.photo;

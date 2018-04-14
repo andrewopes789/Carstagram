@@ -72,7 +72,7 @@ class siteNav extends React.Component {
             </div>
 
             <div className='right-nav'>
-              <Link to='/photos' className='nav-icons'>
+              <Link to='/discover' className='nav-icons'>
                 <i className='fa fa-compass'></i>
               </Link>
 
