@@ -1,7 +1,11 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.page(params[:pageId]).per(3)
-    @photos = Photo.all.sample(12)
+    not_followed_users = User.all.sample(20).reject do |user|
+      current_user.followings_by_id.include?(user.id) ||
+      user.id == current_user.id
+    end
+    @users = not_followed_users.sample(3)
+    @photos = Photo.where(author_id: not_followed_users).limit(12)
   end
 
   def create

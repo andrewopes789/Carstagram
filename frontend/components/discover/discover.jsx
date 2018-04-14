@@ -46,7 +46,7 @@ class Discover extends React.Component {
 
   render() {
     return (
-      this.props.loading ? <LoadingIcon /> :
+      this.props.loading || !this.props.photos ? <LoadingIcon /> :
 
       <main className='explore-main'>
         { this.state.photoModalOpen ?
@@ -69,6 +69,7 @@ class Discover extends React.Component {
           {
             this.props.users.map(user => (
               <RenderUser
+                key={user.id}
                 id={user.id}
                 user={Object.values(user)[0]}
                 createFollow={this.props.createFollow}
@@ -86,6 +87,7 @@ class Discover extends React.Component {
             this.props.photos.map(photo => (
 
               <RenderPhoto
+                key={photo.id}
                 id={photo.id}
                 photo={photo}
                 pushHistory={this.pushHistory}
