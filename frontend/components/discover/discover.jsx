@@ -71,6 +71,10 @@ class Discover extends React.Component {
               <RenderUser
                 id={user.id}
                 user={Object.values(user)[0]}
+                createFollow={this.props.createFollow}
+                deleteFollow={this.props.deleteFollow}
+                currentUser={this.props.currentUser}
+                logout={this.props.logout}
               />
             ))
           }

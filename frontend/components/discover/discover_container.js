@@ -21,6 +21,8 @@ import {
   fetchUsers
 } from '../../actions/user_actions';
 
+import { logout } from '../../actions/session_actions';
+
 const mapStateToProps = ({session, entities, ui}) => ({
   comments: entities.comments,
   likes: entities.likes,
@@ -39,6 +41,7 @@ const mapDispatchToProps = dispatch => ({
   deleteComment: commentId => dispatch(deleteComment(commentId)),
   createFollow: followingId => dispatch(createFollow(followingId)),
   deleteFollow: followingId => dispatch(deleteFollow(followingId)),
+  logout: () => dispatch(logout())
 });
 
 export default withRouter(
