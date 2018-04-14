@@ -348,6 +348,43 @@
   width: 940px;
 }
 
+.explore-user-img {
+  border: 1px solid #e6e6e6;
+  border-radius: 100%;
+  height: 78px;
+  margin: auto auto 12px auto;
+  object-fit: contain;
+  width: 78px;
+}
+
+.explore-user-username {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.explore-users {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 166px 58px 162px;
+  width: 997px;
+}
+
+.explore-users-content {
+  margin: auto;
+}
+
+.explore-users-item {
+  border: 1px solid #e6e6e6;
+  background: white;
+  height: 220px;
+  margin: 15px 0 15px 30px;
+  width: 291px;
+}
+
 .errors {
  color: #ed4956;
  display: flex;

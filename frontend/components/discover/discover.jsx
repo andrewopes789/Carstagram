@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoShow from '../user/photo_show';
 import RenderPhoto from '../user/render_photo';
+import RenderUser from './render_user';
 import LoadingIcon from '../photo/loading_icon';
 
 class Discover extends React.Component {
@@ -64,7 +65,15 @@ class Discover extends React.Component {
 
         }
         <span className='explore-subheader'>Discover People</span>
-        <div>
+        <div className='explore-users'>
+          {
+            this.props.users.map(user => (
+              <RenderUser
+                id={user.id}
+                user={Object.values(user)[0]}
+              />
+            ))
+          }
         </div>
 
         <span className='explore-subheader'>Explore</span>
@@ -73,7 +82,7 @@ class Discover extends React.Component {
             this.props.photos.map(photo => (
 
               <RenderPhoto
-                key={photo.id}
+                id={photo.id}
                 photo={photo}
                 pushHistory={this.pushHistory}
               />

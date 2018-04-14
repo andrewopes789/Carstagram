@@ -89,7 +89,7 @@ class PhotoShow extends React.Component {
     let textInput;
 
     return(
-      <div className='modal'>
+      <div className='modal' key={photo.id}>
 
         <span className='close-modal'
           onClick={this.props.backToProfile}>&times;</span>

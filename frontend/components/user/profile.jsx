@@ -198,7 +198,7 @@ class ProfilePhotos extends React.Component {
             this.props.photos.map(photo => (
 
               <RenderPhoto
-                key={photo.id}
+                id={photo.id}
                 photo={photo}
                 pushHistory={this.pushHistory}
               />
