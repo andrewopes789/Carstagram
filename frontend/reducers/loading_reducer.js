@@ -8,9 +8,9 @@ import {
 
 import {
   RECEIVE_USER,
-  RECEIVE_ALL_USERS,
+  RECEIVE_USERS,
   START_LOADING_USER,
-  START_LOADING_ALL_USERS
+  START_LOADING_USERS
 } from '../actions/user_actions';
 
 import {
@@ -49,9 +49,9 @@ export default (state=initialState, action) => {
     case RECEIVE_USER:
       return Object.assign({}, state, {detailLoading: false});
 
-    case START_LOADING_ALL_USERS:
+    case START_LOADING_USERS:
       return Object.assign({}, state, {indexLoading: true});
-    case RECEIVE_ALL_USERS:
+    case RECEIVE_USERS:
       return Object.assign({}, state, {indexLoading: false});
 
     case START_LOADING_MESSAGES:

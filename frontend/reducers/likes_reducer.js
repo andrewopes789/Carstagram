@@ -7,7 +7,10 @@ import {
 } from '../actions/like_actions';
 
 import { RECEIVE_FEED_PHOTOS } from '../actions/photo_actions';
-import { RECEIVE_USER } from '../actions/user_actions';
+import {
+  RECEIVE_USER,
+  RECEIVE_USERS
+} from '../actions/user_actions';
 
 import { merge } from 'lodash';
 
@@ -20,6 +23,8 @@ export default (state=initialState, action) => {
     case RECEIVE_FEED_PHOTOS:
       return merge({}, state, action.payload.likes);
     case RECEIVE_USER:
+      return merge({}, action.payload.likes);
+    case RECEIVE_USERS:
       return merge({}, action.payload.likes);
 
     case RECEIVE_LIKE:

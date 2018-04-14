@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.page(params[:pageId]).per(12)
-    @photos = Photo.sample(12)
+    @users = User.page(params[:pageId]).per(3)
+    @photos = Photo.all.sample(12)
   end
 
   def create
