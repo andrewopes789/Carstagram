@@ -51,15 +51,12 @@ class FeedPhotos extends React.Component {
             />
           ))
         }
-
+        <Waypoint
+          onEnter={this.fetchNextPhotos}
+          />
       </div>
     );
   }
 }
 
 export default FeedPhotos;
-
-
-// <Waypoint
-//   onEnter={this.fetchNextPhotos}
-//   />
