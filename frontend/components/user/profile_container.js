@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
+import { editUser } from '../../actions/session_actions';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
 import { withRouter } from 'react-router-dom';
@@ -40,6 +41,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: (userId) => dispatch(fetchUser(userId)),
+  editUser: user => dispatch(editUser(user)),
   logout: () => dispatch(logout()),
   createLike: photoId => dispatch(createLike(photoId)),
   deleteLike: photoId => dispatch(deleteLike(photoId)),

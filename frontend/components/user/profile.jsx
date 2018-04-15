@@ -16,13 +16,32 @@ class ProfilePhotos extends React.Component {
       messageModalOpen: false,
       followersModalOpen: false,
       followingsModalOpen: false,
-      searchId: -1
+      searchId: -1,
+      id: this.props.user.id,
+      img_url: this.props.user.img_url
     };
     this.pushHistory = this.pushHistory.bind(this);
     this.openMessageModal = this.openMessageModal.bind(this);
     this.openFollowersModal = this.openFollowersModal.bind(this);
     this.openFollowingsModal = this.openFollowingsModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+  }
+
+  handleUpload(e) {
+    e.preventDefault();
+
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      (error, images) => {
+        if (error === null && images[0].secure_url !== '') {
+          this.setState({img_url: images[0].secure_url});
+        }
+        if (this.state.img_url !== '') {
+          this.props.editUser({img_url: this.state.img_url, id: this.state.id});
+        }
+      }
+    );
   }
 
   componentWillMount () {
@@ -92,7 +111,19 @@ class ProfilePhotos extends React.Component {
       >
       Message</button>
      ) : null;
-
+     let profilePhoto = user.id === currentUser.id ? (
+       <div
+         className='profile-photo-container current-user-profile-pic'
+         onClick={this.handleUpload}>
+         <img className='profile-photo' src={user.img_url}/>
+       </div>
+     ) : (
+       <div
+         className='profile-photo-container'
+        >
+         <img className='profile-photo' src={user.img_url}/>
+       </div>
+     );
     return (
       this.props.loading ? <LoadingIcon /> :
 
@@ -148,9 +179,7 @@ class ProfilePhotos extends React.Component {
 
           <header className='profile-header'>
 
-            <div className='profile-photo-container'>
-              <img className='profile-photo' src={user.img_url}/>
-            </div>
+            { profilePhoto }
 
             <section className='profile-text'>
 

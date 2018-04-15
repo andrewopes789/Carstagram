@@ -6,6 +6,14 @@ export const postUser = user => (
   })
 );
 
+export const updateUser = user => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    data: { user }
+  })
+);
+
 export const postSession = user => (
   $.ajax({
     method: 'POST',

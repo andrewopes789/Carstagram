@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
 
     resources :chatroom_memberships, only: %i(index show create)
-    resources :users, only: %i(index create show) do
+    resources :users, only: %i(index create update show) do
       resources :chatrooms, only: %i(create)
       member do
         post 'follow', to: "follows#create"

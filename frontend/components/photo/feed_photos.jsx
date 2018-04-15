@@ -37,6 +37,7 @@ class FeedPhotos extends React.Component {
         createFollow={this.props.createFollow}
         deleteFollow={this.props.deleteFollow}
         currentUser={this.props.currentUser}
+        editUser={this.props.editUser}
         logout={this.props.logout}
       />
     ) : (

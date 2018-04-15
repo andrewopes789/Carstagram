@@ -275,6 +275,10 @@
  cursor: pointer;
 }
 
+.current-user-profile-pic:hover {
+  cursor: pointer;
+}
+
 .delete-comment {
  border: none;
  color: #c7c7c7;
@@ -482,6 +486,35 @@
   width: 600px;
 }
 
+.feed-placeholder-header {
+  color: #000;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 13px;
+}
+
+.feed-placeholder-icon-container {
+  border: 2px solid #000;
+  border-radius: 100%;
+  height: 60px;
+  margin: auto;
+  width: 60px;
+}
+
+.feed-placeholder-icon {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.feed-placeholder-img-container {
+  background: white;
+  border: 1px solid #e6e6e6;
+  margin-top: 60px;
+  padding: 16px 44px;
+  text-align: center;
+}
+
 .feed-placeholder-items {
   background: white;
   border: 1px solid #e6e6e6;
@@ -505,6 +538,13 @@
 
 .feed-placeholder-item:last-of-type {
   border-bottom: none;
+}
+
+.feed-placeholder-subheader {
+  color: #999;
+  font-family: Arial;
+  margin: 11px auto 15px auto;
+  width: 260px;
 }
 
 .feed-placeholder-suggested {

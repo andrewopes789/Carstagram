@@ -1,24 +1,68 @@
 import React from 'react';
 import FeedPlaceholderItem from './feed_placeholder_item';
 
-const FeedPlaceholder = props => (
-  <div className='feed-placeholder-container'>
-    <div className='feed-placeholder-suggested'>Suggested for you</div>
-    <div className='feed-placeholder-items'>
-      {
-        props.users.map(user => (
-          <FeedPlaceholderItem
-            key={user.id}
-            user={user}
-            createFollow={props.createFollow}
-            deleteFollow={props.deleteFollow}
-            currentUser={props.currentUser}
-            logout={props.logout}
-            />
-        ))
+class FeedPlaceholder extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      img_url: ''
+    };
+    this.handleUpload = this.handleUpload.bind(this);
+  }
+
+  handleUpload(e) {
+    e.preventDefault();
+
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      (error, images) => {
+        if (error === null && images[0].secure_url !== '') {
+          this.setState({img_url: images[0].secure_url});
+        }
+        if (this.state.img_url !== '') {
+          this.props.editUser(this.state);
+        }
       }
-    </div>
-  </div>
-);
+    );
+  }
+
+  render() {
+    let { currentUser, createFollow, deleteFollow, logout } = this.props;
+    let uploadImg =
+    currentUser.img_url === '' || currentUser.img_url === null ? (
+      <div className='feed-placeholder-img-container'>
+        <div className='feed-placeholder-icon-container'>
+          <i className='fa fa-user-o feed-placeholder-icon'/>
+        </div>
+
+        <div className='feed-placeholder-header'>Add a profile photo</div>
+
+        <div className='feed-placeholder-subheader'>Add a profile photo so your friends know it's you</div>
+
+        <button onClick={this.handleUpload}>Add a Profile Photo</button>
+      </div>
+    ) : null;
+    return (
+      <div className='feed-placeholder-container'>
+        { uploadImg }
+        <div className='feed-placeholder-suggested'>Suggested for you</div>
+        <div className='feed-placeholder-items'>
+          {
+            this.props.users.map(user => (
+              <FeedPlaceholderItem
+                key={user.id}
+                user={user}
+                createFollow={createFollow}
+                deleteFollow={deleteFollow}
+                currentUser={currentUser}
+                logout={logout}
+                />
+            ))
+          }
+        </div>
+      </div>
+    );
+  }
+}
 
 export default FeedPlaceholder;

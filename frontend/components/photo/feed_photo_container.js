@@ -20,8 +20,12 @@ import {
 } from '../../actions/follow_actions';
 
 import {
-  fetchUsers
+  fetchUsers,
 } from '../../actions/user_actions';
+
+import {
+  editUser
+} from '../../actions/session_actions';
 
 import {
   logout
@@ -42,6 +46,7 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   fetchFeedPhotos: pageId => dispatch(fetchFeedPhotos(pageId)),
   fetchUsers: pageId => dispatch(fetchUsers(pageId)),
+  editUser: user => dispatch(editUser(user)),
   deletePhotos: () => dispatch(deletePhotos()),
   createLike: photoId => dispatch(createLike(photoId)),
   deleteLike: photoId => dispatch(deleteLike(photoId)),
