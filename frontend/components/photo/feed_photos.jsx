@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoadingIcon from './loading_icon';
 import RenderFeedPhoto from './render_feed_photo';
+import FeedPlaceholder from './feed_placeholder';
 import Waypoint from 'react-waypoint';
 
 class FeedPhotos extends React.Component {
@@ -19,6 +20,7 @@ class FeedPhotos extends React.Component {
 
   componentDidMount() {
     this.fetchNextPhotos();
+    this.props.fetchUsers(this.state.pageId);
   }
 
   fetchNextPhotos() {
@@ -28,23 +30,31 @@ class FeedPhotos extends React.Component {
 
   render () {
     let photos = this.props.photos;
+    let feedContent = this.props.currentUser.followings_by_id.length === 0 ?
+    (
+      <FeedPlaceholder
+        users={Object.values(this.props.users)}
+      />
+    ) : (
+      photos.map(photo => (
+        <RenderFeedPhoto
+          key={photo.id}
+          comments={this.props.comments}
+          createLike={this.props.createLike}
+          createComment={this.props.createComment}
+          currentUser={this.props.currentUser}
+          deleteComment={this.props.deleteComment}
+          deleteLike={this.props.deleteLike}
+          likes={this.props.likes}
+          photo={photo}
+        />
+      ))
+    );
+
     return (
       <div className='feed-photos-all'>
-        {
-          photos.map(photo => (
-            <RenderFeedPhoto
-              key={photo.id}
-              comments={this.props.comments}
-              createLike={this.props.createLike}
-              createComment={this.props.createComment}
-              currentUser={this.props.currentUser}
-              deleteComment={this.props.deleteComment}
-              deleteLike={this.props.deleteLike}
-              likes={this.props.likes}
-              photo={photo}
-            />
-          ))
-        }
+
+        { feedContent }
 
         <Waypoint onEnter={this.fetchNextPhotos} />
 

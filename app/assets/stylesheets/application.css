@@ -477,6 +477,21 @@
  padding-right: 16px;
 }
 
+.feed-placeholder-container {
+  background: white;
+  border: 1px solid #e6e6e6;
+  margin: auto;
+  width: 600px;
+}
+
+.feed-placeholder-item {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.feed-placeholder-item:last-of-type {
+  border-bottom: none;
+}
+
 .follow {
  background-color: #3897f0;
  border: 1px solid #3897f0;

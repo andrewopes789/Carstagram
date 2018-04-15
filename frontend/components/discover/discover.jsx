@@ -53,7 +53,7 @@ class Discover extends React.Component {
     let photos = this.props.photos;
     let users = this.props.users;
     if (!Array.isArray(users)) {
-      users = Object.values(users);
+      users = Object.values(users).splice(0, 3);
     }
 
     return (

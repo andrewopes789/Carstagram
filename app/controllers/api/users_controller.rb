@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
   def index
     not_followed_users = []
 
-    until not_followed_users.length === 3
+    until not_followed_users.length === 12
       offset = rand(User.count)
       random_user = User.offset(offset).first
       if random_user != current_user
