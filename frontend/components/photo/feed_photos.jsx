@@ -34,6 +34,10 @@ class FeedPhotos extends React.Component {
     (
       <FeedPlaceholder
         users={Object.values(this.props.users)}
+        createFollow={this.props.createFollow}
+        deleteFollow={this.props.deleteFollow}
+        currentUser={this.props.currentUser}
+        logout={this.props.logout}
       />
     ) : (
       photos.map(photo => (
