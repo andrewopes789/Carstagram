@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
     end
 
     @users = not_followed_users.sample(3)
-    @photos = Photo.where(author_id: not_followed_users).limit(12)
+    @photos = Photo.order(created_at: :asc).page(params[:pageId]).per(12)
   end
 
   def create

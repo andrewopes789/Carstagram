@@ -49,9 +49,9 @@ class FeedPhotos extends React.Component {
             />
           ))
         }
-        <Waypoint
-          onEnter={this.fetchNextPhotos}
-          />
+
+        <Waypoint onEnter={this.fetchNextPhotos} />
+        
         {
           this.props.loading ? <LoadingIcon /> : null
         }

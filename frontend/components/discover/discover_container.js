@@ -21,6 +21,11 @@ import {
   fetchUsers
 } from '../../actions/user_actions';
 
+import {
+  deleteFeedPhotos
+} from '../../actions/photo_actions';
+
+
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = ({session, entities, ui}) => ({
@@ -40,6 +45,7 @@ const mapDispatchToProps = dispatch => ({
   deleteComment: commentId => dispatch(deleteComment(commentId)),
   createFollow: followingId => dispatch(createFollow(followingId)),
   deleteFollow: followingId => dispatch(deleteFollow(followingId)),
+  deleteFeedPhotos: () => dispatch(deleteFeedPhotos()),
   logout: () => dispatch(logout())
 });
 

@@ -3,6 +3,7 @@ import PhotoShow from '../user/photo_show';
 import RenderPhoto from '../user/render_photo';
 import RenderUser from './render_user';
 import LoadingIcon from '../photo/loading_icon';
+import Waypoint from 'react-waypoint';
 
 class Discover extends React.Component {
   constructor(props) {
@@ -15,6 +16,10 @@ class Discover extends React.Component {
     this.getUsers = this.getUsers.bind(this);
     this.backToProfile = this.backToProfile.bind(this);
     this.pushHistory = this.pushHistory.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.deleteFeedPhotos();
   }
 
   componentDidMount() {
@@ -48,8 +53,6 @@ class Discover extends React.Component {
     let photos = this.props.photos;
     let users = Object.values(this.props.users);
     return (
-      this.props.loading ? <LoadingIcon /> :
-
       <main className='explore-main'>
         { this.state.photoModalOpen ?
 
@@ -99,6 +102,12 @@ class Discover extends React.Component {
             ))
           }
         </div>
+
+        <Waypoint onEnter={this.getUsers} />
+
+        {
+          this.props.loading ? <LoadingIcon /> : null
+        }
       </main>
     );
   }

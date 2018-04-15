@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 
 import {
   RECEIVE_FEED_PHOTOS,
-  CLEAR_FEED_PHOTOS,
   RECEIVE_PHOTO,
   REMOVE_PHOTO
 } from '../actions/photo_actions';
@@ -19,7 +18,8 @@ import {
 
 import {
   RECEIVE_USER,
-  RECEIVE_USERS } from '../actions/user_actions';
+  RECEIVE_USERS
+} from '../actions/user_actions';
 
 import { merge } from 'lodash';
 
@@ -46,7 +46,7 @@ export default (state=initialState, action) => {
     case RECEIVE_USER:
       return merge({}, action.payload.photos);
     case RECEIVE_USERS:
-      return merge({}, action.payload.photos);
+      return merge({}, state, action.payload.photos);
 
     case RECEIVE_FEED_PHOTOS:
       return merge({}, state, action.payload.photos);
@@ -56,6 +56,7 @@ export default (state=initialState, action) => {
       let newState1 = merge({}, state);
       delete newState1[action.photoId];
       return newState1;
+
     default:
       return state;
     }
