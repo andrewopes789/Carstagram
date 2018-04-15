@@ -560,13 +560,15 @@
 }
 
 .footer-item {
- color: #999;
+ color: #003569;
+ font-family: Arial;
  text-decoration: none;
  margin-right: 20px;
+ text-transform: uppercase;
 }
 
 .footer-item:hover {
- color: #696969;
+ color: blue;
  cursor: pointer;
 }
 
@@ -577,10 +579,12 @@
 }
 
 .footer-items-right {
- color: #999;
+ color: #003569;
+ font-family: Arial;
  padding-bottom: 20px;
  padding-top: 15px;
  margin: auto 170px auto auto;
+ text-transform: uppercase;
 }
 
 .get-the-app {
