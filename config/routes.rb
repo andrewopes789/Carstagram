@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   namespace :api, defaults: { format: :json } do
+    resources :recommendations, only: %i(index)
     resources :searches, only: %i(index)
     resources :messages, only: %i(show)
     resources :chatrooms, only: %i(index show) do

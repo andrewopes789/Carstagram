@@ -11,7 +11,6 @@ class Api::UsersController < ApplicationController
     end
 
     @users = not_followed_users
-    @photos = Photo.order(created_at: :asc).page(params[:pageId]).per(12)
   end
 
   def create

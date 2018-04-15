@@ -10,6 +10,10 @@ import {
   RECEIVE_FOLLOW, REMOVE_FOLLOW
 } from '../actions/follow_actions';
 
+import {
+  RECEIVE_RECOMMENDATIONS
+} from '../actions/recommendation_actions';
+
 const initialState = {
   detail: {
     followers_by_id: [],
@@ -31,6 +35,16 @@ export default (state=initialState, action) => {
       });
 
     case RECEIVE_USERS:
+      return merge({}, {
+        index: action.payload.users,
+        detail: {
+          followers_by_id: [],
+          followings_by_id: [],
+          photos_by_id: []
+        }
+      });
+
+    case RECEIVE_RECOMMENDATIONS:
       return merge({}, {
         index: action.payload.users,
         detail: {

@@ -19,8 +19,11 @@ import {
 
 import {
   RECEIVE_USER,
-  RECEIVE_USERS
 } from '../actions/user_actions';
+
+import {
+  RECEIVE_RECOMMENDATIONS
+} from '../actions/recommendation_actions';
 
 import { merge } from 'lodash';
 
@@ -46,7 +49,7 @@ export default (state=initialState, action) => {
 
     case RECEIVE_USER:
       return merge({}, action.payload.photos);
-    case RECEIVE_USERS:
+    case RECEIVE_RECOMMENDATIONS:
       return merge({}, state, action.payload.photos);
 
     case RECEIVE_FEED_PHOTOS:

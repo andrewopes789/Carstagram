@@ -5,6 +5,7 @@ class FeedPlaceholder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: this.props.currentUser.id,
       img_url: ''
     };
     this.handleUpload = this.handleUpload.bind(this);

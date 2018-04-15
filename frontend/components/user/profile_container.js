@@ -22,6 +22,9 @@ import {
 import {
   createChatroom
 } from '../../actions/chatroom_actions';
+import {
+  deletePhotos
+} from '../../actions/photo_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -50,7 +53,8 @@ const mapDispatchToProps = dispatch => ({
   createFollow: followingId => dispatch(createFollow(followingId)),
   deleteFollow: followingId => dispatch(deleteFollow(followingId)),
   createMessage: message => dispatch(createMessage(message)),
-  createChatroom: userId => dispatch(createChatroom(userId))
+  createChatroom: userId => dispatch(createChatroom(userId)),
+  deletePhotos: () => dispatch(deletePhotos())
 });
 
 export default withRouter(

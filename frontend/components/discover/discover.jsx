@@ -36,7 +36,7 @@ class Discover extends React.Component {
   }
 
   getUsers() {
-    this.props.fetchUsers(this.state.pageId);
+    this.props.fetchRecommendations(this.state.pageId);
     this.setState({ pageId: this.state.pageId += 1 });
   }
 

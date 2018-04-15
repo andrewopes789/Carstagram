@@ -18,8 +18,8 @@ import {
 } from '../../actions/follow_actions';
 
 import {
-  fetchUsers
-} from '../../actions/user_actions';
+  fetchRecommendations
+} from '../../actions/recommendation_actions';
 
 import {
   deletePhotos
@@ -38,7 +38,7 @@ const mapStateToProps = ({session, entities, ui}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchUsers: pageId => dispatch(fetchUsers(pageId)),
+  fetchRecommendations: pageId => dispatch(fetchRecommendations(pageId)),
   createLike: photoId => dispatch(createLike(photoId)),
   deleteLike: photoId => dispatch(deleteLike(photoId)),
   createComment: comment => dispatch(createComment(comment)),

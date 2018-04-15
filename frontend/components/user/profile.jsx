@@ -44,13 +44,18 @@ class ProfilePhotos extends React.Component {
     );
   }
 
-  componentWillMount () {
+  componentWillMount() {
+    this.props.deletePhotos();
+  }
+  
+  componentDidMount () {
     this.props.fetchUser(this.props.userId);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.userId !== this.props.userId) {
       this.props.fetchUser(newProps.match.params.userId);
+      this.closeModal();
     }
     if (newProps.location.search !== '') {
       this.setState({photoModalOpen: true});
