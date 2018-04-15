@@ -478,18 +478,50 @@
 }
 
 .feed-placeholder-container {
-  background: white;
-  border: 1px solid #e6e6e6;
   margin: auto;
   width: 600px;
 }
 
+.feed-placeholder-items {
+  background: white;
+  border: 1px solid #e6e6e6;
+}
+
+.feed-placeholder-img {
+  border: 1px solid #e6e6e6;
+  border-radius: 100%;
+  height: 54px;
+  margin-right: 13px;
+  object-fit: contain;
+  width: 54px;
+}
+
 .feed-placeholder-item {
   border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 16px;
 }
 
 .feed-placeholder-item:last-of-type {
   border-bottom: none;
+}
+
+.feed-placeholder-suggested {
+  color: #999;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px 16px 8px;
+  text-align: left;
+}
+
+.feed-placeholder-username {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  margin: auto auto auto 0;
 }
 
 .follow {

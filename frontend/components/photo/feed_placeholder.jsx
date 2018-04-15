@@ -3,14 +3,17 @@ import FeedPlaceholderItem from './feed_placeholder_item';
 
 const FeedPlaceholder = ({ users }) => (
   <div className='feed-placeholder-container'>
-    {
-      users.map(user => (
-        <FeedPlaceholderItem
-          key={user.id}
-          user={user}
-        />
-      ))
-    }
+    <div className='feed-placeholder-suggested'>Suggested for you</div>
+    <div className='feed-placeholder-items'>
+      {
+        users.map(user => (
+          <FeedPlaceholderItem
+            key={user.id}
+            user={user}
+            />
+        ))
+      }
+    </div>
   </div>
 );
 
