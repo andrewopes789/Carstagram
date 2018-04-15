@@ -31,11 +31,12 @@ class RenderUser extends React.Component {
           
           
           <FollowButton
-          currentUser={this.props.currentUser}
-          user={user}
-          createFollow={this.props.createFollow}
-          deleteFollow={this.props.deleteFollow}
-          logout={this.props.logout}/>
+            currentUser={this.props.currentUser}
+            user={user}
+            createFollow={this.props.createFollow}
+            deleteFollow={this.props.deleteFollow}
+            logout={this.props.logout}
+          />
         </div>
       </div>
     );

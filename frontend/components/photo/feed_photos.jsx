@@ -33,8 +33,6 @@ class FeedPhotos extends React.Component {
   render () {
     let photos = this.props.photos;
     return (
-      this.props.loading ?
-      <LoadingIcon /> :
       <div className='feed-photos-all'>
         {
           photos.map(photo => (
@@ -54,6 +52,9 @@ class FeedPhotos extends React.Component {
         <Waypoint
           onEnter={this.fetchNextPhotos}
           />
+        {
+          this.props.loading ? <LoadingIcon /> : null
+        }
       </div>
     );
   }

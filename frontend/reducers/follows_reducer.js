@@ -5,7 +5,9 @@ import {
   REMOVE_FOLLOW
 } from '../actions/follow_actions';
 
-import { RECEIVE_USER } from '../actions/user_actions';
+import {
+  RECEIVE_USER
+} from '../actions/user_actions';
 
 import { merge } from 'lodash';
 
@@ -20,7 +22,7 @@ export default (state=initialState, action) => {
 
     case RECEIVE_FOLLOW:
       return merge({}, state,
-        {[action.payload.follow.id]: action.payload.follow});
+        { [action.payload.follow.id]: action.payload.follow });
 
     case REMOVE_FOLLOW:
       let newState2 = merge({}, state);

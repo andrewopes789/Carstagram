@@ -46,10 +46,7 @@ class Discover extends React.Component {
 
   render() {
     let photos = this.props.photos;
-    let users = this.props.users;
-    if (users) {
-      users = Object.values(users);
-    }
+    let users = Object.values(this.props.users);
     return (
       this.props.loading ? <LoadingIcon /> :
 
@@ -57,6 +54,7 @@ class Discover extends React.Component {
         { this.state.photoModalOpen ?
 
           <PhotoShow
+            key={this.props.photos[this.state.searchId].id}
             backToProfile={this.backToProfile}
             comments={this.props.comments}
             createComment={this.props.createComment}
