@@ -22,6 +22,10 @@ class Discover extends React.Component {
     this.props.deleteFeedPhotos();
   }
 
+  componentWillUnmount() {
+    this.props.deleteFeedPhotos();
+  }
+
   componentDidMount() {
     this.getUsers();
   }

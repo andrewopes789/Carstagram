@@ -21,6 +21,10 @@ class FeedPhotos extends React.Component {
     this.fetchNextPhotos();
   }
 
+  componentWillUnmount() {
+    this.props.deleteFeedPhotos();
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     return true;
   }
@@ -51,7 +55,7 @@ class FeedPhotos extends React.Component {
         }
 
         <Waypoint onEnter={this.fetchNextPhotos} />
-        
+
         {
           this.props.loading ? <LoadingIcon /> : null
         }
