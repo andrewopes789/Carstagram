@@ -25,18 +25,19 @@ export default (state=initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, { detail: action.payload.user });
+      return merge({}, state, { detail: action.payload.user });
 
     case RECEIVE_USERS:
-      return merge({}, { index: action.payload.users });
+      return merge({}, state, {
+        index: action.payload.users });
 
     case RECEIVE_FOLLOW:
       const userId1 = Object.keys(action.payload.user)[0];
-      return merge({}, { detail: action.payload.user[userId1] });
+      return merge({}, state, { detail: action.payload.user[userId1] });
 
     case REMOVE_FOLLOW:
       const userId2 = Object.keys(action.payload.user)[0];
-      return merge({}, { detail: action.payload.user[userId2] });
+      return merge({}, state, { detail: action.payload.user[userId2] });
 
     default:
       return state;

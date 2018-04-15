@@ -27,9 +27,8 @@ const mapStateToProps = ({session, entities, ui}) => ({
   comments: entities.comments,
   likes: entities.likes,
   currentUser: session.currentUser,
-  users: Object.values(entities.user.index),
-  photos: Object.values(entities.photos),
-  photosAsObject: entities.photos,
+  users: entities.user.index,
+  photos: entities.photos,
   loading: ui.loading.indexLoading
 });
 

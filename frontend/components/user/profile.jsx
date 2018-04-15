@@ -76,8 +76,14 @@ class ProfilePhotos extends React.Component {
     let currentUser = this.props.currentUser;
     let photos = this.props.photos;
     let follows = this.props.follows;
-    let followers = user.followers_by_id.map(id => follows[id]);
-    let followings = user.followings_by_id.map(id => follows[id]);
+    let followers = [];
+    let followings = [];
+    if (user.followers_by_id) {
+      followers = user.followers_by_id.map(id => follows[id]);
+    }
+    if (user.followings_by_id) {
+      followings = user.followings_by_id.map(id => follows[id]);
+    }
     if (!this.props.photos) { return null; }
     let button = user.id !== currentUser.id ? (
       <button

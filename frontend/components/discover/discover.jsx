@@ -45,8 +45,13 @@ class Discover extends React.Component {
   }
 
   render() {
+    let photos = this.props.photos;
+    let users = this.props.users;
+    if (users) {
+      users = Object.values(users);
+    }
     return (
-      this.props.loading || !this.props.photos ? <LoadingIcon /> :
+      this.props.loading ? <LoadingIcon /> :
 
       <main className='explore-main'>
         { this.state.photoModalOpen ?
@@ -60,14 +65,14 @@ class Discover extends React.Component {
             deleteComment={this.props.deleteComment}
             deleteLike={this.props.deleteLike}
             likes={this.props.likes}
-            photo={this.props.photosAsObject[this.state.searchId]}
+            photo={this.props.photos[this.state.searchId]}
           /> : ""
 
         }
         <span className='explore-subheader'>Discover People</span>
         <div className='explore-users'>
           {
-            this.props.users.map(user => (
+            users.map(user => (
               <RenderUser
                 key={user.id}
                 id={user.id}
@@ -84,7 +89,7 @@ class Discover extends React.Component {
         <span className='explore-subheader'>Explore</span>
         <div className='explore-photos'>
           {
-            this.props.photos.map(photo => (
+            Object.values(photos).map(photo => (
 
               <RenderPhoto
                 key={photo.id}
