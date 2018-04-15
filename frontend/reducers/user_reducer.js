@@ -41,17 +41,19 @@ export default (state=initialState, action) => {
       });
 
     case RECEIVE_FOLLOW:
-      const userId1 = Object.keys(action.payload.user)[0];
       return merge({}, state, {
-        index: action.payload.user[userId1],
-        detail: action.payload.user[userId1]
+        detail: action.payload.user,
+        index: {
+          [action.payload.user.id]: action.payload.user
+        }
       });
 
     case REMOVE_FOLLOW:
-      const userId2 = Object.keys(action.payload.user)[0];
       return merge({}, state, {
-        index: action.payload.user[userId2],
-        detail: action.payload.user[userId2]
+        detail: action.payload.user,
+        index: {
+          [action.payload.user.id]: action.payload.user
+        }
       });
 
     default:

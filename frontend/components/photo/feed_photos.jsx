@@ -13,20 +13,8 @@ class FeedPhotos extends React.Component {
     this.fetchNextPhotos = this.fetchNextPhotos.bind(this);
   }
 
-  componentWillMount() {
-    this.props.deleteFeedPhotos();
-  }
-
   componentDidMount() {
     this.fetchNextPhotos();
-  }
-
-  componentWillUnmount() {
-    this.props.deleteFeedPhotos();
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return true;
   }
 
   fetchNextPhotos() {

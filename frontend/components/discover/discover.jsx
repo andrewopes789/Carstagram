@@ -22,12 +22,12 @@ class Discover extends React.Component {
     this.props.deleteFeedPhotos();
   }
 
-  componentWillUnmount() {
-    this.props.deleteFeedPhotos();
-  }
-
   componentDidMount() {
     this.getUsers();
+  }
+
+  componentWillUnmount() {
+    this.props.deleteFeedPhotos();
   }
 
   componentWillReceiveProps(newProps) {
@@ -77,11 +77,13 @@ class Discover extends React.Component {
         <span className='explore-subheader'>Discover People</span>
         <div className='explore-users'>
           {
+            this.props.loading ? <LoadingIcon /> :
+
             users.map(user => (
               <RenderUser
                 key={user.id}
                 id={user.id}
-                user={Object.values(user)[0]}
+                user={user}
                 createFollow={this.props.createFollow}
                 deleteFollow={this.props.deleteFollow}
                 currentUser={this.props.currentUser}
