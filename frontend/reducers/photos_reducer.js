@@ -3,7 +3,8 @@ import { combineReducers } from 'redux';
 import {
   RECEIVE_FEED_PHOTOS,
   RECEIVE_PHOTO,
-  REMOVE_PHOTO
+  REMOVE_PHOTO,
+  CLEAR_PHOTOS
 } from '../actions/photo_actions';
 
 import {
@@ -56,6 +57,9 @@ export default (state=initialState, action) => {
       let newState1 = merge({}, state);
       delete newState1[action.photoId];
       return newState1;
+
+    case CLEAR_PHOTOS:
+      return {};
 
     default:
       return state;

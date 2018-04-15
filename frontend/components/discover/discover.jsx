@@ -19,15 +19,11 @@ class Discover extends React.Component {
   }
 
   componentWillMount() {
-    this.props.deleteFeedPhotos();
+    this.props.deletePhotos();
   }
 
   componentDidMount() {
     this.getUsers();
-  }
-
-  componentWillUnmount() {
-    this.props.deleteFeedPhotos();
   }
 
   componentWillReceiveProps(newProps) {
@@ -55,7 +51,11 @@ class Discover extends React.Component {
 
   render() {
     let photos = this.props.photos;
-    let users = Object.values(this.props.users);
+    let users = this.props.users;
+    if (!Array.isArray(users)) {
+      users = Object.values(users);
+    }
+
     return (
       <main className='explore-main'>
         { this.state.photoModalOpen ?

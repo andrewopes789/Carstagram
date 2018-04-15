@@ -1,7 +1,7 @@
 import * as APIUtil from '../utils/photo_utils';
 
 export const RECEIVE_FEED_PHOTOS = 'RECEIVE_FEED_PHOTOS';
-export const CLEAR_FEED_PHOTOS = 'CLEAR_FEED_PHOTOS';
+export const CLEAR_PHOTOS = 'CLEAR_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 export const START_LOADING_FEED_PHOTOS = 'START_LOADING_FEED_PHOTOS';
@@ -13,8 +13,8 @@ export const receiveFeedPhotos = payload => ({
   payload
 });
 
-export const clearFeedPhotos = () => ({
-  type: CLEAR_FEED_PHOTOS
+export const clearPhotos = () => ({
+  type: CLEAR_PHOTOS
 });
 
 export const receivePhoto = photo => ({
@@ -46,8 +46,8 @@ export const fetchFeedPhotos = pageId => dispatch => {
     .then(photos => dispatch(receiveFeedPhotos(photos)));
 };
 
-export const deleteFeedPhotos = () => dispatch => {
-  dispatch(clearFeedPhotos());
+export const deletePhotos = () => dispatch => {
+  dispatch(clearPhotos());
 };
 
 export const fetchPhoto = id => dispatch => {

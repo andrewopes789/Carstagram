@@ -22,7 +22,7 @@ import {
 } from '../../actions/user_actions';
 
 import {
-  deleteFeedPhotos
+  deletePhotos
 } from '../../actions/photo_actions';
 
 
@@ -45,7 +45,7 @@ const mapDispatchToProps = dispatch => ({
   deleteComment: commentId => dispatch(deleteComment(commentId)),
   createFollow: followingId => dispatch(createFollow(followingId)),
   deleteFollow: followingId => dispatch(deleteFollow(followingId)),
-  deleteFeedPhotos: () => dispatch(deleteFeedPhotos()),
+  deletePhotos: () => dispatch(deletePhotos()),
   logout: () => dispatch(logout())
 });
 
