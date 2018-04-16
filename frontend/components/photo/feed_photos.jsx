@@ -23,13 +23,6 @@ class FeedPhotos extends React.Component {
     this.props.fetchUsers(this.state.pageId);
   }
 
-  componentWillReceiveProps(newProps){
-    // if (newProps.currentUser.followings_by_id.length > 0) {
-    //   this.props.deletePhotos();
-    //   this.fetchNextPhotos();
-    // }
-  }
-
   fetchNextPhotos() {
     this.props.fetchFeedPhotos(this.state.pageId);
     this.setState = ({ page: this.state.pageId += 1 });
