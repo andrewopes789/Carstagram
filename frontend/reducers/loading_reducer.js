@@ -45,9 +45,9 @@ export default (state=initialState, action) => {
       return Object.assign({}, state, {indexLoading: false});
 
     case START_LOADING_RECOMMENDATIONS:
-      return Object.assign({}, state, {indexLoading: true});
+      return Object.assign({}, state, {detailLoading: true});
     case RECEIVE_RECOMMENDATIONS:
-      return Object.assign({}, state, {indexLoading: false});
+      return Object.assign({}, state, {detailLoading: false});
 
     case START_LOADING_SINGLE_PHOTO:
       return Object.assign({}, state, {detailLoading: true});

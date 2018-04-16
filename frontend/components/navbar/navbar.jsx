@@ -6,9 +6,24 @@ class siteNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchContent: ''
+      searchContent: '',
+      isTop: true
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.isScrolly = this.isScrolly.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 100;
+      if (isTop !== this.state.isTop) {
+          this.isScrolly(isTop);
+      }
+    });
+  }
+
+  isScrolly(isTop) {
+    this.setState({ isTop: isTop });
   }
 
   componentWillReceiveProps(newProps) {

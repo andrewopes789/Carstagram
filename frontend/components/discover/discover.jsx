@@ -78,7 +78,7 @@ class Discover extends React.Component {
         <span className='explore-subheader'>Discover People</span>
         <div className='explore-users'>
           {
-            this.props.loading ? <LoadingIcon /> :
+            this.props.userLoading ? <LoadingIcon /> :
 
             users.map(user => (
               <RenderUser
@@ -113,7 +113,7 @@ class Discover extends React.Component {
         <Waypoint onEnter={this.getRecommendations} />
 
         {
-          this.props.loading ? <LoadingIcon /> : null
+          this.props.recommendationLoading ? <LoadingIcon /> : null
         }
       </main>
     );

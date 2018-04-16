@@ -38,7 +38,8 @@ const mapStateToProps = ({session, entities, ui}) => ({
   currentUser: session.currentUser,
   users: entities.user.index,
   photos: entities.photos,
-  loading: ui.loading.indexLoading
+  userLoading: ui.loading.indexLoading,
+  recommendationLoading: ui.loading.detailLoading
 });
 
 const mapDispatchToProps = dispatch => ({
