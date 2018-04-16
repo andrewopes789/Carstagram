@@ -30,7 +30,7 @@ class FeedPlaceholder extends React.Component {
   render() {
     let { currentUser, createFollow, deleteFollow, logout } = this.props;
     let uploadImg =
-    currentUser.img_url === '' || currentUser.img_url === null ? (
+    currentUser.img_url === 'http://res.cloudinary.com/dn26kjpum/image/upload/v1523837699/11906329_960233084022564_1448528159_a_i6gdff.jpg' ? (
       <div className='feed-placeholder-img-container'>
         <div className='feed-placeholder-icon-container'>
           <i className='fa fa-user-o feed-placeholder-icon'/>
@@ -38,9 +38,13 @@ class FeedPlaceholder extends React.Component {
 
         <div className='feed-placeholder-header'>Add a profile photo</div>
 
-        <div className='feed-placeholder-subheader'>Add a profile photo so your friends know it's you</div>
+        <div
+          className='feed-placeholder-subheader'
+        >Add a profile photo so your friends know it's you</div>
 
-        <button onClick={this.handleUpload}>Add a Profile Photo</button>
+        <button
+          className='feed-placeholder-button'
+          onClick={this.handleUpload}>Add a Profile Photo</button>
       </div>
     ) : null;
     return (

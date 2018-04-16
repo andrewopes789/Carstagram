@@ -7,7 +7,8 @@ class Signup extends React.Component {
     this.state = {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      img_url: 'http://res.cloudinary.com/dn26kjpum/image/upload/v1523837699/11906329_960233084022564_1448528159_a_i6gdff.jpg'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
