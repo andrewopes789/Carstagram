@@ -719,7 +719,7 @@
 }
 
 .image-show-container {
-  background: white;
+  background: #fafafa;
   display: flex;
   flex-direction: row;
   width: 600px;
@@ -1277,7 +1277,6 @@
 
 .modal-zero-likes {
   color: #999;
-  font-size: 14px;
   font-family: Arial;
   font-size: 14px;
   margin-left: 0;
