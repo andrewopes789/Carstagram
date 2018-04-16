@@ -1449,7 +1449,7 @@ text-decoration: none;
 .profile-header {
   display: flex;
   flex-direction: row;
-  margin: 0 15px -15px 15px;
+  margin: 0 15px 44px 15px;
   width: 997px;
 }
 
@@ -1490,7 +1490,7 @@ text-decoration: none;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  margin: 45px 166px 58px 162px;
+  margin: 0 166px 58px 162px;
   width: 997px;
 }
 
@@ -1501,6 +1501,69 @@ text-decoration: none;
   padding: 0 69.5px 0 69.5px;
 }
 
+.profile-placeholder-container {
+  border-top: 1px solid #efefef;
+  display: flex;
+  flex-direction: row;
+  height: 380px;
+  margin: auto auto 30px auto;
+  padding-top: 53px;
+  width: 935px;
+}
+
+.profile-placeholder-left-img {
+  height: 380px;
+  width: 380px;
+}
+
+.profile-placeholder-link {
+  font-weight: 600;
+}
+
+.profile-placeholder-right {
+  margin: auto;
+}
+
+.profile-placeholder-right-container {
+  background: white;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-family: Arial;
+  height: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.profile-placeholder-right-buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 25px auto auto auto;
+}
+
+.profile-placeholder-right-img {
+  height: 40px;
+  margin: auto auto auto 0;
+  width: 136px;
+}
+
+.profile-placeholder-right-img:first-of-type {
+  margin: auto 8px auto auto;
+}
+
+.profile-placeholder-right-text-1 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.profile-placeholder-right-text-2 {
+  margin-top: 10px;
+}
+
+.profile-placeholder-right-text-container {
+  display: flex;
+  flex-direction: column;
+}
 
 .profile-posts {
   margin: auto 42px auto 0;

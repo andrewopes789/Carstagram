@@ -47,7 +47,7 @@ class ProfilePhotos extends React.Component {
   componentWillMount() {
     this.props.deletePhotos();
   }
-  
+
   componentDidMount () {
     this.props.fetchUser(this.props.userId);
   }
@@ -129,6 +129,48 @@ class ProfilePhotos extends React.Component {
          <img className='profile-photo' src={user.img_url}/>
        </div>
      );
+
+     let profilePlaceholder = currentUser.id === user.id &&
+                              currentUser.photos_by_id.length === 0 ?
+     (
+       <div className='profile-placeholder-container'>
+         <div className='profile-placeholder-left'>
+           <img
+             src='http://res.cloudinary.com/dn26kjpum/image/upload/v1523837536/7e0cb2166ce8_izr03s.jpg'
+             alt='placeholder image'
+             className='profile-placeholder-left-img'
+           />
+         </div>
+
+         <div className='profile-placeholder-right-container'>
+           <div className='profile-placeholder-right'>
+             <div className='profile-placeholder-right-text-container'>
+               <span
+                 className='profile-placeholder-right-text-1'
+                 >Start capturing and sharing your moments.</span>
+               <span
+                 className='profile-placeholder-right-text-2'
+                 >Get the app or click <Link to='/photos/new'
+                 className='profile-placeholder-link'
+                 >here</Link> to share your first photo or video.</span>
+             </div>
+             <div className='profile-placeholder-right-buttons'>
+               <img
+                 src='http://res.cloudinary.com/dn26kjpum/image/upload/v1523837495/f06b908907d5_xg0jjw.png'
+                 alt='placeholder image'
+                 className='profile-placeholder-right-img'
+                 />
+
+               <img
+                 src='http://res.cloudinary.com/dn26kjpum/image/upload/v1523837495/4b70f6fae447_dqldmh.png'
+                 alt='placeholder image'
+                 className='profile-placeholder-right-img'
+                 />
+             </div>
+           </div>
+         </div>
+       </div>
+     ) : null;
     return (
       this.props.loading ? <LoadingIcon /> :
 
@@ -232,6 +274,8 @@ class ProfilePhotos extends React.Component {
             </section>
           </header>
         </div>
+
+        { profilePlaceholder }
 
         <div className='profile-photos'>
           {
