@@ -25,6 +25,11 @@ import {
   START_LOADING_CHATROOM
 } from '../actions/chatroom_actions';
 
+import {
+  START_LOADING_RECOMMENDATIONS,
+  RECEIVE_RECOMMENDATIONS
+} from '../actions/recommendation_actions';
+
 const initialState = {
   indexLoading: false,
   detailLoading: false
@@ -37,6 +42,11 @@ export default (state=initialState, action) => {
     case START_LOADING_FEED_PHOTOS:
     return Object.assign({}, state, {indexLoading: true});
     case RECEIVE_FEED_PHOTOS:
+      return Object.assign({}, state, {indexLoading: false});
+
+    case START_LOADING_RECOMMENDATIONS:
+      return Object.assign({}, state, {indexLoading: true});
+    case RECEIVE_RECOMMENDATIONS:
       return Object.assign({}, state, {indexLoading: false});
 
     case START_LOADING_SINGLE_PHOTO:
