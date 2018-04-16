@@ -18,6 +18,11 @@ span, article, footer, time, small {
 
 html {
   background: #fafafa;
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 ul {

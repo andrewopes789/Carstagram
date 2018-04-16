@@ -273,9 +273,10 @@ class ProfilePhotos extends React.Component {
               </div>
             </section>
           </header>
-        </div>
 
-        { profilePlaceholder }
+          { profilePlaceholder }
+          
+        </div>
 
         <div className='profile-photos'>
           {

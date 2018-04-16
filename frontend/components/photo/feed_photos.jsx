@@ -27,7 +27,8 @@ class FeedPhotos extends React.Component {
 
   render () {
     let photos = this.props.photos;
-    let feedContent = this.props.currentUser.followings_by_id.length === 0 ?
+    let feedContent = this.props.currentUser.followings_by_id.length === 0
+    || photos.length === 0 ?
     (
       <FeedPlaceholder
         users={Object.values(this.props.users)}

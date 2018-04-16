@@ -438,8 +438,9 @@
   display: flex;
   flex-direction: column;
   font-family: Arial;
-  height: 100%;
-  padding-bottom: 60px;
+  margin-bottom: -94px;
+  min-height: 100vh;
+  padding-bottom: 94px;
   padding-top: 60px;
   text-align: center;
 }
@@ -696,6 +697,7 @@
 .image-form-container {
  display: flex;
  flex-direction: row;
+ margin: 0 auto auto auto;
 }
 
 .image-placeholder {
@@ -1280,6 +1282,7 @@
 
 .nav-bar {
   align-items: center;
+  background: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1347,6 +1350,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: -94px;
+  min-height: 100vh;
   padding: 30px;
 }
 
@@ -1414,7 +1419,7 @@ text-decoration: none;
   flex-direction: column;
   text-align: center;
   padding: 60px 20px 0 20px;
-  margin: auto auto 0 auto;
+  margin: 0 auto 30px auto;
 }
 
 .profile-option {
@@ -1455,6 +1460,8 @@ text-decoration: none;
   border-top: 1px solid #e6e6e6;
   display: flex;
   flex-direction: row;
+  margin-bottom: -94px;
+  min-height: 100vh;
 }
 
 .profile-bottom-line {
@@ -1503,7 +1510,7 @@ text-decoration: none;
   display: flex;
   flex-direction: row;
   height: 380px;
-  margin: auto auto 30px auto;
+  margin: 0 auto 30px auto;
   padding-top: 53px;
   width: 935px;
 }
