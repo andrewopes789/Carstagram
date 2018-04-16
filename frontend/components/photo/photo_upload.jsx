@@ -58,42 +58,40 @@ class PhotoUpload extends React.Component {
     );
 
     return (
-      <div>
-        <section className='photo-detail'>
+      <section className='photo-detail'>
 
-          <div className='image-form-container'>
+        <div className='image-form-container'>
 
-            <div className='image-show-container'
-              onClick={this.handleUpload}>
-              {imageShow}
-            </div>
-
-            <form className='upload-form'>
-              <div className='new-post'>New Post</div>
-              <label>
-                <textarea
-                  className='caption-input'
-                  value={this.state.caption}
-                  placeholder='Write a caption...'
-                  onChange={this.update('caption')}
-                  />
-              </label>
-
-              <label>
-                <button
-                  onClick={this.handleSubmit}
-                  className='upload-button'>Share</button>
-              </label>
-
-              <ul>
-                {this.errors()}
-              </ul>
-
-            </form>
+          <div className='image-show-container'
+            onClick={this.handleUpload}>
+            {imageShow}
           </div>
 
-        </section>
-      </div>
+          <form className='upload-form'>
+            <div className='new-post'>New Post</div>
+            <label>
+              <textarea
+                className='caption-input'
+                value={this.state.caption}
+                placeholder='Write a caption...'
+                onChange={this.update('caption')}
+                />
+            </label>
+
+            <label>
+              <button
+                onClick={this.handleSubmit}
+                className='upload-button'>Share</button>
+            </label>
+
+            <ul>
+              {this.errors()}
+            </ul>
+
+          </form>
+        </div>
+
+      </section>
     );
   }
 }

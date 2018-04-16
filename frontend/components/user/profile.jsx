@@ -152,7 +152,7 @@ class ProfilePhotos extends React.Component {
                  className='profile-placeholder-right-text-2'
                  >Get the app or click <Link to='/photos/new'
                  className='profile-placeholder-link'
-                 >here</Link> to share your first photo or video.</span>
+                 >here</Link> to share your first photo.</span>
              </div>
              <div className='profile-placeholder-right-buttons'>
                <img

@@ -35,7 +35,7 @@ const App = () => {
         <ProtectedRoute path='/chatrooms' component={ChatroomContainer}/>
         <ProtectedRoute path='/discover' component={DiscoverContainer}/>
       </Switch>
-      <footer>
+      <footer className='footer'>
         <FooterContainer />
       </footer>
     </div>

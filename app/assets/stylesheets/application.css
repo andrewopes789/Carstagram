@@ -659,6 +659,10 @@
   overflow: scroll;
 }
 
+.footer {
+  background: #fafafa;
+}
+
 .footer-item {
  color: #003569;
  font-family: Arial;
@@ -1282,7 +1286,7 @@
   margin: auto;
   min-width: 385px;
   max-width: 930px;
-  padding: 26px 40px;
+  padding: 20px 40px;
 }
 
 .nav-bar-container {
@@ -1338,14 +1342,12 @@
 
 .photo-detail {
   align-items: center;
+  background: #fafafa;
   border-top: 1px solid #e6e6e6;
-  bottom: 53px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  position: fixed;
-  top: 89px;
-  width: 100vw;
+  padding: 30px;
 }
 
 .photo-header {
@@ -1653,7 +1655,6 @@ text-decoration: none;
 
 .session-footer {
   background: #fafafa;
-  bottom: 0;
   display: flex;
   flex-direction: row;
   font-family: Arial;
@@ -1661,7 +1662,8 @@ text-decoration: none;
   font-weight: 550;
   justify-content: center;
   line-height: 18px;
-  max-height: 53px;
+  margin: auto;
+  max-width: 935px;
   padding: 38px 20px;
   text-transform: uppercase;
 }
