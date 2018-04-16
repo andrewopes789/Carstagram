@@ -49,12 +49,22 @@ class PhotoUpload extends React.Component {
 
   render() {
     let imageShow = this.state.img_url === '' ? (
-      imageShow = (<div className='image-placeholder'
-      >Click here to upload an image</div>)
+      imageShow = (
+        <div
+          className='image-show-container'
+          onClick={this.handleUpload}>
+          <div
+            className='image-placeholder'
+            >Click here to upload an image</div>
+        </div>)
     ) : (
-      imageShow = (<img
+      imageShow = (
+        <img
         src={this.state.img_url}
-        className='upload-preview'></img>)
+        className='upload-preview image-show-container'
+        onClick={this.handleUpload}
+        />
+    )
     );
 
     return (
@@ -62,18 +72,16 @@ class PhotoUpload extends React.Component {
 
         <div className='image-form-container'>
 
-          <div className='image-show-container'
-            onClick={this.handleUpload}>
+          <div className='new-post'>New Post</div>
+
             {imageShow}
-          </div>
 
           <form className='upload-form'>
-            <div className='new-post'>New Post</div>
             <label>
               <textarea
                 className='caption-input'
                 value={this.state.caption}
-                placeholder='Write a caption...'
+                placeholder='Add a caption...'
                 onChange={this.update('caption')}
                 />
             </label>
