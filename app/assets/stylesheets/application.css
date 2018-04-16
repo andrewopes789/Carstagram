@@ -328,7 +328,6 @@
   background: #fafafa;
   border-top: 1px solid #e6e6e6;
   display: flex;
-  padding-top: 60px;
   flex-direction: column;
 }
 
@@ -440,6 +439,7 @@
   font-family: Helvetica;
   height: 100%;
   padding-bottom: 70px;
+  padding-top: 60px;
   text-align: center;
 }
 
@@ -469,7 +469,7 @@
  border: 1px solid #e6e6e6;
  display: flex;
  flex-direction: column;
- margin: 60px auto auto auto;
+ margin: auto auto 60px auto;
  width: 600px;
 }
 
