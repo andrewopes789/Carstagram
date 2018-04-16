@@ -13,7 +13,7 @@ class Discover extends React.Component {
       photoModalOpen: false,
       searchId: -1
     };
-    this.getUsers = this.getUsers.bind(this);
+    this.getRecommendations = this.getRecommendations.bind(this);
     this.backToProfile = this.backToProfile.bind(this);
     this.pushHistory = this.pushHistory.bind(this);
   }
@@ -23,7 +23,8 @@ class Discover extends React.Component {
   }
 
   componentDidMount() {
-    this.getUsers();
+    this.props.fetchUsers(this.state.pageId);
+    this.getRecommendations();
   }
 
   componentWillReceiveProps(newProps) {
@@ -35,7 +36,7 @@ class Discover extends React.Component {
     }
   }
 
-  getUsers() {
+  getRecommendations() {
     this.props.fetchRecommendations(this.state.pageId);
     this.setState({ pageId: this.state.pageId += 1 });
   }
@@ -109,7 +110,7 @@ class Discover extends React.Component {
           }
         </div>
 
-        <Waypoint onEnter={this.getUsers} />
+        <Waypoint onEnter={this.getRecommendations} />
 
         {
           this.props.loading ? <LoadingIcon /> : null

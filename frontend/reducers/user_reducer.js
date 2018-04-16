@@ -44,16 +44,6 @@ export default (state=initialState, action) => {
         }
       });
 
-    case RECEIVE_RECOMMENDATIONS:
-      return merge({}, {
-        index: action.payload.users,
-        detail: {
-          followers_by_id: [],
-          followings_by_id: [],
-          photos_by_id: []
-        }
-      });
-
     case RECEIVE_FOLLOW:
       return merge({}, state, {
         detail: action.payload.user,
