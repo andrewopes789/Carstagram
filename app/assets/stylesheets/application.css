@@ -668,18 +668,17 @@
 }
 
 .footer-item:hover {
- color: blue;
  cursor: pointer;
 }
 
 .footer-items-left {
- margin: auto auto auto 170px;
+ margin: auto auto auto 30px;
 }
 
 .footer-items-right {
- color: #003569;
+ color: #999;
  font-family: Arial;
- margin: auto 170px auto auto;
+ margin: auto 30px auto auto;
  text-transform: uppercase;
 }
 
@@ -1618,12 +1617,12 @@ text-decoration: none;
 }
 
 .session-all {
+  background: #fafafa;
   display: flex;
   flex-direction: row;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  padding: 30px 52px;
 }
 
 .session-blurb {
@@ -1661,8 +1660,9 @@ text-decoration: none;
   font-size: 12px;
   font-weight: 550;
   justify-content: center;
+  line-height: 18px;
   max-height: 53px;
-  padding: 38px 0;
+  padding: 38px 20px;
   text-transform: uppercase;
 }
 
@@ -1683,7 +1683,7 @@ text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 6px 0 0 0;
+  margin: 12px 0 0 0;
   padding: 10px 0;
   text-align: center;
   width: 100%;
@@ -1711,13 +1711,9 @@ text-decoration: none;
 }
 
 .session-photo {
-  display: flex;
-  flex-direction: column;
-  background-image: url('http://res.cloudinary.com/dn26kjpum/image/upload/v1511990923/auto_detail_the_suitcase_light_colors_blue_red_museum-670976_vgtpr4.jpg');
-  min-height: 600px;
-  border-radius: 35px;
-  margin-right: 30px;
-  width: 454px;
+  margin: auto 0 -25px auto;
+  max-width: 430px;
+  object-fit: contain;
 }
 
 .session-text {
@@ -1725,7 +1721,8 @@ text-decoration: none;
   flex-direction: column;
   font-family: Arial;
   justify-content: center;
-  width: 350px;
+  margin: auto auto auto 0;
+  width: 348px;
 }
 
 .terms-privacy-policy {

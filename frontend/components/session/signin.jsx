@@ -43,7 +43,10 @@ class Signin extends React.Component {
       <div className='session-all-container'>
         <div className='session-all'>
 
-          <div className='session-photo'></div>
+          <img
+            src='http://res.cloudinary.com/dn26kjpum/image/upload/v1523850450/Screen_Shot_2018-04-15_at_8.45.59_PM_vnxyp6.png'
+            alt='session photo'
+            className='session-photo'/>
 
           <div className='session-text'>
             <div className='session-form'>

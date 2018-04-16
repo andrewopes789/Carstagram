@@ -17,7 +17,7 @@ const Footer = () => (
         </a>
       </div>
       <div className='footer-items-right'>
-        © Andrew Cho 2018
+        © 2018 Andrew Cho
       </div>
     </footer>
 );
