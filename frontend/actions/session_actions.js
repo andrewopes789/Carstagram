@@ -37,7 +37,7 @@ export const editUser = inputUser => dispatch => {
   updateUser(inputUser)
     .then(user => {
       dispatch(receiveCurrentUser(user));
-      dispatch(receiveUser(user))
+      dispatch(receiveUser(user));
     });
 };
 

@@ -794,7 +794,7 @@
 }
 
 .logo-text {
-  font-family: Brush Script MT, cursive;
+  font-family: Arial;
   font-size: 60px;
   font-weight: 100;
   margin: 10px 0 10px 0;
@@ -1311,7 +1311,7 @@
 
 .nav-bar-written-logo {
   color: #262626;
-  font-family: Brush Script MT, cursive;
+  font-family: Arial;
   font-size: 30px;
   font-weight: 50;
   text-decoration: none;
